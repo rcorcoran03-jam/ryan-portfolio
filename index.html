@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ryan Corcoran — Product Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#1A1F1C;--bg2:#1F2620;--bg3:#242E27;--bg4:#2A3D30;
+  --jade:#1D9E75;--jade2:#9FE1CB;--jade3:#085041;
+  --rose:#D4537E;--rose2:#F4C0D1;--rose3:#72243E;
+  --tx:#E8F2EC;--tx2:#A8C4B0;--tx3:#6A9A7A;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);
+  --serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--tx);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,31,28,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-name{font-family:var(--serif);font-size:17px;color:var(--jade2);}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{font-size:12px;color:var(--tx3);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--jade2);}
+.hero{min-height:100vh;padding:120px 48px 80px;display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(29,158,117,0.06) 0%,transparent 70%);pointer-events:none;}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--jade);letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px;}
+.hero-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--jade);}
+.hero-headline{font-family:var(--serif);font-size:clamp(44px,5vw,68px);line-height:1.05;color:var(--tx);margin-bottom:20px;letter-spacing:-.01em;}
+.hero-headline em{font-style:italic;color:var(--jade2);}
+.hero-sub{font-size:16px;color:var(--tx2);line-height:1.7;margin-bottom:32px;max-width:500px;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px;}
+.htag{font-size:11px;padding:5px 12px;border-radius:20px;letter-spacing:.04em;}
+.htag.jade{background:var(--jade3);color:var(--jade2);border:0.5px solid rgba(29,158,117,.3);}
+.htag.rose{background:var(--rose3);color:var(--rose2);border:0.5px solid rgba(212,83,126,.3);}
+.htag.muted{background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{font-family:var(--sans);font-size:12px;padding:10px 22px;border-radius:6px;cursor:pointer;text-decoration:none;letter-spacing:.05em;transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
+.btn-primary{background:var(--jade);color:#fff;border:none;}
+.btn-primary:hover{background:var(--jade3);color:var(--jade2);}
+.btn-ghost{background:transparent;color:var(--tx2);border:0.5px solid var(--border2);}
+.btn-ghost:hover{border-color:var(--jade);color:var(--jade2);}
+.hero-photo-col{display:flex;flex-direction:column;gap:16px;}
+.hero-photo{width:100%;aspect-ratio:3/4;background:var(--bg3);border-radius:12px;border:0.5px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--tx3);font-size:12px;position:relative;overflow:hidden;}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(29,158,117,.05) 0%,transparent 50%,rgba(212,83,126,.05) 100%);}
+.hero-stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.hstat{background:var(--bg3);border:0.5px solid var(--border);border-radius:8px;padding:14px;text-align:center;}
+.hstat-num{font-family:var(--serif);font-size:26px;color:var(--jade2);line-height:1;margin-bottom:4px;}
+.hstat-label{font-size:10px;color:var(--tx3);letter-spacing:.05em;line-height:1.4;}
+section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;margin:0 auto;}
+.section-eyebrow{font-size:10px;color:var(--jade);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.section-eyebrow::before{content:'';display:inline-block;width:16px;height:1px;background:var(--jade);}
+.section-title{font-family:var(--serif);font-size:clamp(28px,3vw,38px);color:var(--tx);margin-bottom:12px;line-height:1.15;}
+.section-title em{font-style:italic;color:var(--jade2);}
+.section-lead{font-size:16px;color:var(--tx2);max-width:580px;line-height:1.8;margin-bottom:48px;}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.story-text{font-size:17px;color:var(--tx2);line-height:1.9;}
+.story-text strong{color:var(--tx);font-weight:500;}
+.story-text .accent{color:var(--jade2);}
+.story-text .rose-accent{color:var(--rose2);}
+.timeline{padding-left:24px;position:relative;}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--border2);}
+.tl-item{position:relative;margin-bottom:28px;}
+.tl-dot{position:absolute;left:-29px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--jade);box-shadow:0 0 0 3px rgba(29,158,117,.2);}
+.tl-dot.rose{background:var(--rose);box-shadow:0 0 0 3px rgba(212,83,126,.2);}
+.tl-dot.dim{background:var(--bg4);box-shadow:none;border:1px solid var(--border2);}
+.tl-year{font-size:10px;color:var(--tx3);letter-spacing:.08em;margin-bottom:3px;}
+.tl-role{font-size:14px;font-weight:500;color:var(--tx);margin-bottom:2px;}
+.tl-co{font-size:12px;color:var(--tx3);}
+.cases-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.case-card{background:var(--bg2);border:0.5px solid var(--border);border-radius:12px;padding:28px;cursor:pointer;transition:border-color .25s,background .25s;position:relative;overflow:hidden;}
+.case-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--jade);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.case-card:hover{border-color:var(--border2);background:var(--bg3);}
+.case-card:hover::before,.case-card.open::before{transform:scaleX(1);}
+.case-card.open{border-color:rgba(29,158,117,.3);background:var(--bg3);}
+.case-card.wide{grid-column:1/-1;}
+.case-tag{display:inline-block;font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:var(--jade3);color:var(--jade2);margin-bottom:14px;}
+.case-title{font-family:var(--serif);font-size:22px;color:var(--tx);margin-bottom:10px;line-height:1.2;}
+.case-summary{font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;}
+.case-metrics{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:14px;}
+.case-metric-num{font-family:var(--serif);font-size:26px;color:var(--jade2);line-height:1;}
+.case-metric-label{font-size:10px;color:var(--tx3);margin-top:2px;}
+.case-expand-btn{font-size:11px;color:var(--jade);background:none;border:none;cursor:pointer;padding:0;letter-spacing:.05em;display:flex;align-items:center;gap:5px;font-family:var(--sans);transition:color .2s;}
+.case-expand-btn:hover{color:var(--jade2);}
+.case-expand-btn .arrow{transition:transform .25s;}
+.case-card.open .case-expand-btn .arrow{transform:rotate(180deg);}
+.case-detail{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.case-card.open .case-detail{max-height:400px;border-top:0.5px solid var(--border);padding-top:16px;margin-top:16px;}
+.case-detail-text{font-size:13px;color:var(--tx2);line-height:1.8;}
+.case-detail-list{margin-top:12px;padding-left:16px;}
+.case-detail-list li{font-size:13px;color:var(--tx2);margin-bottom:6px;line-height:1.7;}
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.domain-items{display:flex;flex-direction:column;gap:14px;}
+.domain-row-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+.domain-row-name{font-size:13px;color:var(--tx);}
+.domain-row-pct{font-size:11px;color:var(--tx3);}
+.domain-bar-bg{height:3px;background:var(--bg4);border-radius:2px;overflow:hidden;}
+.domain-bar{height:3px;border-radius:2px;background:var(--jade);width:0;transition:width 1s ease;}
+.domain-bar.rose-bar{background:var(--rose);}
+.skills-right{display:flex;flex-direction:column;gap:14px;}
+.skill-cat-label{font-size:10px;color:var(--jade);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.skill-tag{font-size:11px;padding:4px 10px;border-radius:4px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border);}
+.fit-widget{background:var(--bg2);border:0.5px solid var(--border2);border-radius:16px;padding:36px;position:relative;overflow:hidden;}
+.fit-widget::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(29,158,117,.08) 0%,transparent 70%);pointer-events:none;}
+.fit-intro{font-size:15px;color:var(--tx2);line-height:1.7;margin-bottom:24px;max-width:560px;}
+.fit-input-row{display:flex;gap:12px;margin-bottom:8px;}
+.fit-textarea{flex:1;background:var(--bg3);border:0.5px solid var(--border2);border-radius:8px;color:var(--tx);font-family:var(--sans);font-size:13px;padding:14px 16px;resize:vertical;min-height:100px;outline:none;transition:border-color .2s;}
+.fit-textarea:focus{border-color:rgba(29,158,117,.4);}
+.fit-textarea::placeholder{color:var(--tx3);}
+.fit-btn{align-self:flex-end;background:var(--jade);color:#fff;border:none;border-radius:8px;padding:12px 24px;font-family:var(--sans);font-size:13px;cursor:pointer;white-space:nowrap;transition:background .2s;min-width:120px;}
+.fit-btn:hover{background:var(--jade3);color:var(--jade2);}
+.fit-btn:disabled{opacity:.5;cursor:not-allowed;}
+.fit-hint{font-size:11px;color:var(--tx3);margin-bottom:24px;}
+.fit-result{display:none;border-top:0.5px solid var(--border);padding-top:24px;margin-top:8px;}
+.fit-result.visible{display:block;}
+.fit-result-top{display:grid;grid-template-columns:auto auto 1fr;gap:16px;align-items:start;margin-bottom:20px;}
+.fit-score-box{background:var(--bg3);border-radius:10px;padding:16px 20px;text-align:center;border:0.5px solid var(--border);}
+.fit-score-num{font-family:var(--serif);font-size:36px;line-height:1;margin-bottom:4px;}
+.fit-score-label{font-size:10px;color:var(--tx3);letter-spacing:.08em;text-transform:uppercase;}
+.fit-role-box{background:var(--bg3);border-radius:10px;padding:16px 20px;border:0.5px solid var(--border);min-width:180px;}
+.fit-role-co{font-size:14px;font-weight:500;color:var(--tx);}
+.fit-role-title{font-size:12px;color:var(--tx2);margin-top:2px;}
+.fit-role-comp{font-size:11px;color:var(--tx3);margin-top:4px;}
+.fit-rationale{background:var(--bg3);border-radius:10px;padding:16px 20px;border:0.5px solid var(--border);font-size:13px;color:var(--tx2);line-height:1.7;}
+.fit-flags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.fit-flag{font-size:11px;padding:4px 10px;border-radius:4px;background:rgba(212,83,126,.1);color:var(--rose2);border:0.5px solid rgba(212,83,126,.2);}
+.fit-news{background:var(--bg4);border-radius:8px;padding:14px 16px;font-size:13px;color:var(--tx2);line-height:1.7;}
+.fit-news-label{font-size:10px;color:var(--jade);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.fit-match{font-size:12px;color:var(--tx3);margin-bottom:12px;}
+.fit-match strong{color:var(--tx2);}
+.fit-loading{display:none;text-align:center;padding:32px;color:var(--tx3);font-size:14px;}
+.fit-loading.visible{display:block;}
+.fit-error{display:none;color:var(--rose2);font-size:13px;margin-top:12px;}
+.fit-error.visible{display:block;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.spin{display:inline-block;animation:spin 1s linear infinite;margin-right:8px;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.contact-links{display:flex;flex-direction:column;gap:14px;}
+.contact-link-row{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg2);border:0.5px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color .2s,background .2s;}
+.contact-link-row:hover{border-color:var(--jade);background:var(--bg3);}
+.contact-link-icon{font-size:14px;color:var(--jade);width:20px;text-align:center;}
+.contact-link-label{font-size:13px;color:var(--tx2);}
+.contact-link-val{font-size:13px;color:var(--jade2);margin-left:auto;}
+.contact-note{font-size:17px;color:var(--tx2);line-height:1.8;font-family:var(--serif);font-style:italic;}
+.contact-note strong{font-style:normal;color:var(--tx);}
+footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
+.footer-name{font-family:var(--serif);font-size:14px;color:var(--tx3);}
+.footer-note{font-size:11px;color:var(--tx3);}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.fade-up.in{opacity:1;transform:translateY(0);}
+@media(max-width:768px){
+  nav{padding:0 20px;}.nav-links{display:none;}
+  .hero{grid-template-columns:1fr;padding:100px 20px 60px;}.hero-photo-col{display:none;}
+  section{padding:60px 20px;}
+  .story-grid,.skills-layout,.contact-grid{grid-template-columns:1fr;}
+  .cases-grid{grid-template-columns:1fr;}.case-card.wide{grid-column:1;}
+  .fit-input-row{flex-direction:column;}.fit-btn{align-self:stretch;}
+  .fit-result-top{grid-template-columns:1fr;}.footer{padding:20px;flex-direction:column;gap:8px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Ryan Corcoran</span>
+  <div class="nav-links">
+    <a href="#story">story</a>
+    <a href="#work">work</a>
+    <a href="#skills">skills</a>
+    <a href="#fit">fit check</a>
+    <a href="#contact">contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-left fade-up">
+    <div class="hero-eyebrow">open to new roles · minneapolis, mn</div>
+    <h1 class="hero-headline">Building products<br>that <em>matter.</em></h1>
+    <p class="hero-sub">Senior product leader with a background in biomedical science, healthcare analytics, and 0→1 platform builds. I translate complex problems into things people actually use.</p>
+    <div class="hero-tags">
+      <span class="htag jade">Care navigation</span>
+      <span class="htag jade">Digital health</span>
+      <span class="htag jade">Medtech</span>
+      <span class="htag rose">0→1 builds</span>
+      <span class="htag rose">Analytics platforms</span>
+      <span class="htag muted">MBA · Medical Industry</span>
+      <span class="htag muted">Regulated environments</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#fit" class="btn btn-primary">check role fit ↓</a>
+      <a href="#work" class="btn btn-ghost">see the work</a>
+      <a href="mailto:rcorcoran03@gmail.com" class="btn btn-ghost">get in touch</a>
+    </div>
+  </div>
+  <div class="hero-photo-col fade-up" style="transition-delay:.15s">
+    <div class="hero-photo">
+      <span style="font-size:32px;opacity:.2">◻</span>
+      <span style="font-size:11px;color:var(--tx3)">photo goes here</span>
+    </div>
+    <div class="hero-stat-cards">
+      <div class="hstat"><div class="hstat-num">7+</div><div class="hstat-label">years in health product</div></div>
+      <div class="hstat"><div class="hstat-num">48hr</div><div class="hstat-label">time-to-care, Access Plus</div></div>
+      <div class="hstat"><div class="hstat-num">0→1</div><div class="hstat-label">multiple platforms shipped</div></div>
+      <div class="hstat"><div class="hstat-num">NPS+</div><div class="hstat-label">double-digit lift, 6 months</div></div>
+    </div>
+  </div>
+</div>
+
+<section id="story">
+  <div class="section-eyebrow">the story</div>
+  <h2 class="section-title">Non-linear path.<br><em>Intentional direction.</em></h2>
+  <div class="story-grid fade-up">
+    <div class="story-text">
+      <p style="margin-bottom:20px">Started in the <strong>Visible Heart Lab</strong> at the University of Minnesota — studying cardiac physiology and biomedical engineering at the device level. That foundation of understanding how complex systems fail, adapt, and heal has shaped how I think about product ever since.</p>
+      <p style="margin-bottom:20px">Went sideways into <span class="rose-accent">video and brand storytelling</span> at Motion 117, learning that the hardest part of any complex idea is making it land for someone who doesn't already care. That skill travels.</p>
+      <p style="margin-bottom:20px">Spent time in the <span class="accent">UMN Technology Commercialization office</span>, helping researchers cross the gap between a working idea and a real product — market fit, regulatory strategy, financial models.</p>
+      <p>Now: senior product leader building <strong>platforms that help people navigate the hardest moments in health</strong> — from a 0→1 care navigation build that cut time-to-care to 48 hours, to a behavioral health analytics platform serving enterprise clients at national scale.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2023 – 2026</div><div class="tl-role">Senior Manager, Digital Product</div><div class="tl-co">Aetna · CVS Health</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2021 – 2023</div><div class="tl-role">Technical Product Manager</div><div class="tl-co">Claros Technologies</div></div>
+      <div class="tl-item"><div class="tl-dot rose"></div><div class="tl-year">2020 – 2021</div><div class="tl-role">MBA · Medical Industry Leadership</div><div class="tl-co">Carlson School of Management, UMN</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2020 – 2021</div><div class="tl-role">Venture Center Associate</div><div class="tl-co">UMN Office of Technology Commercialization</div></div>
+      <div class="tl-item"><div class="tl-dot dim"></div><div class="tl-year">2017 – 2019</div><div class="tl-role">Business Development &amp; Producer</div><div class="tl-co">Motion 117</div></div>
+      <div class="tl-item"><div class="tl-dot rose"></div><div class="tl-year">2009</div><div class="tl-role">BS Biomedical Sciences</div><div class="tl-co">University of Minnesota · Visible Heart Lab</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="section-eyebrow">case studies</div>
+  <h2 class="section-title">Problems worth <em>solving.</em></h2>
+  <p class="section-lead">Three builds that shaped how I think about product — each one a different kind of hard.</p>
+  <div class="cases-grid fade-up">
+    <div class="case-card" onclick="toggleCase(this)">
+      <span class="case-tag">0→1 build</span>
+      <div class="case-title">Access Plus</div>
+      <div class="case-summary">Legacy EAP with broken access. Members waited weeks to connect with care. Built a care navigation and scheduling platform from scratch — inside a large health system, against competing priorities.</div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="case-metric-num">48hr</div><div class="case-metric-label">time-to-care (was weeks)</div></div>
+        <div class="case-metric"><div class="case-metric-num">NPS+</div><div class="case-metric-label">double-digit lift, 6 months</div></div>
+        <div class="case-metric"><div class="case-metric-num">8%</div><div class="case-metric-label">reduction in unused auths</div></div>
+      </div>
+      <button class="case-expand-btn">read the story <span class="arrow">↓</span></button>
+      <div class="case-detail">
+        <div class="case-detail-text">Resources for Living's EAP had a fundamental access problem: members were authorized for care but couldn't get to it fast enough. Scheduling was fragmented, provider matching was manual, and the digital experience hadn't kept pace.
+          <ul class="case-detail-list">
+            <li>Led discovery across clinical, operations, and account stakeholders to map the broken workflow and find the highest-leverage intervention points</li>
+            <li>Owned the full product roadmap — prioritizing scheduling and navigation first, then building automated engagement workflows on top</li>
+            <li>Launched 1,000+ automated monthly touchpoints that reduced unused authorizations and improved care utilization</li>
+            <li>Delivered in a HIPAA-regulated environment with enterprise reporting requirements layered on top</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="case-card" onclick="toggleCase(this)">
+      <span class="case-tag">analytics platform</span>
+      <div class="case-title">Behavioral Health Analytics</div>
+      <div class="case-summary">Enterprise health clients needed to evaluate program performance — but data was siloed, inconsistent, and hard to act on. Built the platform that changed that.</div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="case-metric-num">Ent.</div><div class="case-metric-label">national + mid-market scale</div></div>
+        <div class="case-metric"><div class="case-metric-num">0→1</div><div class="case-metric-label">real-time insights platform</div></div>
+      </div>
+      <button class="case-expand-btn">read the story <span class="arrow">↓</span></button>
+      <div class="case-detail">
+        <div class="case-detail-text">Aetna's behavioral health clients were making decisions with stale, inconsistent data. The opportunity: build a centralized analytics layer that surfaces real-time insights and makes them actionable.
+          <ul class="case-detail-list">
+            <li>Built a data ecosystem connecting disparate member and clinical data layers across the behavioral health portfolio</li>
+            <li>Owned product strategy and roadmap — aligning features to customer needs, regulatory requirements, and business priorities</li>
+            <li>Partnered with Sales to translate insights into client-facing tools supporting pricing decisions and account growth</li>
+            <li>Unlocked new outcome insights enabling more informed product, pricing, and go-to-market decisions at national scale</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="case-card wide" onclick="toggleCase(this)">
+      <span class="case-tag">commercialization strategy</span>
+      <div class="case-title">SDOH Mobile App · UMN Technology Commercialization</div>
+      <div class="case-summary">Academic researchers had built a compelling social determinants of health application — but had no path from lab to market. Led the strategy that got it to early-stage pilot.</div>
+      <button class="case-expand-btn">read the story <span class="arrow">↓</span></button>
+      <div class="case-detail">
+        <div class="case-detail-text">The UMN Office of Technology Commercialization works at the intersection of research and application. This project: a social determinants of health mobile app — proven in research, stranded without a viable path to market.
+          <ul class="case-detail-list">
+            <li>Conducted market assessment to identify the most viable initial deployment context and buyer profile</li>
+            <li>Developed regulatory strategy mapping the pathway from research tool to commercial product</li>
+            <li>Built financial modeling to support early-stage funding conversations and partnership development</li>
+            <li>Facilitated the transition from concept to pilot — the gap that kills most good research ideas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-eyebrow">skills &amp; domains</div>
+  <h2 class="section-title">Where I'm <em>strong.</em></h2>
+  <div class="skills-layout fade-up">
+    <div class="domain-items">
+      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Care navigation &amp; patient access</span><span class="domain-row-pct">95%</span></div><div class="domain-bar-bg"><div class="domain-bar" data-w="95"></div></div></div>
+      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">0→1 product builds</span><span class="domain-row-pct">92%</span></div><div class="domain-bar-bg"><div class="domain-bar" data-w="92"></div></div></div>
+      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Behavioral &amp; mental health</span><span class="domain-row-pct">88%</span></div><div class="domain-bar-bg"><div class="domain-bar" data-w="88"></div></div></div>
+      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Analytics &amp; data platforms</span><span class="domain-row-pct">85%</span></div><div class="domain-bar-bg"><div class="domain-bar" data-w="85"></div></div></div>
+      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Payer / employer markets</span><span class="domain-row-pct">80%</span></div><div class="domain-bar-bg"><div class="domain-bar" data-w="80"></div></div></div>
+      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">GTM &amp; commercialization</span><span class="domain-row-pct">78%</span></div><div class="domain-bar-bg"><div class="domain-bar rose-bar" data-w="78"></div></div></div>
+      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Medtech &amp; regulated devices</span><span class="domain-row-pct">70%</span></div><div class="domain-bar-bg"><div class="domain-bar rose-bar" data-w="70"></div></div></div>
+    </div>
+    <div class="skills-right">
+      <div><div class="skill-cat-label">product craft</div><div class="skill-tags"><span class="skill-tag">Roadmap ownership</span><span class="skill-tag">Discovery &amp; research</span><span class="skill-tag">Backlog prioritization</span><span class="skill-tag">Agile / Jira</span><span class="skill-tag">User stories</span><span class="skill-tag">KPI design</span><span class="skill-tag">Go-to-market</span></div></div>
+      <div><div class="skill-cat-label">technical fluency</div><div class="skill-tags"><span class="skill-tag">Tableau</span><span class="skill-tag">SQL (working)</span><span class="skill-tag">Data warehousing</span><span class="skill-tag">API integrations</span><span class="skill-tag">HIPAA compliance</span><span class="skill-tag">Salesforce CRM</span></div></div>
+      <div><div class="skill-cat-label">domain knowledge</div><div class="skill-tags"><span class="skill-tag">EAP / care navigation</span><span class="skill-tag">Behavioral health</span><span class="skill-tag">Medicare Advantage</span><span class="skill-tag">Value-based care</span><span class="skill-tag">Cardiac physiology</span><span class="skill-tag">SDOH</span><span class="skill-tag">Payer markets</span></div></div>
+      <div><div class="skill-cat-label">leadership</div><div class="skill-tags"><span class="skill-tag">Cross-functional teams</span><span class="skill-tag">Executive stakeholders</span><span class="skill-tag">Vendor management</span><span class="skill-tag">Storytelling</span><span class="skill-tag">Customer discovery</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="fit">
+  <div class="section-eyebrow">role fit check</div>
+  <h2 class="section-title">See how I map<br>to <em>your role.</em></h2>
+  <p class="section-lead">Paste a job description and get a real-time analysis of how my background aligns — experience, domain match, and anything worth a closer look.</p>
+  <div class="fit-widget fade-up">
+    <p class="fit-intro">Built this to make your life easier. Paste the JD below — you'll get an honest read on where there's genuine overlap, where there are gaps, and whether this conversation is worth having.</p>
+    <div class="fit-input-row">
+      <textarea class="fit-textarea" id="fit-jd" placeholder="Paste job description text here..."></textarea>
+      <button class="fit-btn" id="fit-btn" onclick="runFit()">Analyze ↗</button>
+    </div>
+    <div class="fit-hint">powered by claude · ~15 seconds · no data stored</div>
+    <div class="fit-loading" id="fit-loading"><span class="spin">↻</span> Analyzing the role...</div>
+    <div class="fit-error" id="fit-error"></div>
+    <div class="fit-result" id="fit-result">
+      <div class="fit-result-top">
+        <div class="fit-score-box"><div class="fit-score-num" id="fit-score-num">—</div><div class="fit-score-label">fit score</div></div>
+        <div class="fit-role-box"><div class="fit-role-co" id="fit-co">—</div><div class="fit-role-title" id="fit-role">—</div><div class="fit-role-comp" id="fit-comp"></div></div>
+        <div class="fit-rationale" id="fit-rationale">—</div>
+      </div>
+      <div class="fit-match" id="fit-match"></div>
+      <div class="fit-flags" id="fit-flags"></div>
+      <div class="fit-news" id="fit-news" style="display:none"><div class="fit-news-label">company news</div><div id="fit-news-text"></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-eyebrow">get in touch</div>
+  <h2 class="section-title">Let's talk about<br>what you're <em>building.</em></h2>
+  <div class="contact-grid fade-up">
+    <div class="contact-links">
+      <a href="mailto:rcorcoran03@gmail.com" class="contact-link-row"><span class="contact-link-icon">✉</span><span class="contact-link-label">Email</span><span class="contact-link-val">rcorcoran03@gmail.com</span></a>
+      <a href="https://linkedin.com/in/ryancorcoran1" target="_blank" class="contact-link-row"><span class="contact-link-icon">in</span><span class="contact-link-label">LinkedIn</span><span class="contact-link-val">linkedin.com/in/ryancorcoran1</span></a>
+      <a href="#" class="contact-link-row"><span class="contact-link-icon">↓</span><span class="contact-link-label">Resume</span><span class="contact-link-val">download PDF</span></a>
+      <div class="contact-link-row" style="cursor:default"><span class="contact-link-icon">◎</span><span class="contact-link-label">Location</span><span class="contact-link-val">Minneapolis, MN · remote ok</span></div>
+    </div>
+    <p class="contact-note">"I'm drawn to teams building at the intersection of <strong>clinical complexity and consumer experience</strong> — where the stakes are real and the product craft has to match."</p>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Ryan Corcoran</span>
+  <span class="footer-note">Minneapolis, MN · (651) 343-4165</span>
+</footer>
+
+<script>
+const CLAUDE_URL='/api/claude';
+const SYSTEM=`You are analyzing a job description on behalf of Ryan Corcoran's portfolio site to help recruiters and hiring managers understand how his background maps to their role.
+
+RYAN'S PROFILE:
+- 7+ years Product Management in digital health, healthtech, regulated environments
+- Strengths: care navigation, behavioral health analytics, 0-to-1 builds, analytics platforms, patient engagement
+- Key wins: Access Plus (0-1 care nav, 48hr time-to-care, double-digit NPS in 6mo); behavioral health analytics platform at Aetna/CVS; SDOH app commercialization at UMN
+- Education: MBA Medical Industry Leadership (UMN Carlson), BS Biomedical Sciences (Visible Heart Lab)
+- Location: Minneapolis MN — open to remote, hybrid, in-person
+- Target comp: $130K-$180K base
+- Open to: senior PM, upstream/downstream medtech PM, product owner, payer-side roles; cardiac or neuro device experience a plus
+- Hard nos: comp below $120K, relocation required
+
+Be honest and direct. This helps recruiters quickly understand fit — not oversell. Strong fit: say so. Gaps: name them. Goal is useful signal, not a pitch.`;
+
+async function runFit(){
+  const jd=document.getElementById('fit-jd').value.trim();
+  if(!jd)return;
+  const btn=document.getElementById('fit-btn');
+  const loading=document.getElementById('fit-loading');
+  const result=document.getElementById('fit-result');
+  const error=document.getElementById('fit-error');
+  btn.disabled=true;
+  loading.classList.add('visible');
+  result.classList.remove('visible');
+  error.classList.remove('visible');
+  const prompt=`Analyze this job posting and return ONLY valid JSON (no markdown, no preamble):
+{"company":"company name","role":"job title","salary":"range or empty","location":"location","fitScore":<1-10>,"fitRationale":"2-3 honest sentences on fit","matchCriteria":"key requirements semicolon separated","redFlags":["flag1"],"compAnalysis":"1 sentence on market comp","newsSnapshot":"2-3 sentences recent company news using web search"}
+
+Job posting:
+${jd}`;
+  try{
+    const apiKey=localStorage.getItem('portfolio_api_key')||'';
+    const headers={'Content-Type':'application/json'};
+    if(apiKey)headers['x-user-api-key']=apiKey;
+    const resp=await fetch(CLAUDE_URL,{method:'POST',headers,body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1000,system:SYSTEM,tools:[{type:'web_search_20250305',name:'web_search'}],messages:[{role:'user',content:prompt}]})});
+    const data=await resp.json();
+    const text=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('').trim();
+    const clean=text.replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'').trim();
+    const r=JSON.parse(clean);
+    const sEl=document.getElementById('fit-score-num');
+    sEl.textContent=r.fitScore+'/10';
+    sEl.style.color=r.fitScore>=7?'var(--jade2)':r.fitScore>=5?'#EF9F27':'var(--rose2)';
+    document.getElementById('fit-co').textContent=r.company||'—';
+    document.getElementById('fit-role').textContent=r.role||'—';
+    document.getElementById('fit-comp').textContent=r.salary||'';
+    document.getElementById('fit-rationale').textContent=r.fitRationale||'';
+    const mEl=document.getElementById('fit-match');
+    mEl.innerHTML=r.matchCriteria?`<strong>Key requirements:</strong> ${r.matchCriteria}`:'';
+    const fEl=document.getElementById('fit-flags');
+    fEl.innerHTML=(r.redFlags||[]).map(f=>`<span class="fit-flag">⚑ ${f}</span>`).join('');
+    if(r.newsSnapshot){document.getElementById('fit-news').style.display='block';document.getElementById('fit-news-text').textContent=r.newsSnapshot;}
+    loading.classList.remove('visible');
+    result.classList.add('visible');
+  }catch(e){
+    loading.classList.remove('visible');
+    error.textContent='Analysis failed: '+e.message;
+    error.classList.add('visible');
+  }
+  btn.disabled=false;
+}
+
+function toggleCase(card){
+  const wasOpen=card.classList.contains('open');
+  document.querySelectorAll('.case-card.open').forEach(c=>c.classList.remove('open'));
+  if(!wasOpen)card.classList.add('open');
+}
+
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+const barObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.domain-bar').forEach(b=>{b.style.width=b.dataset.w+'%';});barObs.disconnect();}});},{threshold:0.3});
+const skillSec=document.getElementById('skills');
+if(skillSec)barObs.observe(skillSec);
+
+setTimeout(()=>{document.querySelectorAll('.fade-up').forEach((el,i)=>{setTimeout(()=>el.classList.add('in'),i*120);});},100);
+</script>
+</body>
+</html>
