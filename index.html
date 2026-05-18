@@ -34,7 +34,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,31,28,0.9
 .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px;}
 .htag{font-size:11px;padding:5px 12px;border-radius:20px;letter-spacing:.04em;}
 .htag.jade{background:var(--jade3);color:var(--jade2);border:0.5px solid rgba(29,158,117,.3);}
-.htag.rose{background:var(--rose3);color:var(--rose2);border:0.5px solid rgba(212,83,126,.3);}
+.htag.rose{background:var(--jade3);color:var(--jade2);border:0.5px solid rgba(29,158,117,.3);}
 .htag.muted{background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;}
 .btn{font-family:var(--sans);font-size:12px;padding:10px 22px;border-radius:6px;cursor:pointer;text-decoration:none;letter-spacing:.05em;transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
@@ -75,7 +75,7 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .case-card:hover{border-color:var(--border2);background:var(--bg3);}
 .case-card:hover::before,.case-card.open::before{transform:scaleX(1);}
 .case-card.open{border-color:rgba(29,158,117,.3);background:var(--bg3);}
-.case-card.wide{grid-column:1/-1;}
+.case-card.wide{grid-column:1/-1;border-left:2px solid rgba(212,83,126,.3);}
 .case-tag{display:inline-block;font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:var(--jade3);color:var(--jade2);margin-bottom:14px;}
 .case-title{font-family:var(--serif);font-size:22px;color:var(--tx);margin-bottom:10px;line-height:1.2;}
 .case-summary{font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;}
@@ -98,12 +98,12 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .domain-row-pct{font-size:11px;color:var(--tx3);}
 .domain-bar-bg{height:3px;background:var(--bg4);border-radius:2px;overflow:hidden;}
 .domain-bar{height:3px;border-radius:2px;background:var(--jade);width:0;transition:width 1s ease;}
-.domain-bar.rose-bar{background:var(--rose);}
+.domain-bar.rose-bar{background:var(--jade);opacity:.7;}
 .skills-right{display:flex;flex-direction:column;gap:14px;}
 .skill-cat-label{font-size:10px;color:var(--jade);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
 .skill-tags{display:flex;flex-wrap:wrap;gap:6px;}
 .skill-tag{font-size:11px;padding:4px 10px;border-radius:4px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border);}
-.fit-widget{background:var(--bg2);border:0.5px solid var(--border2);border-radius:16px;padding:36px;position:relative;overflow:hidden;}
+.fit-widget{background:var(--bg2);border:0.5px solid rgba(212,83,126,.2);border-left:2px solid var(--rose);border-radius:16px;padding:36px;position:relative;overflow:hidden;}
 .fit-widget::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(29,158,117,.08) 0%,transparent 70%);pointer-events:none;}
 .fit-intro{font-size:15px;color:var(--tx2);line-height:1.7;margin-bottom:24px;max-width:560px;}
 .fit-input-row{display:flex;gap:12px;margin-bottom:8px;}
@@ -126,7 +126,7 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .fit-role-comp{font-size:11px;color:var(--tx3);margin-top:4px;}
 .fit-rationale{background:var(--bg3);border-radius:10px;padding:16px 20px;border:0.5px solid var(--border);font-size:13px;color:var(--tx2);line-height:1.7;}
 .fit-flags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
-.fit-flag{font-size:11px;padding:4px 10px;border-radius:4px;background:rgba(212,83,126,.1);color:var(--rose2);border:0.5px solid rgba(212,83,126,.2);}
+.fit-flag{font-size:11px;padding:4px 10px;border-radius:4px;background:var(--bg4);color:var(--jade2);border:0.5px solid rgba(29,158,117,.2);}
 .fit-news{background:var(--bg4);border-radius:8px;padding:14px 16px;font-size:13px;color:var(--tx2);line-height:1.7;}
 .fit-news-label{font-size:10px;color:var(--jade);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
 .fit-match{font-size:12px;color:var(--tx3);margin-bottom:12px;}
@@ -183,7 +183,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <div class="hero-tags">
       <span class="htag jade">Care navigation</span>
       <span class="htag jade">Digital health</span>
-      <span class="htag jade">Medtech</span>
+      <span class="htag jade">Medtech · upstream/downstream</span>
       <span class="htag rose">0→1 builds</span>
       <span class="htag rose">Analytics platforms</span>
       <span class="htag muted">MBA · Medical Industry</span>
@@ -215,9 +215,9 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   <div class="story-grid fade-up">
     <div class="story-text">
       <p style="margin-bottom:20px">Started in the <strong>Visible Heart Lab</strong> at the University of Minnesota — studying cardiac physiology and biomedical engineering at the device level. That foundation of understanding how complex systems fail, adapt, and heal has shaped how I think about product ever since.</p>
-      <p style="margin-bottom:20px">Went sideways into <span class="rose-accent">video and brand storytelling</span> at Motion 117, learning that the hardest part of any complex idea is making it land for someone who doesn't already care. That skill travels.</p>
+      <p style="margin-bottom:20px">Took an unpaved road into <span class="rose-accent">video and brand storytelling</span> at Motion 117, learning that the hardest part of any complex idea is making it land for someone who doesn't already care. That skill travels.</p>
       <p style="margin-bottom:20px">Spent time in the <span class="accent">UMN Technology Commercialization office</span>, helping researchers cross the gap between a working idea and a real product — market fit, regulatory strategy, financial models.</p>
-      <p>Now: senior product leader building <strong>platforms that help people navigate the hardest moments in health</strong> — from a 0→1 care navigation build that cut time-to-care to 48 hours, to a behavioral health analytics platform serving enterprise clients at national scale.</p>
+      <p style="margin-bottom:20px">I use <span class="accent">AI as a core part of how I work</span> — not as a novelty, but as a genuine force multiplier in discovery, synthesis, and delivery. Built the tools in this portfolio using Claude. Not worried about the transformation; actively leaning into it.</p><p>Now: senior product leader building <strong>platforms that help people navigate the hardest moments in health</strong> — from a 0→1 care navigation build that cut time-to-care to 48 hours, to a behavioral health analytics platform serving enterprise clients at national scale.</p>
     </div>
     <div class="timeline">
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2023 – 2026</div><div class="tl-role">Senior Manager, Digital Product</div><div class="tl-co">Aetna · CVS Health</div></div>
@@ -261,7 +261,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <div class="case-title">Behavioral Health Analytics</div>
       <div class="case-summary">Enterprise health clients needed to evaluate program performance — but data was siloed, inconsistent, and hard to act on. Built the platform that changed that.</div>
       <div class="case-metrics">
-        <div class="case-metric"><div class="case-metric-num">Ent.</div><div class="case-metric-label">national + mid-market scale</div></div>
+        <div class="case-metric"><div class="case-metric-num" style="font-size:18px">Enterprise</div><div class="case-metric-label">enterprise, national + mid-market</div></div>
         <div class="case-metric"><div class="case-metric-num">0→1</div><div class="case-metric-label">real-time insights platform</div></div>
       </div>
       <button class="case-expand-btn">read the story <span class="arrow">↓</span></button>
@@ -306,13 +306,13 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Analytics &amp; data platforms</span><span class="domain-row-pct">85%</span></div><div class="domain-bar-bg"><div class="domain-bar" data-w="85"></div></div></div>
       <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Payer / employer markets</span><span class="domain-row-pct">80%</span></div><div class="domain-bar-bg"><div class="domain-bar" data-w="80"></div></div></div>
       <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">GTM &amp; commercialization</span><span class="domain-row-pct">78%</span></div><div class="domain-bar-bg"><div class="domain-bar rose-bar" data-w="78"></div></div></div>
-      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Medtech &amp; regulated devices</span><span class="domain-row-pct">70%</span></div><div class="domain-bar-bg"><div class="domain-bar rose-bar" data-w="70"></div></div></div>
+      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Medtech &amp; regulated devices</span><span class="domain-row-pct">76%</span></div><div class="domain-bar-bg"><div class="domain-bar rose-bar" data-w="76"></div></div></div>
     </div>
     <div class="skills-right">
       <div><div class="skill-cat-label">product craft</div><div class="skill-tags"><span class="skill-tag">Roadmap ownership</span><span class="skill-tag">Discovery &amp; research</span><span class="skill-tag">Backlog prioritization</span><span class="skill-tag">Agile / Jira</span><span class="skill-tag">User stories</span><span class="skill-tag">KPI design</span><span class="skill-tag">Go-to-market</span></div></div>
-      <div><div class="skill-cat-label">technical fluency</div><div class="skill-tags"><span class="skill-tag">Tableau</span><span class="skill-tag">SQL (working)</span><span class="skill-tag">Data warehousing</span><span class="skill-tag">API integrations</span><span class="skill-tag">HIPAA compliance</span><span class="skill-tag">Salesforce CRM</span></div></div>
+      <div><div class="skill-cat-label">technical fluency</div><div class="skill-tags"><span class="skill-tag">Tableau</span><span class="skill-tag">SQL (working)</span><span class="skill-tag">Data warehousing</span><span class="skill-tag">API integrations</span><span class="skill-tag">HIPAA compliance</span><span class="skill-tag">Salesforce CRM</span><span class="skill-tag">Applied AI in product</span></div></div>
       <div><div class="skill-cat-label">domain knowledge</div><div class="skill-tags"><span class="skill-tag">EAP / care navigation</span><span class="skill-tag">Behavioral health</span><span class="skill-tag">Medicare Advantage</span><span class="skill-tag">Value-based care</span><span class="skill-tag">Cardiac physiology</span><span class="skill-tag">SDOH</span><span class="skill-tag">Payer markets</span></div></div>
-      <div><div class="skill-cat-label">leadership</div><div class="skill-tags"><span class="skill-tag">Cross-functional teams</span><span class="skill-tag">Executive stakeholders</span><span class="skill-tag">Vendor management</span><span class="skill-tag">Storytelling</span><span class="skill-tag">Customer discovery</span></div></div>
+      <div><div class="skill-cat-label">leadership</div><div class="skill-tags"><span class="skill-tag">Cross-functional teams</span><span class="skill-tag">Executive stakeholders</span><span class="skill-tag">Vendor management</span><span class="skill-tag">Storytelling</span><span class="skill-tag">Customer discovery</span></div></div><div><div class="skill-cat-label">medtech &amp; devices</div><div class="skill-tags"><span class="skill-tag">Design controls</span><span class="skill-tag">510(k) familiarity</span><span class="skill-tag">Clinical/commercial handoff</span><span class="skill-tag">Upstream voice of customer</span><span class="skill-tag">Risk management</span></div></div>
     </div>
   </div>
 </section>
