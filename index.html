@@ -12,7 +12,7 @@
 :root {
   --bg:#0F1B2D;--bg2:#162030;--bg3:#1A2535;--bg4:#1E2C3F;
   --jade:#6BA3C8;--jade2:#B8D4E8;--jade3:#1A3A52;
-  --rose:#D4537E;--rose2:#F4C0D1;--rose3:#72243E;
+  --rose:#C4848F;--rose2:#DDA8B0;--rose3:#3D1F25;
   --blue:#6BA3C8;--blue2:#B8D4E8;--blue3:#1A3A52;
   --gold:#C9961A;--gold2:#E8C97A;--gold3:#3D2800;
   --tx:#E8F2F8;--tx2:#8BAABB;--tx3:#5A7A90;
@@ -47,7 +47,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,27,45,0.9
 .btn-ghost:hover{border-color:var(--jade);color:var(--jade2);}
 .hero-photo-col{display:flex;flex-direction:column;gap:16px;}
 .hero-photo{width:100%;aspect-ratio:3/4;background:var(--bg3);border-radius:12px;border:0.5px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--tx3);font-size:12px;position:relative;overflow:hidden;}
-.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(29,158,117,.05) 0%,transparent 50%,rgba(212,83,126,.05) 100%);}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(107,163,200,.05) 0%,transparent 50%,rgba(196,132,143,.05) 100%);}
 .hero-stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .hstat{background:var(--bg3);border:0.5px solid var(--border);border-radius:8px;padding:14px;text-align:center;}
 .hstat-num{font-family:var(--serif);font-size:26px;color:var(--jade2);line-height:1;margin-bottom:4px;}
@@ -66,7 +66,7 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .story-text .accent{color:var(--jade2);}
 .story-text .rose-accent{color:var(--rose2);}
 .timeline{padding-left:24px;position:relative;}
-.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:rgba(212,83,126,.3);}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:rgba(196,132,143,.3);}
 .tl-item{position:relative;margin-bottom:28px;}
 .tl-dot{position:absolute;left:-29px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--jade);box-shadow:0 0 0 3px rgba(29,158,117,.2);}
 .tl-dot.gold{background:var(--gold);box-shadow:0 0 0 3px rgba(201,150,26,.2);}
@@ -81,7 +81,7 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .case-card:hover::before,.case-card.open::before{transform:scaleX(1);}
 .case-card.open{border-color:rgba(107,163,200,.3);background:var(--bg3);}
 .case-card.wide{grid-column:1/-1;}
-.case-tag{display:inline-block;font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(212,83,126,.12);color:var(--rose2);border:0.5px solid rgba(212,83,126,.3);margin-bottom:14px;}
+.case-tag{display:inline-block;font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(196,132,143,.12);color:var(--rose2);border:0.5px solid rgba(196,132,143,.3);margin-bottom:14px;}
 .case-title{font-family:var(--serif);font-size:22px;color:var(--tx);margin-bottom:10px;line-height:1.2;}
 .case-summary{font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;}
 .case-metrics{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:14px;}
@@ -170,7 +170,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 <body>
 
 <nav>
-  <span class="nav-name">Ryan Corcoran</span>
+  <span class="nav-name" style="display:flex;align-items:center;gap:10px;"><svg width="20" height="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><polygon points="16,2 18.2,10.5 26,7.5 21.5,14.5 30,16 21.5,17.5 26,24.5 18.2,21.5 16,30 13.8,21.5 6,24.5 10.5,17.5 2,16 10.5,14.5 6,7.5 13.8,10.5" fill="#6BA3C8"/></svg>Ryan Corcoran</span>
   <div class="nav-links">
     <a href="#story">story</a>
     <a href="#work">work</a>
@@ -206,7 +206,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     </div>
     <div class="hero-stat-cards">
       <div class="hstat"><div class="hstat-num" style="color:var(--blue2);font-size:20px;line-height:1.2">7+</div><div class="hstat-label">years in<br>healthcare tech</div></div>
-      <div class="hstat"><div class="hstat-num" style="color:var(--blue2);font-size:20px;line-height:1.2">10+</div><div class="hstat-label">years consultative<br>sales & storytelling</div></div>
+      <div class="hstat" style="border-top:2px solid var(--blue)"><div class="hstat-num" style="color:var(--blue2);font-size:24px;line-height:1.2">15+</div><div class="hstat-label">consultative sales<br>&amp; visual storytelling</div></div>
       <div class="hstat"><div class="hstat-num" style="color:var(--blue2);font-size:16px;line-height:1.2">MBA</div><div class="hstat-label">Medical Industry<br>Leadership</div></div>
       <div class="hstat"><div class="hstat-num" style="color:var(--blue2);font-size:13px;line-height:1.3;letter-spacing:-.01em">Visible Heart Lab</div><div class="hstat-label">BS, Biomedical<br>Sciences</div></div>
     </div>
@@ -259,8 +259,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <div class="story-text">
       <p style="margin-bottom:20px">Started in the <strong class="gold">Visible Heart Lab</strong> at the University of Minnesota, studying cardiac physiology and biomedical engineering at the device level. That foundation of understanding how complex systems fail, adapt, and heal has shaped how I think about product ever since.</p>
       <p style="margin-bottom:20px">Spent nearly a decade in consultative sales and training, then video and brand storytelling, learning that the hardest part of any complex idea is making it land for someone who doesn't already care. That skill travels.</p>
-      <p style="margin-bottom:20px">Went back for a <strong class="gold">MBA in Medical Industry Leadership</strong> at Carlson, then joined the <strong>UMN Technology Commercialization office</strong>, helping researchers cross the gap between a working idea and a real product: market fit, regulatory strategy, financial models.</p>
-      <p style="margin-bottom:20px">Moved into product full-time at <strong>Claros Technologies</strong>, building commercialization strategy around remediation technology for PFAS Forever Chemicals, then into digital access to behavioral healthcare at <strong>Aetna/CVS</strong>.</p>
+      <p style="margin-bottom:20px">Went back for a <strong class="gold">MBA in Medical Industry Leadership</strong> at Carlson, then joined the <strong>UMN Technology Commercialization office</strong> helping researchers cross the gap between a working idea and a real product: market fit, regulatory strategy, financial models. Moved into product full-time at <strong>Claros Technologies</strong>, building commercialization strategy around remediation technology for PFAS Forever Chemicals, then into digital access to behavioral healthcare at <strong>Aetna/CVS</strong>.</p>
       <p style="margin-bottom:20px">I've embraced AI as a genuine force multiplier in discovery, synthesis, and delivery. Built the tools in this portfolio using Claude. The transformation is real and I'm leaning in, not waiting.</p>
       <p>Now: senior product leader building <strong class="plain">platforms that help people navigate the hardest moments in health</strong>, where the stakes are real and the product craft has to match.</p>
     </div>
@@ -427,6 +426,12 @@ Be honest and direct. This helps recruiters quickly understand fit — not overs
 async function runFit(){
   const jd=document.getElementById('fit-jd').value.trim();
   if(!jd)return;
+  if(/^https?:\/\/|^www\./i.test(jd)){
+    const errEl=document.getElementById('fit-error');
+    errEl.textContent='For best results, paste the job description text directly. Copy it from the posting and paste here.';
+    errEl.classList.add('visible');
+    return;
+  }
   const btn=document.getElementById('fit-btn');
   const loading=document.getElementById('fit-loading');
   const result=document.getElementById('fit-result');
