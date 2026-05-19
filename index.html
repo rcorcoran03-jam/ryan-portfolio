@@ -22,15 +22,15 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--tx);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,31,28,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,27,45,0.95);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border);padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between;}
 .nav-name{font-family:var(--serif);font-size:17px;color:var(--jade2);}
 .nav-links{display:flex;gap:28px;}
-.nav-links a{font-size:12px;color:var(--tx3);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .2s;}
-.nav-links a:hover{color:var(--blue2);}
+.nav-links a{font-size:12px;color:var(--rose);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--rose2);}
 .hero{min-height:100vh;padding:120px 48px 80px;display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:center;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(29,158,117,0.06) 0%,transparent 70%);pointer-events:none;}
-.hero-eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--jade);letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px;}
-.hero-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--jade);}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--rose);letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px;}
+.hero-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--rose);}
 .hero-headline{font-family:var(--serif);font-size:clamp(44px,5vw,68px);line-height:1.05;color:var(--tx);margin-bottom:20px;letter-spacing:-.01em;}
 .hero-headline em{font-style:italic;color:var(--jade2);}
 .hero-sub{font-size:16px;color:var(--tx2);line-height:1.7;margin-bottom:32px;max-width:500px;}
@@ -53,18 +53,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(26,31,28,0.9
 .hstat-num{font-family:var(--serif);font-size:26px;color:var(--jade2);line-height:1;margin-bottom:4px;}
 .hstat-label{font-size:10px;color:var(--tx3);letter-spacing:.05em;line-height:1.4;}
 section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;margin:0 auto;}
-.section-eyebrow{font-size:10px;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
-.section-eyebrow::before{content:'';display:inline-block;width:16px;height:1px;background:var(--blue);}
+.section-eyebrow{font-size:10px;color:var(--rose);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.section-eyebrow::before{content:'';display:inline-block;width:16px;height:1px;background:var(--rose);}
 .section-title{font-family:var(--serif);font-size:clamp(28px,3vw,38px);color:var(--tx);margin-bottom:12px;line-height:1.15;}
 .section-title em{font-style:italic;color:var(--blue2);}
 .section-lead{font-size:16px;color:var(--tx2);max-width:580px;line-height:1.8;margin-bottom:48px;}
 .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
 .story-text{font-size:17px;color:var(--tx2);line-height:1.9;}
-.story-text strong{color:var(--tx);font-weight:500;}
+.story-text strong{color:var(--rose2);font-weight:500;}
+.story-text strong.gold{color:var(--gold2);font-weight:500;}
+.story-text strong.plain{color:var(--tx);font-weight:500;}
 .story-text .accent{color:var(--jade2);}
-.story-text .rose-accent{color:var(--blue2);}
+.story-text .rose-accent{color:var(--rose2);}
 .timeline{padding-left:24px;position:relative;}
-.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--border2);}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:rgba(212,83,126,.3);}
 .tl-item{position:relative;margin-bottom:28px;}
 .tl-dot{position:absolute;left:-29px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--jade);box-shadow:0 0 0 3px rgba(29,158,117,.2);}
 .tl-dot.gold{background:var(--gold);box-shadow:0 0 0 3px rgba(201,150,26,.2);}
@@ -78,15 +80,15 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .case-card:hover{border-color:var(--border2);background:var(--bg3);}
 .case-card:hover::before,.case-card.open::before{transform:scaleX(1);}
 .case-card.open{border-color:rgba(107,163,200,.3);background:var(--bg3);}
-.case-card.wide{grid-column:1/-1;border-left:2px solid rgba(212,83,126,.4);}
-.case-tag{display:inline-block;font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);margin-bottom:14px;}
+.case-card.wide{grid-column:1/-1;}
+.case-tag{display:inline-block;font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(212,83,126,.12);color:var(--rose2);border:0.5px solid rgba(212,83,126,.3);margin-bottom:14px;}
 .case-title{font-family:var(--serif);font-size:22px;color:var(--tx);margin-bottom:10px;line-height:1.2;}
 .case-summary{font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;}
 .case-metrics{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:14px;}
 .case-metric-num{font-family:var(--serif);font-size:26px;color:var(--blue2);line-height:1;}
 .case-metric-label{font-size:10px;color:var(--tx3);margin-top:2px;}
-.case-expand-btn{font-size:11px;color:var(--blue);background:none;border:none;cursor:pointer;padding:0;letter-spacing:.05em;display:flex;align-items:center;gap:5px;font-family:var(--sans);transition:color .2s;}
-.case-expand-btn:hover{color:var(--blue2);}
+.case-expand-btn{font-size:11px;color:var(--rose);background:none;border:none;cursor:pointer;padding:0;letter-spacing:.05em;display:flex;align-items:center;gap:5px;font-family:var(--sans);transition:color .2s;}
+.case-expand-btn:hover{color:var(--rose2);}
 .case-expand-btn .arrow{transition:transform .25s;}
 .case-card.open .case-expand-btn .arrow{transform:rotate(180deg);}
 .case-detail{max-height:0;overflow:hidden;transition:max-height .4s ease;}
@@ -100,8 +102,8 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .domain-row-name{font-size:13px;color:var(--tx);}
 .domain-row-pct{font-size:11px;color:var(--tx3);}
 .domain-bar-bg{height:6px;background:var(--bg4);border-radius:3px;overflow:hidden;}
-.domain-bar{height:6px;border-radius:3px;background:var(--blue);width:0;transition:width 1s ease;}
-.domain-bar.rose-bar{background:var(--blue);opacity:.85;}
+.domain-bar{height:6px;border-radius:3px;background:var(--rose);width:0;transition:width 1s ease;}
+.domain-bar.rose-bar{background:var(--rose);opacity:1;}
 .skills-right{display:flex;flex-direction:column;gap:14px;}
 .skill-cat-label{font-size:10px;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
 .skill-tags{display:flex;flex-wrap:wrap;gap:6px;}
@@ -143,10 +145,10 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
 .contact-links{display:flex;flex-direction:column;gap:14px;}
 .contact-link-row{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg2);border:0.5px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color .2s,background .2s;}
-.contact-link-row:hover{border-color:var(--blue);background:var(--bg3);}
-.contact-link-icon{font-size:14px;color:var(--jade);width:20px;text-align:center;}
+.contact-link-row:hover{border-color:var(--rose);background:var(--bg3);}
+.contact-link-icon{font-size:14px;color:var(--rose);width:20px;text-align:center;}
 .contact-link-label{font-size:13px;color:var(--tx2);}
-.contact-link-val{font-size:13px;color:var(--blue2);margin-left:auto;}
+.contact-link-val{font-size:13px;color:var(--rose2);margin-left:auto;}
 .contact-note{font-size:17px;color:var(--tx2);line-height:1.8;font-family:var(--serif);font-style:italic;border-left:2px solid var(--blue);padding-left:20px;}
 .contact-note strong{font-style:normal;color:var(--tx);}
 footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
@@ -215,58 +217,19 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 <div style="max-width:1200px;margin:0 auto;padding:0 48px 64px;">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="seeking-grid">
 
-    <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--blue);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
-      <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:var(--blue3);color:var(--blue2);border:0.5px solid rgba(107,163,200,.3);display:inline-block;margin-bottom:14px;">primary search</div>
-      <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Digital Health &amp; Care Navigation</div>
-      <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:18px;">Senior PM and product leadership roles where the product directly shapes how people access and experience care. Navigation platforms, behavioral health tools, analytics, and 0-to-1 builds in regulated environments.</p>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">⚡ Startups</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Unite Us</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Reema Health</span>
-      </div>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">🏢 Enterprise</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:transparent;color:var(--tx3);border:0.5px solid var(--border2);">UnitedHealth / Optum</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:transparent;color:var(--tx3);border:0.5px solid var(--border2);">CVS / Aetna</span>
-      </div>
-    </div>
-
-    <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--blue);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
-      <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:var(--blue3);color:var(--blue2);border:0.5px solid rgba(107,163,200,.3);display:inline-block;margin-bottom:14px;">parallel path</div>
-      <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Medical Devices &amp; Commercialization</div>
-      <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:18px;">Drawing on a biomedical sciences foundation and cardiac research at the UMN Visible Heart Lab, I'm pursuing upstream and downstream PM roles where clinical depth and product craft meet.</p>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">⚡ Startups</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Anteris Medical</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Stryker</span>
-      </div>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">🏢 Enterprise</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:transparent;color:var(--tx3);border:0.5px solid var(--border2);">Boston Scientific</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:transparent;color:var(--tx3);border:0.5px solid var(--border2);">Medtronic</span>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-<div style="max-width:1200px;margin:0 auto;padding:0 48px 64px;">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="seeking-grid">
-
     <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
       <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">primary search</div>
       <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Digital Health &amp; Care Navigation</div>
       <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Senior PM and product leadership roles where the product directly shapes how people access and experience care. Navigation platforms, behavioral health tools, analytics, and 0-to-1 builds in regulated environments.</p>
-      <div style="font-size:10px;color:var(--gold2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">⚡ Startups</div>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:rgba(201,150,26,.1);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);">Unite Us</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:rgba(201,150,26,.1);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);">Reema Health</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Unite Us</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Reema Health</span>
       </div>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">🏢 Enterprise</div>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:transparent;color:var(--tx2);border:0.5px solid var(--border2);">UnitedHealth / Optum</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:transparent;color:var(--tx2);border:0.5px solid var(--border2);">CVS / Aetna</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">UnitedHealth / Optum</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">CVS / Aetna</span>
       </div>
     </div>
 
@@ -274,15 +237,15 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">parallel path</div>
       <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Medical Devices &amp; Commercialization</div>
       <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Drawing on a biomedical sciences foundation and cardiac research at the UMN Visible Heart Lab, I'm pursuing upstream and downstream PM roles where clinical depth and product craft meet.</p>
-      <div style="font-size:10px;color:var(--gold2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">⚡ Startups</div>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:rgba(201,150,26,.1);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);">Anteris Medical</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:rgba(201,150,26,.1);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);">Stryker</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Anteris Medical</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Stryker</span>
       </div>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">🏢 Enterprise</div>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:transparent;color:var(--tx2);border:0.5px solid var(--border2);">Boston Scientific</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:transparent;color:var(--tx2);border:0.5px solid var(--border2);">Medtronic</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Boston Scientific</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Medtronic</span>
       </div>
     </div>
 
@@ -294,19 +257,21 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   <h2 class="section-title">Non-linear path.<br><em>Intentional direction.</em></h2>
   <div class="story-grid fade-up">
     <div class="story-text">
-      <p style="margin-bottom:20px">Started in the <strong>Visible Heart Lab</strong> at the University of Minnesota — studying cardiac physiology and biomedical engineering at the device level. That foundation of understanding how complex systems fail, adapt, and heal has shaped how I think about product ever since.</p>
-      <p style="margin-bottom:20px">Took an unpaved road into <span class="rose-accent">video and brand storytelling</span> at Motion 117, learning that the hardest part of any complex idea is making it land for someone who doesn't already care. That skill travels.</p>
-      <p style="margin-bottom:20px">Spent time in the <span class="accent">UMN Technology Commercialization office</span>, helping researchers cross the gap between a working idea and a real product — market fit, regulatory strategy, financial models.</p>
-      <p style="margin-bottom:20px">I use <span class="accent">AI as a core part of how I work</span> — not as a novelty, but as a genuine force multiplier in discovery, synthesis, and delivery. Built the tools in this portfolio using Claude. Not worried about the transformation; actively leaning into it.</p><p>Now: senior product leader building <strong>platforms that help people navigate the hardest moments in health</strong> — from a 0→1 care navigation build that cut time-to-care to 48 hours, to a behavioral health analytics platform serving enterprise clients at national scale.</p>
+      <p style="margin-bottom:20px">Started in the <strong class="gold">Visible Heart Lab</strong> at the University of Minnesota, studying cardiac physiology and biomedical engineering at the device level. That foundation of understanding how complex systems fail, adapt, and heal has shaped how I think about product ever since.</p>
+      <p style="margin-bottom:20px">Spent nearly a decade in consultative sales and training, then video and brand storytelling, learning that the hardest part of any complex idea is making it land for someone who doesn't already care. That skill travels.</p>
+      <p style="margin-bottom:20px">Went back for a <strong class="gold">MBA in Medical Industry Leadership</strong> at Carlson, then joined the <strong>UMN Technology Commercialization office</strong>, helping researchers cross the gap between a working idea and a real product: market fit, regulatory strategy, financial models.</p>
+      <p style="margin-bottom:20px">Moved into product full-time at <strong>Claros Technologies</strong>, building commercialization strategy around remediation technology for PFAS Forever Chemicals, then into digital access to behavioral healthcare at <strong>Aetna/CVS</strong>.</p>
+      <p style="margin-bottom:20px">I've embraced AI as a genuine force multiplier in discovery, synthesis, and delivery. Built the tools in this portfolio using Claude. The transformation is real and I'm leaning in, not waiting.</p>
+      <p>Now: senior product leader building <strong class="plain">platforms that help people navigate the hardest moments in health</strong>, where the stakes are real and the product craft has to match.</p>
     </div>
     <div class="timeline">
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2023 – 2026</div><div class="tl-role">Senior Manager, Digital Product</div><div class="tl-co">Aetna · CVS Health</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2021 – 2023</div><div class="tl-role">Technical Product Manager</div><div class="tl-co">Claros Technologies</div></div>
+      <div class="tl-item"><div class="tl-dot gold"></div><div class="tl-year">2009</div><div class="tl-role">BS Biomedical Sciences</div><div class="tl-co">University of Minnesota · Visible Heart Lab</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2009 – 2017</div><div class="tl-role">Consultative Sales &amp; Training</div><div class="tl-co">Various companies</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2017 – 2019</div><div class="tl-role">Business Development &amp; Producer</div><div class="tl-co">Motion 117</div></div>
       <div class="tl-item"><div class="tl-dot gold"></div><div class="tl-year">2020 – 2021</div><div class="tl-role">MBA · Medical Industry Leadership</div><div class="tl-co">Carlson School of Management, UMN</div></div>
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2020 – 2021</div><div class="tl-role">Venture Center Associate</div><div class="tl-co">UMN Office of Technology Commercialization</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2017 – 2019</div><div class="tl-role">Business Development &amp; Producer</div><div class="tl-co">Motion 117</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2009 – 2017</div><div class="tl-role">Consultative Sales &amp; Training</div><div class="tl-co">Various companies</div></div>
-      <div class="tl-item"><div class="tl-dot gold"></div><div class="tl-year">2009</div><div class="tl-role">BS Biomedical Sciences</div><div class="tl-co">University of Minnesota · Visible Heart Lab</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2021 – 2023</div><div class="tl-role">Technical Product Manager</div><div class="tl-co">Claros Technologies</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2023 – 2026</div><div class="tl-role">Senior Manager, Digital Product</div><div class="tl-co">Aetna · CVS Health</div></div>
     </div>
   </div>
 </section>
@@ -319,7 +284,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <div class="case-card" onclick="toggleCase(this)">
       <span class="case-tag">0→1 build</span>
       <div class="case-title">Access Plus</div>
-      <div class="case-summary">Legacy EAP with broken access. Members waited weeks to connect with care. Built a care navigation and scheduling platform from scratch — inside a large health system, against competing priorities.</div>
+      <div class="case-summary">Legacy EAP with broken access. Members waited weeks to connect with care. Built a care navigation and scheduling platform from scratch, inside a large health system, against competing priorities.</div>
       <div class="case-metrics">
         <div class="case-metric"><div class="case-metric-num">48hr</div><div class="case-metric-label">time-to-care (was weeks)</div></div>
         <div class="case-metric"><div class="case-metric-num">NPS+</div><div class="case-metric-label">double-digit lift, 6 months</div></div>
@@ -340,9 +305,9 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <div class="case-card" onclick="toggleCase(this)">
       <span class="case-tag">analytics platform</span>
       <div class="case-title">Behavioral Health Analytics</div>
-      <div class="case-summary">Enterprise health clients needed to evaluate program performance — but data was siloed, inconsistent, and hard to act on. Built the platform that changed that.</div>
+      <div class="case-summary">Enterprise health clients needed to evaluate program performance, but data was siloed, inconsistent, and hard to act on. Led the build of the platform that changed that.</div>
       <div class="case-metrics">
-        <div class="case-metric"><div class="case-metric-num" style="font-size:18px">Enterprise</div><div class="case-metric-label">enterprise, national + mid-market</div></div>
+        <div class="case-metric"><div class="case-metric-num">Ent.</div><div class="case-metric-label">national + mid-market</div></div>
         <div class="case-metric"><div class="case-metric-num">0→1</div><div class="case-metric-label">real-time insights platform</div></div>
       </div>
       <button class="case-expand-btn">read the story <span class="arrow">↓</span></button>
@@ -360,7 +325,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <div class="case-card wide" onclick="toggleCase(this)">
       <span class="case-tag">commercialization strategy</span>
       <div class="case-title">SDOH Mobile App · UMN Technology Commercialization</div>
-      <div class="case-summary">Academic researchers had built a compelling social determinants of health application — but had no path from lab to market. Led the strategy that got it to early-stage pilot.</div>
+      <div class="case-summary">Academic researchers had built a compelling social determinants of health application, but had no path from desk to market. Led the strategy that got it to early-stage pilot.</div>
       <button class="case-expand-btn">read the story <span class="arrow">↓</span></button>
       <div class="case-detail">
         <div class="case-detail-text">The UMN Office of Technology Commercialization works at the intersection of research and application. This project: a social determinants of health mobile app — proven in research, stranded without a viable path to market.
