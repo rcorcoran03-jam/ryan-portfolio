@@ -41,10 +41,38 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,27,45,0.9
 .htag.muted{background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;}
 .btn{font-family:var(--sans);font-size:12px;padding:10px 22px;border-radius:6px;cursor:pointer;text-decoration:none;letter-spacing:.05em;transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
-.btn-primary{background:var(--jade);color:#fff;border:none;}
-.btn-primary:hover{background:var(--jade3);color:var(--jade2);}
+.btn-primary{background:rgba(201,150,26,.15);color:var(--gold2);border:0.5px solid rgba(201,150,26,.35);position:relative;overflow:hidden;}
+.btn-primary::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,150,26,.18) 0%,transparent 70%);pointer-events:none;}
+.btn-primary:hover{background:rgba(201,150,26,.22);border-color:rgba(201,150,26,.55);color:var(--gold2);box-shadow:0 0 18px rgba(201,150,26,.15);}
 .btn-ghost{background:transparent;color:var(--tx2);border:0.5px solid var(--border2);}
 .btn-ghost:hover{border-color:var(--jade);color:var(--jade2);}
+.btn-claude-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;}
+.claude-badge{font-size:9px;color:var(--gold);letter-spacing:.09em;text-transform:uppercase;opacity:.75;display:flex;align-items:center;gap:4px;}
+.claude-badge::before{content:'✦';font-size:7px;}
+.booking-strip{max-width:640px;background:var(--bg2);border:0.5px solid var(--border2);border-radius:12px;padding:14px 16px 14px 20px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;margin-top:16px;}
+.booking-strip::before{content:'';position:absolute;left:0;top:15%;bottom:15%;width:2px;background:linear-gradient(to bottom,transparent,rgba(107,163,200,.5),transparent);border-radius:2px;}
+.strip-top-row{display:flex;align-items:center;gap:12px;}
+.avail-dot{width:6px;height:6px;border-radius:50%;background:#4CAF8A;flex-shrink:0;box-shadow:0 0 0 0 rgba(76,175,138,.4);animation:pulse-dot 2.2s ease-in-out infinite;}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 rgba(76,175,138,.4);}55%{box-shadow:0 0 0 5px rgba(76,175,138,0);}}
+.strip-label{font-size:10px;color:var(--tx3);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;}
+.strip-divider{width:1px;height:20px;background:var(--border2);flex-shrink:0;}
+.strip-note{font-size:10px;color:var(--tx3);}
+.strip-pills-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.strip-pills-grid .strip-pill-row{display:contents;}
+.strip-pills-bottom{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;}
+.strip-pill{font-family:var(--sans);font-size:11px;padding:7px 13px;border-radius:8px;border:0.5px solid var(--border2);background:var(--bg3);color:var(--tx2);cursor:pointer;transition:all .17s;display:flex;align-items:center;gap:6px;text-decoration:none;white-space:nowrap;letter-spacing:.02em;position:relative;}
+.strip-pill:hover{border-color:var(--blue);color:var(--blue2);background:var(--blue3);transform:translateY(-1px);box-shadow:0 4px 10px rgba(107,163,200,.12);}
+.strip-pill:active{transform:translateY(0);}
+.strip-pill.local:hover{border-color:rgba(201,150,26,.5);color:var(--gold2);background:rgba(201,150,26,.08);box-shadow:0 4px 10px rgba(201,150,26,.1);}
+.pill-icon{font-size:13px;flex-shrink:0;}
+.pill-text{display:flex;flex-direction:column;gap:1px;min-width:0;}
+.pill-name{font-size:11px;color:inherit;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.pill-dur{font-size:9px;color:var(--tx3);letter-spacing:.04em;transition:color .17s;}
+.strip-pill:hover .pill-dur{color:var(--blue2);opacity:.75;}
+.strip-pill.local:hover .pill-dur{color:var(--gold2);opacity:.75;}
+.pill-tip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--bg4);border:0.5px solid var(--border2);border-radius:6px;padding:6px 10px;font-size:11px;color:var(--tx2);white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .15s;z-index:20;box-shadow:0 4px 16px rgba(0,0,0,.35);}
+.pill-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:4px solid transparent;border-top-color:var(--border2);}
+.strip-pill:hover .pill-tip{opacity:1;}
 .hero-photo-col{display:flex;flex-direction:column;gap:16px;}
 .hero-photo{width:100%;aspect-ratio:4/5;background:var(--bg3);border-radius:12px;border:0.5px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--tx3);font-size:12px;position:relative;overflow:hidden;}
 .hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(107,163,200,.05) 0%,transparent 50%,rgba(196,132,143,.05) 100%);}
@@ -156,7 +184,67 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 .footer-note{font-size:11px;color:var(--tx3);}
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
 .fade-up.in{opacity:1;transform:translateY(0);}
+/* ── SCHEDULE SECTION ───────────────────────────────────── */
+.schedule-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.schedule-left{display:flex;flex-direction:column;gap:20px;}
+.schedule-intro{font-size:16px;color:var(--tx2);line-height:1.8;}
+.meeting-types{display:flex;flex-direction:column;gap:10px;}
+.meeting-type{background:var(--bg2);border:0.5px solid var(--border);border-radius:10px;padding:16px 20px;cursor:pointer;transition:border-color .2s,background .2s;display:flex;align-items:center;gap:14px;position:relative;}
+.meeting-type:hover{background:var(--bg3);border-color:var(--border2);}
+.meeting-type.selected{background:var(--bg3);border-color:var(--blue);border-left:2px solid var(--blue);}
+.mt-icon{font-size:18px;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--bg4);flex-shrink:0;}
+.mt-body{flex:1;}
+.mt-title{font-size:13px;font-weight:500;color:var(--tx);margin-bottom:2px;}
+.mt-desc{font-size:11px;color:var(--tx3);line-height:1.5;}
+.mt-duration{font-size:10px;color:var(--rose);letter-spacing:.06em;margin-left:auto;white-space:nowrap;padding:3px 8px;border-radius:10px;background:rgba(196,132,143,.1);border:0.5px solid rgba(196,132,143,.2);}
+.schedule-right{background:var(--bg2);border:0.5px solid rgba(107,163,200,.2);border-radius:16px;overflow:hidden;position:relative;}
+.schedule-header{background:var(--bg3);border-bottom:0.5px solid var(--border);padding:20px 24px;display:flex;align-items:center;gap:12px;}
+.schedule-header-icon{width:40px;height:40px;border-radius:10px;background:var(--blue3);border:0.5px solid rgba(107,163,200,.3);display:flex;align-items:center;justify-content:center;font-size:18px;}
+.schedule-header-text{}
+.schedule-header-name{font-size:14px;font-weight:500;color:var(--tx);}
+.schedule-header-sub{font-size:11px;color:var(--tx3);}
+.cal-wrapper{padding:24px;}
+.cal-month-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.cal-month-label{font-family:var(--serif);font-size:16px;color:var(--tx);}
+.cal-nav-btn{background:var(--bg3);border:0.5px solid var(--border);color:var(--tx2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.cal-nav-btn:hover{border-color:var(--blue);color:var(--blue2);}
+.cal-days-header{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:8px;}
+.cal-day-hdr{font-size:10px;color:var(--tx3);text-align:center;letter-spacing:.06em;padding:4px 0;}
+.cal-days-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+.cal-day{aspect-ratio:1;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:default;color:var(--tx3);}
+.cal-day.in-month{color:var(--tx2);}
+.cal-day.available{color:var(--tx);cursor:pointer;background:var(--bg3);transition:all .15s;}
+.cal-day.available:hover{background:var(--blue3);color:var(--blue2);border:0.5px solid rgba(107,163,200,.3);}
+.cal-day.selected-day{background:var(--blue);color:#fff !important;font-weight:600;}
+.cal-day.today{border:0.5px solid var(--gold);color:var(--gold2) !important;}
+.cal-day.past{color:var(--bg4);cursor:default;}
+.time-slots{padding:0 24px 24px;}
+.time-slots-label{font-size:11px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
+.slots-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.slot-btn{background:var(--bg3);border:0.5px solid var(--border);border-radius:6px;padding:8px;font-size:12px;color:var(--tx2);cursor:pointer;text-align:center;transition:all .15s;font-family:var(--sans);}
+.slot-btn:hover{border-color:var(--blue);color:var(--blue2);background:var(--blue3);}
+.slot-btn.selected-slot{background:var(--blue);color:#fff;border-color:var(--blue);}
+.confirm-panel{padding:0 24px 24px;display:none;}
+.confirm-panel.visible{display:block;}
+.confirm-summary{background:var(--bg4);border-radius:8px;padding:14px 16px;margin-bottom:14px;font-size:13px;color:var(--tx2);line-height:1.8;}
+.confirm-summary strong{color:var(--tx);}
+.confirm-fields{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;}
+.confirm-input{background:var(--bg3);border:0.5px solid var(--border2);border-radius:7px;color:var(--tx);font-family:var(--sans);font-size:13px;padding:10px 14px;outline:none;transition:border-color .2s;}
+.confirm-input:focus{border-color:rgba(107,163,200,.4);}
+.confirm-input::placeholder{color:var(--tx3);}
+.confirm-btn{width:100%;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:11px;font-family:var(--sans);font-size:13px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.confirm-btn:hover{background:var(--blue2);color:var(--bg);}
+.confirm-btn:disabled{opacity:.5;cursor:not-allowed;}
+.booked-state{display:none;padding:32px 24px;text-align:center;}
+.booked-state.visible{display:block;}
+.booked-icon{font-size:36px;margin-bottom:12px;}
+.booked-title{font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:8px;}
+.booked-sub{font-size:13px;color:var(--tx2);line-height:1.7;}
+.booked-detail{margin-top:16px;background:var(--bg3);border-radius:8px;padding:14px;font-size:12px;color:var(--tx3);line-height:1.9;}
+.cal-note{font-size:11px;color:var(--tx3);text-align:center;padding:0 24px 16px;line-height:1.6;}
+/* ── END SCHEDULE ────────────────────────────────────────── */
 @media(max-width:768px){
+  .schedule-grid{grid-template-columns:1fr;}
   nav{padding:0 20px;}.nav-links{display:none;}
   .hero{grid-template-columns:1fr;padding:100px 20px 60px;}.hero-photo-col{display:none;}
   section{padding:60px 20px;}
@@ -176,8 +264,8 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <a href="#work">work</a>
     <a href="#skills">skills</a>
     <a href="#fit">fit check</a>
+    <a href="#schedule">schedule</a>
     <a href="#contact">contact</a>
-    <a href="#jobquest">jobquest</a>
   </div>
 </nav>
 
@@ -196,9 +284,55 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <span class="htag muted">Regulated environments</span>
     </div>
     <div class="hero-cta">
-      <a href="#fit" class="btn btn-primary">check role fit ↓</a>
+      <div class="btn-claude-wrap">
+        <a href="#fit" class="btn btn-primary">
+          <svg width="12" height="12" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><polygon points="16,2 18.2,10.5 26,7.5 21.5,14.5 30,16 21.5,17.5 26,24.5 18.2,21.5 16,30 13.8,21.5 6,24.5 10.5,17.5 2,16 10.5,14.5 6,7.5 13.8,10.5" fill="#E8C97A"/></svg>
+          check role fit ↓
+        </a>
+        <div class="claude-badge">claude-powered</div>
+      </div>
       <a href="#work" class="btn btn-ghost">see the work</a>
       <a href="mailto:rcorcoran03@gmail.com" class="btn btn-ghost">get in touch</a>
+    </div>
+
+    <div class="booking-strip">
+      <div class="strip-top-row">
+        <div class="avail-dot"></div>
+        <div class="strip-label">book a call</div>
+        <div class="strip-divider"></div>
+        <div class="strip-note">Minneapolis / St. Paul · remote · Central Time</div>
+      </div>
+      <!-- Row 1: two wider pills -->
+      <div class="strip-pills-grid">
+        <a href="https://calendly.com/rcorcoran03/walk-and-talk-mpls-metro" target="_blank" class="strip-pill local">
+          <span class="pill-icon">🚶</span>
+          <span class="pill-text"><span class="pill-name">Walk &amp; Talk</span><span class="pill-dur">30 min · Mpls/StP</span></span>
+          <div class="pill-tip">Walk &amp; talk · Minneapolis / St. Paul metro</div>
+        </a>
+        <a href="https://calendly.com/rcorcoran03/in-person-coffee-mpls-stp" target="_blank" class="strip-pill local">
+          <span class="pill-icon">☕</span>
+          <span class="pill-text"><span class="pill-name">In-Person Coffee</span><span class="pill-dur">30 min · Mpls/StP</span></span>
+          <div class="pill-tip">In-person coffee chat · Minneapolis / St. Paul</div>
+        </a>
+      </div>
+      <!-- Row 2: three narrower pills -->
+      <div class="strip-pills-bottom">
+        <a href="https://calendly.com/rcorcoran03/virtual-intro" target="_blank" class="strip-pill">
+          <span class="pill-icon">💻</span>
+          <span class="pill-text"><span class="pill-name">Virtual Intro</span><span class="pill-dur">30 min</span></span>
+          <div class="pill-tip">Virtual introduction — role overview &amp; search context</div>
+        </a>
+        <a href="https://calendly.com/rcorcoran03/deep-dive" target="_blank" class="strip-pill">
+          <span class="pill-icon">🔬</span>
+          <span class="pill-text"><span class="pill-name">Deep Dive</span><span class="pill-dur">60 min</span></span>
+          <div class="pill-tip">Full conversation — virtual or in-person</div>
+        </a>
+        <a href="https://calendly.com/rcorcoran03/chess-chat-cafe-racer-kitchen" target="_blank" class="strip-pill local">
+          <span class="pill-icon">♟</span>
+          <span class="pill-text"><span class="pill-name">Chess &amp; Chat</span><span class="pill-dur">45 min · Cafe Racer</span></span>
+          <div class="pill-tip">Chess &amp; conversation · Cafe Racer Kitchen, Mpls</div>
+        </a>
+      </div>
     </div>
   </div>
   <div class="hero-photo-col fade-up" style="transition-delay:.15s">
@@ -215,43 +349,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 </div>
 
 
-<div style="max-width:1200px;margin:0 auto;padding:0 48px 64px;">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="seeking-grid">
 
-    <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
-      <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">primary search</div>
-      <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Digital Health &amp; Care Navigation</div>
-      <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Senior PM and product leadership roles where the product directly shapes how people access and experience care. Navigation platforms, behavioral health tools, analytics, and 0-to-1 builds in regulated environments.</p>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Unite Us</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Reema Health</span>
-      </div>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">UnitedHealth / Optum</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">CVS / Aetna</span>
-      </div>
-    </div>
-
-    <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
-      <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">parallel path</div>
-      <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Medical Devices &amp; Commercialization</div>
-      <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Drawing on a biomedical sciences foundation and cardiac research at the UMN Visible Heart Lab, I'm pursuing upstream and downstream PM roles where clinical depth and product craft meet.</p>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Anteris Medical</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Stryker</span>
-      </div>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Boston Scientific</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Medtronic</span>
-      </div>
-    </div>
-
-  </div>
-</div>
 
 <section id="story">
   <div class="section-eyebrow">the story</div>
@@ -341,6 +439,48 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   </div>
 </section>
 
+<div style="max-width:1200px;margin:0 auto;padding:0 48px 0;border-top:0.5px solid var(--border);">
+  <div style="padding:56px 0 40px;">
+    <div style="font-size:10px;color:var(--rose);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;"><span style="display:inline-block;width:16px;height:1px;background:var(--rose);"></span>built for the search</div>
+    <h2 style="font-family:var(--serif);font-size:clamp(26px,3vw,34px);color:var(--tx);margin-bottom:36px;line-height:1.15;">Where I'm <em style="font-style:italic;color:var(--blue2);">focused.</em></h2>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-bottom:64px;" class="seeking-grid">
+
+    <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
+      <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">primary search</div>
+      <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Digital Health &amp; Care Navigation</div>
+      <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Senior PM and product leadership roles where the product directly shapes how people access and experience care. Navigation platforms, behavioral health tools, analytics, and 0-to-1 builds in regulated environments.</p>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Unite Us</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Reema Health</span>
+      </div>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">UnitedHealth / Optum</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">CVS / Aetna</span>
+      </div>
+    </div>
+
+    <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
+      <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">parallel path</div>
+      <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Medical Devices &amp; Commercialization</div>
+      <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Drawing on a biomedical sciences foundation and cardiac research at the UMN Visible Heart Lab, I'm pursuing upstream and downstream PM roles where clinical depth and product craft meet.</p>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Anteris Medical</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Stryker</span>
+      </div>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Boston Scientific</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Medtronic</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <section id="skills">
   <div class="section-eyebrow">skills &amp; domains</div>
   <h2 class="section-title">Where I'm <em>strong.</em></h2>
@@ -389,6 +529,104 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   </div>
 </section>
 
+<section id="schedule">
+  <div class="section-eyebrow">book time</div>
+  <h2 class="section-title">Let's have a<br><em>real conversation.</em></h2>
+  <p class="section-lead">Exploring a role, want to talk product, or just curious how my background maps to what you're building — pick a time below.</p>
+
+  <div class="schedule-grid fade-up">
+
+    <!-- LEFT: Meeting types -->
+    <div class="schedule-left">
+      <p class="schedule-intro">I keep a few slots open each week for meaningful conversations. No prep required — just a real exchange about the work.</p>
+      <div class="meeting-types">
+        <div class="meeting-type selected" onclick="selectMeeting(this,'Recruiter / Role Intro','A quick intro call — learn about the role, I'll share where I am in the search. Best for recruiters and hiring managers.','20 min')" data-title="Recruiter / Role Intro" data-desc="A quick intro call — learn about the role, I'll share where I am in the search. Best for recruiters and hiring managers." data-dur="20 min">
+          <div class="mt-icon">🤝</div>
+          <div class="mt-body"><div class="mt-title">Recruiter / Role Intro</div><div class="mt-desc">Quick intro — discuss the role, share context on my search</div></div>
+          <span class="mt-duration">20 min</span>
+        </div>
+        <div class="meeting-type" onclick="selectMeeting(this,'Product Chat','Talk product craft — discovery, 0-to-1 builds, care navigation, analytics. I love these conversations.','30 min')" data-title="Product Chat" data-desc="Talk product craft — discovery, 0-to-1 builds, care navigation, analytics. I love these conversations." data-dur="30 min">
+          <div class="mt-icon">⚗️</div>
+          <div class="mt-body"><div class="mt-title">Product Chat</div><div class="mt-desc">Talk craft — discovery, 0-to-1 builds, care nav, analytics</div></div>
+          <span class="mt-duration">30 min</span>
+        </div>
+        <div class="meeting-type" onclick="selectMeeting(this,'Coffee Chat','Informal connection — no agenda required. Networks grow best over curiosity, not transactions.','20 min')" data-title="Coffee Chat" data-desc="Informal connection — no agenda required. Networks grow best over curiosity, not transactions." data-dur="20 min">
+          <div class="mt-icon">☕</div>
+          <div class="mt-body"><div class="mt-title">Coffee Chat</div><div class="mt-desc">Informal connection — no agenda, just curiosity</div></div>
+          <span class="mt-duration">20 min</span>
+        </div>
+        <div class="meeting-type" onclick="selectMeeting(this,'Deep Dive / Interview Prep','Full conversation for active interview processes. Share the JD and we go deeper on fit, background, questions.','45 min')" data-title="Deep Dive / Interview Prep" data-desc="Full conversation for active interview processes. Share the JD and we go deeper on fit, background, questions." data-dur="45 min">
+          <div class="mt-icon">🔬</div>
+          <div class="mt-body"><div class="mt-title">Deep Dive / Interview Prep</div><div class="mt-desc">Active interview process — go deep on fit and questions</div></div>
+          <span class="mt-duration">45 min</span>
+        </div>
+      </div>
+
+      <!-- Context note -->
+      <div style="background:var(--bg2);border:0.5px solid var(--border);border-left:2px solid var(--gold);border-radius:10px;padding:16px 20px;margin-top:4px;">
+        <div style="font-size:10px;color:var(--gold2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;">Currently available</div>
+        <div style="font-size:13px;color:var(--tx2);line-height:1.7;">Active search · Minneapolis, MN · <span style="color:var(--jade2)">Remote-first preferred</span><br>Target: <span style="color:var(--tx)">$120K–$175K</span> · Open to senior PM / Sr. Manager roles in behavioral health, care navigation, and analytics.</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Calendar widget -->
+    <div class="schedule-right">
+      <div class="schedule-header">
+        <div class="schedule-header-icon">📅</div>
+        <div class="schedule-header-text">
+          <div class="schedule-header-name">Ryan Corcoran</div>
+          <div class="schedule-header-sub" id="sched-type-label">Recruiter / Role Intro · 20 min</div>
+        </div>
+      </div>
+
+      <!-- Calendar -->
+      <div class="cal-wrapper" id="cal-wrapper">
+        <div class="cal-month-nav">
+          <button class="cal-nav-btn" onclick="prevMonth()">‹</button>
+          <div class="cal-month-label" id="cal-month-label"></div>
+          <button class="cal-nav-btn" onclick="nextMonth()">›</button>
+        </div>
+        <div class="cal-days-header">
+          <div class="cal-day-hdr">Su</div><div class="cal-day-hdr">Mo</div><div class="cal-day-hdr">Tu</div>
+          <div class="cal-day-hdr">We</div><div class="cal-day-hdr">Th</div><div class="cal-day-hdr">Fr</div><div class="cal-day-hdr">Sa</div>
+        </div>
+        <div class="cal-days-grid" id="cal-grid"></div>
+      </div>
+
+      <!-- Time slots (shown after selecting a day) -->
+      <div class="time-slots" id="time-slots" style="display:none">
+        <div class="time-slots-label" id="slots-date-label"></div>
+        <div class="slots-grid" id="slots-grid"></div>
+      </div>
+
+      <!-- Confirm panel -->
+      <div class="confirm-panel" id="confirm-panel">
+        <div class="confirm-summary" id="confirm-summary"></div>
+        <div class="confirm-fields">
+          <input class="confirm-input" id="sched-name" placeholder="Your name" type="text">
+          <input class="confirm-input" id="sched-email" placeholder="Email address" type="email">
+          <input class="confirm-input" id="sched-note" placeholder="Brief context (optional — role, company, topic)" type="text">
+        </div>
+        <button class="confirm-btn" id="confirm-btn" onclick="bookMeeting()">
+          <span>Confirm meeting</span><span>→</span>
+        </button>
+      </div>
+
+      <!-- Booked confirmation -->
+      <div class="booked-state" id="booked-state">
+        <div class="booked-icon">✓</div>
+        <div class="booked-title">You're on the calendar.</div>
+        <div class="booked-sub">A confirmation will be sent to your email. Looking forward to the conversation.</div>
+        <div class="booked-detail" id="booked-detail"></div>
+        <button onclick="resetScheduler()" style="margin-top:16px;background:none;border:0.5px solid var(--border2);color:var(--tx3);border-radius:6px;padding:8px 16px;font-size:12px;cursor:pointer;font-family:var(--sans);">Schedule another →</button>
+      </div>
+
+      <div class="cal-note" id="cal-note">Times shown in Central Time (CT) · Minneapolis, MN</div>
+    </div>
+
+  </div>
+</section>
+
 <section id="contact">
   <div class="section-eyebrow">get in touch</div>
   <h2 class="section-title">Let's talk about<br>what you're <em>building.</em></h2>
@@ -401,118 +639,6 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     </div>
     <p class="contact-note">"I'm drawn to teams building at the intersection of <strong>clinical complexity and consumer experience</strong>, where the stakes are real and the product craft has to match."</p>
   </div>
-</section>
-<!-- ═══════════════════════════════════════════════════════════════════════════
-     JOBQUEST SECTION — drop into ryan-corcoran.com index.html
-     Place this block BEFORE the <footer> tag, after the contact section.
-     Also add "jobquest" to the nav links (see note at bottom).
-     ═══════════════════════════════════════════════════════════════════════════ -->
-
-<!-- ADD to nav .nav-links (copy this line into the nav alongside the other links): -->
-<!-- <a href="#jobquest">jobquest</a> -->
-
-<section id="jobquest" style="padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;margin:0 auto;">
-  <div class="section-eyebrow">built during the search</div>
-  <h2 class="section-title">JobQuest: Essential in 2026 —<br><em>a search OS.</em></h2>
-  <p class="section-lead" style="margin-bottom:40px">I built the tool I couldn't find. A full job search operating system — application tracking, AI-powered Job Description analysis, networking CRM, job board workflows, and focus timer — in a single HTML file while actively conducting this search.</p>
-
-  <!-- FEATURE CARDS GRID -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:40px" class="fade-up">
-
-    <!-- JD Analyzer -->
-    <div style="background:var(--bg2);border:0.5px solid rgba(201,150,26,.25);border-top:2px solid var(--gold);border-radius:12px;padding:24px;position:relative;overflow:hidden">
-      <div style="position:absolute;top:-40px;right:-40px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(201,150,26,.08) 0%,transparent 70%)"></div>
-      <div style="font-size:10px;color:var(--gold2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:10px;height:1px;background:var(--gold)"></span>AI-powered · claude</div>
-      <div style="font-family:var(--serif);font-size:19px;color:var(--tx);margin-bottom:8px">Job Description Analyzer</div>
-      <div style="font-size:13px;color:var(--tx2);line-height:1.7;margin-bottom:14px">Paste any job description — Claude scores fit against my profile, surfaces red flags, checks comp alignment, and pulls live company news. One click to save all relevant information to the tracker.</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <span style="font-size:10px;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3)">Fit score 1–10</span>
-        <span style="font-size:10px;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3)">Red flags</span>
-        <span style="font-size:10px;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3)">Comp check</span>
-        <span style="font-size:10px;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3)">Live news</span>
-      </div>
-    </div>
-
-    <!-- Application Tracker -->
-    <div style="background:var(--bg2);border:0.5px solid rgba(196,132,143,.2);border-top:2px solid var(--rose);border-radius:12px;padding:24px">
-      <div style="font-size:10px;color:var(--rose2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:10px;height:1px;background:var(--rose)"></span>Application tracker</div>
-      <div style="font-family:var(--serif);font-size:19px;color:var(--tx);margin-bottom:8px">Pipeline Dashboard</div>
-      <div style="font-size:13px;color:var(--tx2);line-height:1.7;margin-bottom:14px">Full application lifecycle — Saved → Applied → Interviewing → Offer. Clickable stat tiles, stage filters, high-priority queue, CSV import/export, and Excel sync. Built for 50–100 active roles.</div>
-      <!-- Mini stat strip -->
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
-        <div style="background:var(--bg3);border-radius:6px;padding:8px;text-align:center;border:0.5px solid var(--border)">
-          <div style="font-family:var(--serif);font-size:20px;color:var(--rose2);line-height:1">189</div>
-          <div style="font-size:9px;color:var(--tx3);margin-top:2px;letter-spacing:.04em">tracked</div>
-        </div>
-        <div style="background:var(--bg3);border-radius:6px;padding:8px;text-align:center;border:0.5px solid var(--border)">
-          <div style="font-family:var(--serif);font-size:20px;color:var(--jade2);line-height:1">22</div>
-          <div style="font-size:9px;color:var(--tx3);margin-top:2px;letter-spacing:.04em">apply next</div>
-        </div>
-        <div style="background:var(--bg3);border-radius:6px;padding:8px;text-align:center;border:0.5px solid var(--border)">
-          <div style="font-family:var(--serif);font-size:20px;color:var(--gold2);line-height:1">14</div>
-          <div style="font-size:9px;color:var(--tx3);margin-top:2px;letter-spacing:.04em">active app</div>
-        </div>
-        <div style="background:var(--bg3);border-radius:6px;padding:8px;text-align:center;border:0.5px solid var(--border)">
-          <div style="font-family:var(--serif);font-size:20px;color:var(--rose2);line-height:1">8.4</div>
-          <div style="font-size:9px;color:var(--tx3);margin-top:2px;letter-spacing:.04em">avg fit</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Networking CRM -->
-    <div style="background:var(--bg2);border:0.5px solid rgba(107,163,200,.2);border-top:2px solid var(--jade);border-radius:12px;padding:24px">
-      <div style="font-size:10px;color:var(--jade2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:10px;height:1px;background:var(--jade)"></span>Networking CRM</div>
-      <div style="font-family:var(--serif);font-size:19px;color:var(--tx);margin-bottom:8px">Contact Pipeline</div>
-      <div style="font-size:13px;color:var(--tx2);line-height:1.7;margin-bottom:14px">Heat-based contact tracking — Warm / Nudge / Cold — with a timestamped activity log, one-tap activity logging, AI-generated outreach prompts, and filter views for 50+ contacts.</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <span style="font-size:10px;padding:3px 9px;border-radius:10px;background:rgba(107,163,200,.1);color:var(--jade2);border:0.5px solid rgba(107,163,200,.25)">Heat logic</span>
-        <span style="font-size:10px;padding:3px 9px;border-radius:10px;background:rgba(107,163,200,.1);color:var(--jade2);border:0.5px solid rgba(107,163,200,.25)">Activity log</span>
-        <span style="font-size:10px;padding:3px 9px;border-radius:10px;background:rgba(107,163,200,.1);color:var(--jade2);border:0.5px solid rgba(107,163,200,.25)">AI prompts</span>
-        <span style="font-size:10px;padding:3px 9px;border-radius:10px;background:rgba(107,163,200,.1);color:var(--jade2);border:0.5px solid rgba(107,163,200,.25)">Source filters</span>
-      </div>
-    </div>
-
-    <!-- Job Board + Focus -->
-    <div style="background:var(--bg2);border:0.5px solid var(--border2);border-top:2px solid var(--tx3);border-radius:12px;padding:24px">
-      <div style="font-size:10px;color:var(--tx2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:10px;height:1px;background:var(--tx3)"></span>Job boards + focus</div>
-      <div style="font-family:var(--serif);font-size:19px;color:var(--tx);margin-bottom:8px">Search Workflows</div>
-      <div style="font-size:13px;color:var(--tx2);line-height:1.7;margin-bottom:14px">Curated Healthtech and Medtech job board cards with enterprise + startup tiers, a LinkedIn search builder, Pomodoro focus timer with task log, and a persistent mini-timer across all pages.</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <span style="font-size:10px;padding:3px 9px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2)">Healthtech</span>
-        <span style="font-size:10px;padding:3px 9px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2)">Medtech</span>
-        <span style="font-size:10px;padding:3px 9px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2)">LinkedIn builder</span>
-        <span style="font-size:10px;padding:3px 9px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2)">Focus timer</span>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- TECH + BUILD CALLOUT -->
-  <div style="background:var(--bg2);border:0.5px solid var(--border2);border-radius:12px;padding:24px 28px;margin-bottom:36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center" class="fade-up">
-    <div>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px">How it was built</div>
-      <div style="font-size:14px;color:var(--tx2);line-height:1.8">A single self-contained HTML file — no frameworks, no build step, no backend. Vanilla JS, localStorage persistence, live CSV import/export, and Claude API for AI features. Iterated in real-time as my search evolved. ~2,700 lines.</div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:8px;flex-shrink:0;text-align:center">
-      <div style="font-family:var(--serif);font-size:36px;color:var(--jade2);line-height:1">v16</div>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.04em">current version</div>
-    </div>
-  </div>
-
-  <!-- CTA BUTTONS -->
-  <div style="display:flex;gap:12px;flex-wrap:wrap" class="fade-up">
-    <a href="https://rcorcoran03-jam.github.io/jobquest/access.html" class="btn btn-primary">
-      Access JobQuest ↗
-    </a>
-    <button onclick="document.getElementById('jq-stats-note').style.display=document.getElementById('jq-stats-note').style.display==='none'?'block':'none'" class="btn btn-ghost" style="font-size:13px;padding:12px 28px;cursor:pointer">
-      About the stats ↓
-    </button>
-  </div>
-
-  <div id="jq-stats-note" style="display:none;margin-top:16px;background:var(--bg3);border:0.5px solid var(--border);border-radius:8px;padding:16px 20px;font-size:13px;color:var(--tx2);line-height:1.8;max-width:560px">
-    The numbers above reflect my actual live search as of May 2026 — real companies, real stages, real fit scores from the analyzer. The tool lives in localStorage on my device. Access to the full version is password-protected; reach out if you'd like a walkthrough.
-  </div>
-
 </section>
 
 <footer>
@@ -589,7 +715,167 @@ ${jd}`;
   btn.disabled=false;
 }
 
-function toggleCase(card){
+
+// ── SCHEDULING WIDGET ────────────────────────────────────────────────────────
+
+const AVAILABLE_DAYS = [1,2,3,4]; // Mon–Thu (0=Sun)
+const TIMES_SHORT = ['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM'];
+const TIMES_LONG  = ['10:00 AM','11:00 AM','2:00 PM','3:00 PM'];
+
+let schedState = {
+  today: new Date(),
+  month: new Date().getMonth(),
+  year: new Date().getFullYear(),
+  selectedDay: null,
+  selectedTime: null,
+  meetingTitle: 'Recruiter / Role Intro',
+  meetingDesc: 'A quick intro call — learn about the role, I\'ll share where I am in the search.',
+  meetingDur: '20 min'
+};
+
+function selectMeeting(el, title, desc, dur) {
+  document.querySelectorAll('.meeting-type').forEach(m => m.classList.remove('selected'));
+  el.classList.add('selected');
+  schedState.meetingTitle = title;
+  schedState.meetingDesc = desc;
+  schedState.meetingDur = dur;
+  document.getElementById('sched-type-label').textContent = title + ' · ' + dur;
+  resetDaySelection();
+}
+
+function renderCalendar() {
+  const mn = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('cal-month-label').textContent = mn[schedState.month] + ' ' + schedState.year;
+  const grid = document.getElementById('cal-grid');
+  grid.innerHTML = '';
+  const first = new Date(schedState.year, schedState.month, 1).getDay();
+  const days = new Date(schedState.year, schedState.month+1, 0).getDate();
+  const now = schedState.today;
+
+  for(let i = 0; i < first; i++) {
+    const d = document.createElement('div');
+    d.className = 'cal-day';
+    grid.appendChild(d);
+  }
+  for(let d = 1; d <= days; d++) {
+    const cell = document.createElement('div');
+    const date = new Date(schedState.year, schedState.month, d);
+    const dow = date.getDay();
+    const isPast = date < new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const isToday = d === now.getDate() && schedState.month === now.getMonth() && schedState.year === now.getFullYear();
+    const isAvail = AVAILABLE_DAYS.includes(dow) && !isPast;
+    const isSel = schedState.selectedDay === d && schedState.month === now.getMonth() && schedState.year === now.getFullYear();
+
+    cell.className = 'cal-day in-month' + (isPast ? ' past' : '') + (isAvail ? ' available' : '') + (isToday ? ' today' : '') + (isSel ? ' selected-day' : '');
+    cell.textContent = d;
+    if(isAvail) cell.onclick = () => selectDay(d, date);
+    grid.appendChild(cell);
+  }
+}
+
+function selectDay(d, date) {
+  schedState.selectedDay = d;
+  document.querySelectorAll('.cal-day.selected-day').forEach(c => c.classList.remove('selected-day'));
+  event.target.classList.add('selected-day');
+  schedState.selectedTime = null;
+
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const label = days[date.getDay()] + ', ' + months[date.getMonth()] + ' ' + d;
+
+  const slotsDiv = document.getElementById('time-slots');
+  const slotLabel = document.getElementById('slots-date-label');
+  const slotGrid = document.getElementById('slots-grid');
+  const confirmPanel = document.getElementById('confirm-panel');
+  const bookedState = document.getElementById('booked-state');
+
+  slotLabel.textContent = label;
+  const times = schedState.meetingDur === '45 min' ? TIMES_LONG : TIMES_SHORT;
+  slotGrid.innerHTML = times.map(t =>
+    `<button class="slot-btn" onclick="selectTime(this,'${t}','${label}')">${t}</button>`
+  ).join('');
+
+  slotsDiv.style.display = 'block';
+  confirmPanel.classList.remove('visible');
+  bookedState.classList.remove('visible');
+}
+
+function selectTime(btn, time, dateLabel) {
+  document.querySelectorAll('.slot-btn.selected-slot').forEach(b => b.classList.remove('selected-slot'));
+  btn.classList.add('selected-slot');
+  schedState.selectedTime = time;
+
+  const panel = document.getElementById('confirm-panel');
+  const summary = document.getElementById('confirm-summary');
+  summary.innerHTML = `<strong>${schedState.meetingTitle}</strong><br>${dateLabel} at ${time} CT · ${schedState.meetingDur}<br><span style="font-size:12px;color:var(--tx3)">Google Meet link will be sent to your email</span>`;
+  panel.classList.add('visible');
+  document.getElementById('cal-note').style.display = 'none';
+}
+
+function resetDaySelection() {
+  schedState.selectedDay = null;
+  schedState.selectedTime = null;
+  document.getElementById('time-slots').style.display = 'none';
+  document.getElementById('confirm-panel').classList.remove('visible');
+  document.getElementById('booked-state').classList.remove('visible');
+  document.getElementById('cal-note').style.display = 'block';
+  renderCalendar();
+}
+
+async function bookMeeting() {
+  const name = document.getElementById('sched-name').value.trim();
+  const email = document.getElementById('sched-email').value.trim();
+  if(!name || !email) {
+    document.getElementById('sched-name').style.borderColor = name ? '' : 'var(--rose)';
+    document.getElementById('sched-email').style.borderColor = email ? '' : 'var(--rose)';
+    return;
+  }
+  const btn = document.getElementById('confirm-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin">↻</span> Confirming…';
+
+  // Simulate booking (replace with real calendar API / Calendly embed)
+  await new Promise(r => setTimeout(r, 1400));
+
+  document.getElementById('confirm-panel').classList.remove('visible');
+  document.getElementById('time-slots').style.display = 'none';
+  document.getElementById('cal-note').style.display = 'none';
+  document.getElementById('cal-wrapper').style.display = 'none';
+
+  const booked = document.getElementById('booked-state');
+  const detail = document.getElementById('booked-detail');
+  const note = document.getElementById('sched-note').value.trim();
+  detail.innerHTML = `📅 ${schedState.meetingTitle}<br>⏱ ${schedState.meetingDur}<br>👤 ${name} · ${email}` + (note ? `<br>💬 "${note}"` : '');
+  booked.classList.add('visible');
+  btn.disabled = false;
+  btn.innerHTML = '<span>Confirm meeting</span><span>→</span>';
+}
+
+function resetScheduler() {
+  document.getElementById('sched-name').value = '';
+  document.getElementById('sched-email').value = '';
+  document.getElementById('sched-note').value = '';
+  document.getElementById('booked-state').classList.remove('visible');
+  document.getElementById('cal-wrapper').style.display = 'block';
+  document.getElementById('cal-note').style.display = 'block';
+  resetDaySelection();
+}
+
+function prevMonth() {
+  if(schedState.month === 0) { schedState.month = 11; schedState.year--; }
+  else schedState.month--;
+  resetDaySelection();
+}
+function nextMonth() {
+  if(schedState.month === 11) { schedState.month = 0; schedState.year++; }
+  else schedState.month++;
+  resetDaySelection();
+}
+
+renderCalendar();
+
+// ── END SCHEDULING ────────────────────────────────────────────────────────────
+
   const wasOpen=card.classList.contains('open');
   document.querySelectorAll('.case-card.open').forEach(c=>c.classList.remove('open'));
   if(!wasOpen)card.classList.add('open');
