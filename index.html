@@ -876,6 +876,7 @@ renderCalendar();
 
 // ── END SCHEDULING ────────────────────────────────────────────────────────────
 
+function toggleCase(card){
   const wasOpen=card.classList.contains('open');
   document.querySelectorAll('.case-card.open').forEach(c=>c.classList.remove('open'));
   if(!wasOpen)card.classList.add('open');
