@@ -246,7 +246,10 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 @media(max-width:768px){
   .schedule-grid{grid-template-columns:1fr;}
   nav{padding:0 20px;}.nav-links{display:none;}
-  .hero{grid-template-columns:1fr;padding:100px 20px 60px;}.hero-photo-col{display:none;}
+  .hero{grid-template-columns:1fr;padding:80px 20px 60px;display:flex;flex-direction:column-reverse;gap:32px;}
+  .hero-photo-col{display:flex;width:100%;}
+  .hero-photo{width:100%;aspect-ratio:3/4;max-height:380px;}
+  .hero-photo img{object-position:center 8%!important;}
   section{padding:60px 20px;}
   .story-grid,.skills-layout,.contact-grid{grid-template-columns:1fr;}.seeking-grid{grid-template-columns:1fr !important;}
   .cases-grid{grid-template-columns:1fr;}.case-card.wide{grid-column:1;}
