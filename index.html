@@ -58,7 +58,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,27,45,0.9
 .btn-jobquest .mn-star{transition:transform .45s ease;}
 .btn-jobquest:hover .mn-star{transform:rotate(45deg);}
 .jq-caption{font-size:9px;color:var(--gold);letter-spacing:.05em;opacity:.82;font-style:italic;white-space:nowrap;}
-.claude-badge{font-size:9px;color:var(--gold);letter-spacing:.09em;text-transform:uppercase;opacity:.75;display:flex;align-items:center;gap:4px;}
+.claude-badge{font-size:9px;color:var(--gold2);letter-spacing:.05em;opacity:.85;display:flex;align-items:center;gap:4px;}
 .claude-badge::before{content:'✦';font-size:7px;}
 .booking-strip{max-width:640px;background:var(--bg2);border:0.5px solid var(--border2);border-radius:12px;padding:14px 16px 14px 20px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;margin-top:16px;}
 .booking-strip::before{content:'';position:absolute;left:0;top:15%;bottom:15%;width:2px;background:linear-gradient(to bottom,transparent,rgba(107,163,200,.5),transparent);border-radius:2px;}
@@ -135,18 +135,43 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .case-detail-text{font-size:13px;color:var(--tx2);line-height:1.8;}
 .case-detail-list{margin-top:12px;padding-left:16px;}
 .case-detail-list li{font-size:13px;color:var(--tx2);margin-bottom:6px;line-height:1.7;}
-.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
-.domain-items{display:flex;flex-direction:column;gap:20px;}
-.domain-row-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
-.domain-row-name{font-size:13px;color:var(--tx);}
-.domain-row-pct{font-size:11px;color:var(--tx3);}
-.domain-bar-bg{height:6px;background:var(--bg4);border-radius:3px;overflow:hidden;}
-.domain-bar{height:6px;border-radius:3px;background:var(--rose);width:0;transition:width 1s ease;}
-.domain-bar.rose-bar{background:var(--rose);opacity:1;}
-.skills-right{display:flex;flex-direction:column;gap:14px;}
-.skill-cat-label{font-size:10px;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;}
-.skill-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.skill-tag{font-size:11px;padding:4px 10px;border-radius:4px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border);}
+.skills-lead{font-size:15px;color:var(--tx2);line-height:1.7;max-width:600px;margin-bottom:34px;}
+.domains-strip{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:38px;}
+.domain-chip{font-family:var(--serif);font-size:15px;color:var(--tx);padding:10px 18px;border-radius:10px;background:linear-gradient(135deg,var(--bg2),var(--bg3));border:0.5px solid var(--border2);position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease;}
+.domain-chip::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1);}
+.domain-chip:hover{transform:translateY(-2px);border-color:rgba(201,150,26,.4);}
+.domain-chip:hover::after{transform:scaleX(1);}
+.skill-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.skill-filter{--c:var(--tx2);font-family:var(--sans);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--tx2);background:transparent;border:0.5px solid var(--border2);border-radius:20px;padding:7px 15px;cursor:pointer;transition:all .2s ease;display:inline-flex;align-items:center;gap:7px;}
+.skill-filter::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--c);flex-shrink:0;transition:box-shadow .2s ease;}
+.skill-filter[data-cat="all"]{--c:var(--tx2);}
+.skill-filter[data-cat="product"]{--c:var(--blue2);}
+.skill-filter[data-cat="technical"]{--c:var(--teal2);}
+.skill-filter[data-cat="domain"]{--c:var(--gold2);}
+.skill-filter[data-cat="leadership"]{--c:var(--rose2);}
+.skill-filter[data-cat="medtech"]{--c:var(--gold2);}
+.skill-filter:hover{color:var(--tx);border-color:var(--c);}
+.skill-filter:hover::before{box-shadow:0 0 7px var(--c);}
+.skill-filter.active{color:var(--tx);border-color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);}
+.skill-filter.active::before{box-shadow:0 0 8px var(--c);}
+.skill-cloud{display:flex;flex-wrap:wrap;gap:8px;}
+.skill-chip{--c:var(--blue);font-size:12px;color:var(--tx2);padding:8px 14px;border-radius:8px;background:var(--bg2);border:0.5px solid var(--border);display:inline-flex;align-items:center;gap:8px;cursor:default;transition:opacity .4s ease,transform .35s ease,border-color .25s ease,background .25s ease,color .25s ease;}
+.skill-chip::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--c);flex-shrink:0;transition:box-shadow .3s ease,transform .3s ease;}
+.skill-chip[data-cat="product"]{--c:var(--blue);}
+.skill-chip[data-cat="technical"]{--c:var(--teal);}
+.skill-chip[data-cat="domain"]{--c:var(--gold);}
+.skill-chip[data-cat="leadership"]{--c:var(--rose);}
+.skill-chip[data-cat="medtech"]{--c:var(--gold2);}
+.skill-chip:hover{color:var(--tx);border-color:var(--border2);transform:translateY(-2px);}
+.skill-chip:hover::before{transform:scale(1.4);box-shadow:0 0 8px var(--c);}
+.skill-chip.dim{opacity:.16;}
+.skill-chip.lit{color:var(--tx);transform:translateY(-1px);}
+.skill-chip.lit::before{box-shadow:0 0 9px var(--c);transform:scale(1.3);}
+.skill-chip[data-cat="product"].lit{border-color:rgba(107,163,200,.55);background:rgba(107,163,200,.1);}
+.skill-chip[data-cat="technical"].lit{border-color:rgba(76,175,138,.55);background:rgba(76,175,138,.1);}
+.skill-chip[data-cat="domain"].lit{border-color:rgba(201,150,26,.55);background:rgba(201,150,26,.1);}
+.skill-chip[data-cat="leadership"].lit{border-color:rgba(196,132,143,.55);background:rgba(196,132,143,.1);}
+.skill-chip[data-cat="medtech"].lit{border-color:rgba(232,201,122,.55);background:rgba(232,201,122,.1);}
 .fit-widget{background:var(--bg2);border:0.5px solid rgba(201,150,26,.2);border-left:2px solid var(--gold);border-radius:16px;padding:36px;position:relative;overflow:hidden;}
 .fit-widget::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(201,150,26,.10) 0%,transparent 70%);pointer-events:none;}
 .fit-intro{font-size:15px;color:var(--tx2);line-height:1.7;margin-bottom:24px;max-width:560px;}
@@ -181,13 +206,13 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .fit-error.visible{display:block;}
 @keyframes spin{to{transform:rotate(360deg);}}
 .spin{display:inline-block;animation:spin 1s linear infinite;margin-right:8px;}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
-.contact-links{display:flex;flex-direction:column;gap:14px;}
-.contact-link-row{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg2);border:0.5px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color .2s,background .2s;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.contact-links{display:flex;flex-direction:column;gap:8px;}
+.contact-link-row{display:flex;align-items:center;gap:10px;padding:11px 14px;background:var(--bg2);border:0.5px solid var(--border);border-radius:9px;text-decoration:none;transition:border-color .2s,background .2s;min-width:0;}
 .contact-link-row:hover{border-color:var(--rose);background:var(--bg3);}
-.contact-link-icon{font-size:14px;color:var(--rose);width:20px;text-align:center;}
-.contact-link-label{font-size:13px;color:var(--tx2);}
-.contact-link-val{font-size:13px;color:var(--rose2);margin-left:auto;}
+.contact-link-icon{font-size:13px;color:var(--rose);width:16px;text-align:center;flex-shrink:0;}
+.contact-link-label{font-size:12px;color:var(--tx2);flex-shrink:0;}
+.contact-link-val{font-size:11px;color:var(--rose2);margin-left:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}
 .contact-note{font-size:17px;color:var(--tx2);line-height:1.8;font-family:var(--serif);font-style:italic;border-left:2px solid var(--blue);padding-left:20px;}
 .contact-note strong{font-style:normal;color:var(--tx);}
 footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
@@ -196,66 +221,26 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
 .fade-up.in{opacity:1;transform:translateY(0);}
 /* ── SCHEDULE SECTION ───────────────────────────────────── */
-.schedule-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
-.schedule-left{display:flex;flex-direction:column;gap:20px;}
-.schedule-intro{font-size:16px;color:var(--tx2);line-height:1.8;}
-.meeting-types{display:flex;flex-direction:column;gap:10px;}
-.meeting-type{background:var(--bg2);border:0.5px solid var(--border);border-radius:10px;padding:16px 20px;cursor:pointer;transition:border-color .2s,background .2s;display:flex;align-items:center;gap:14px;position:relative;}
-.meeting-type:hover{background:var(--bg3);border-color:var(--border2);}
-.meeting-type.selected{background:var(--bg3);border-color:var(--blue);border-left:2px solid var(--blue);}
-.mt-icon{font-size:18px;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--bg4);flex-shrink:0;}
-.mt-body{flex:1;}
-.mt-title{font-size:13px;font-weight:500;color:var(--tx);margin-bottom:2px;}
-.mt-desc{font-size:11px;color:var(--tx3);line-height:1.5;}
-.mt-duration{font-size:10px;color:var(--rose);letter-spacing:.06em;margin-left:auto;white-space:nowrap;padding:3px 8px;border-radius:10px;background:rgba(196,132,143,.1);border:0.5px solid rgba(196,132,143,.2);}
-.schedule-right{background:var(--bg2);border:0.5px solid rgba(107,163,200,.2);border-radius:16px;overflow:hidden;position:relative;}
-.schedule-header{background:var(--bg3);border-bottom:0.5px solid var(--border);padding:20px 24px;display:flex;align-items:center;gap:12px;}
-.schedule-header-icon{width:40px;height:40px;border-radius:10px;background:var(--blue3);border:0.5px solid rgba(107,163,200,.3);display:flex;align-items:center;justify-content:center;font-size:18px;}
-.schedule-header-text{}
-.schedule-header-name{font-size:14px;font-weight:500;color:var(--tx);}
-.schedule-header-sub{font-size:11px;color:var(--tx3);}
-.cal-wrapper{padding:24px;}
-.cal-month-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
-.cal-month-label{font-family:var(--serif);font-size:16px;color:var(--tx);}
-.cal-nav-btn{background:var(--bg3);border:0.5px solid var(--border);color:var(--tx2);width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
-.cal-nav-btn:hover{border-color:var(--blue);color:var(--blue2);}
-.cal-days-header{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:8px;}
-.cal-day-hdr{font-size:10px;color:var(--tx3);text-align:center;letter-spacing:.06em;padding:4px 0;}
-.cal-days-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
-.cal-day{aspect-ratio:1;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:default;color:var(--tx3);}
-.cal-day.in-month{color:var(--tx2);}
-.cal-day.available{color:var(--tx);cursor:pointer;background:var(--bg3);transition:all .15s;}
-.cal-day.available:hover{background:var(--blue3);color:var(--blue2);border:0.5px solid rgba(107,163,200,.3);}
-.cal-day.selected-day{background:var(--blue);color:#fff !important;font-weight:600;}
-.cal-day.today{border:0.5px solid var(--gold);color:var(--gold2) !important;}
-.cal-day.past{color:var(--bg4);cursor:default;}
-.time-slots{padding:0 24px 24px;}
-.time-slots-label{font-size:11px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
-.slots-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
-.slot-btn{background:var(--bg3);border:0.5px solid var(--border);border-radius:6px;padding:8px;font-size:12px;color:var(--tx2);cursor:pointer;text-align:center;transition:all .15s;font-family:var(--sans);}
-.slot-btn:hover{border-color:var(--blue);color:var(--blue2);background:var(--blue3);}
-.slot-btn.selected-slot{background:var(--blue);color:#fff;border-color:var(--blue);}
-.confirm-panel{padding:0 24px 24px;display:none;}
-.confirm-panel.visible{display:block;}
-.confirm-summary{background:var(--bg4);border-radius:8px;padding:14px 16px;margin-bottom:14px;font-size:13px;color:var(--tx2);line-height:1.8;}
-.confirm-summary strong{color:var(--tx);}
-.confirm-fields{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;}
-.confirm-input{background:var(--bg3);border:0.5px solid var(--border2);border-radius:7px;color:var(--tx);font-family:var(--sans);font-size:13px;padding:10px 14px;outline:none;transition:border-color .2s;}
-.confirm-input:focus{border-color:rgba(107,163,200,.4);}
-.confirm-input::placeholder{color:var(--tx3);}
-.confirm-btn{width:100%;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:11px;font-family:var(--sans);font-size:13px;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;}
-.confirm-btn:hover{background:var(--blue2);color:var(--bg);}
-.confirm-btn:disabled{opacity:.5;cursor:not-allowed;}
-.booked-state{display:none;padding:32px 24px;text-align:center;}
-.booked-state.visible{display:block;}
-.booked-icon{font-size:36px;margin-bottom:12px;}
-.booked-title{font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:8px;}
-.booked-sub{font-size:13px;color:var(--tx2);line-height:1.7;}
-.booked-detail{margin-top:16px;background:var(--bg3);border-radius:8px;padding:14px;font-size:12px;color:var(--tx3);line-height:1.9;}
-.cal-note{font-size:11px;color:var(--tx3);text-align:center;padding:0 24px 16px;line-height:1.6;}
+.book-panel{max-width:760px;background:var(--bg2);border:0.5px solid var(--border2);border-radius:14px;padding:18px 20px 18px 24px;position:relative;overflow:hidden;}
+.book-panel::before{content:'';position:absolute;left:0;top:12%;bottom:12%;width:2px;background:linear-gradient(to bottom,transparent,rgba(76,175,138,.6),transparent);border-radius:2px;}
+.book-panel-top{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.book-card{display:flex;align-items:center;gap:11px;background:var(--bg3);border:0.5px solid var(--border);border-radius:9px;padding:11px 14px;text-decoration:none;transition:all .17s;position:relative;}
+.book-card:hover{border-color:rgba(76,175,138,.5);background:rgba(76,175,138,.07);transform:translateY(-1px);box-shadow:0 4px 12px rgba(76,175,138,.1);}
+.book-card:active{transform:translateY(0);}
+.bc-icon{font-size:15px;width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;background:var(--bg4);flex-shrink:0;}
+.bc-body{flex:1;min-width:0;}
+.bc-title{font-size:12.5px;font-weight:500;color:var(--tx);margin-bottom:1px;}
+.bc-desc{font-size:10.5px;color:var(--tx3);line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.bc-dur{font-size:10px;color:var(--teal2);letter-spacing:.06em;margin-left:auto;white-space:nowrap;padding:2px 8px;border-radius:10px;background:rgba(76,175,138,.1);border:0.5px solid rgba(76,175,138,.25);flex-shrink:0;}
+.book-card:hover .bc-dur{background:rgba(76,175,138,.18);}
+.book-avail{margin-top:14px;padding-top:14px;border-top:0.5px solid var(--border);}
+.book-avail-label{font-size:10px;color:var(--teal2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.book-avail-text{font-size:13px;color:var(--tx2);line-height:1.7;}
 /* ── END SCHEDULE ────────────────────────────────────────── */
 @media(max-width:768px){
-  .schedule-grid{grid-template-columns:1fr;}
+  .book-grid{grid-template-columns:1fr;}
+  .book-panel{padding:16px 16px 16px 20px;}
   nav{padding:0 20px;}.nav-links{display:none;}
   .hero{grid-template-columns:1fr;padding:80px 20px 60px;display:flex;flex-direction:column-reverse;gap:32px;}
   .hero-left{min-width:0;width:100%;}
@@ -263,7 +248,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   .hero-photo{width:100%;aspect-ratio:3/4;max-height:380px;}
   .hero-photo img{object-position:center 5%!important;}
   section{padding:60px 20px;}
-  .story-grid,.skills-layout,.contact-grid{grid-template-columns:1fr;}.seeking-grid{grid-template-columns:1fr !important;}
+  .story-grid,.contact-grid{grid-template-columns:1fr;}.seeking-grid{grid-template-columns:1fr !important;}
   .cases-grid{grid-template-columns:1fr;}.case-card.wide{grid-column:1;}
   .fit-input-row{flex-direction:column;}.fit-btn{align-self:stretch;}
   .fit-result-top{grid-template-columns:1fr;}.footer{padding:20px;flex-direction:column;gap:8px;}
@@ -311,9 +296,8 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
           <svg width="12" height="12" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><polygon points="16,2 18.2,10.5 26,7.5 21.5,14.5 30,16 21.5,17.5 26,24.5 18.2,21.5 16,30 13.8,21.5 6,24.5 10.5,17.5 2,16 10.5,14.5 6,7.5 13.8,10.5" fill="#E8C97A"/></svg>
           check role fit ↓
         </a>
-        <div class="claude-badge">claude-powered</div>
+        <div class="claude-badge">powered by claude</div>
       </div>
-      <a href="mailto:rcorcoran03@gmail.com" class="btn btn-ghost">get in touch</a>
     </div>
 
     <div class="booking-strip">
@@ -377,11 +361,11 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <div style="padding:56px 0 32px;">
       <div style="font-size:10px;color:var(--rose);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;"><span style="display:inline-block;width:16px;height:1px;background:var(--rose);"></span>built for the search</div>
       <h2 style="font-family:var(--serif);font-size:clamp(26px,3vw,38px);color:var(--tx);margin-bottom:8px;line-height:1.1;">Where I'm <em style="font-style:italic;color:var(--blue2);">focused.</em></h2>
-      <p style="font-size:15px;color:var(--tx2);line-height:1.7;max-width:540px;">Two parallel paths — both rooted in the same question: how do complex, high-stakes systems fail the people who need them most?</p>
+      <p style="font-size:15px;color:var(--tx2);line-height:1.7;max-width:540px;">Two parallel paths, one throughline: high-stakes products that have to work for the person on the other end.</p>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="seeking-grid">
       <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
-        <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">primary search</div>
+        <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">Health Tech</div>
         <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Digital Health &amp; Care Navigation</div>
         <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Senior PM and product leadership roles where the product directly shapes how people access and experience care. Navigation platforms, behavioral health tools, analytics, and 0-to-1 builds in regulated environments.</p>
         <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
@@ -396,16 +380,17 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
         </div>
       </div>
       <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
-        <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">parallel path</div>
+        <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">Medtech</div>
         <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Medical Devices &amp; Commercialization</div>
-        <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Drawing on a biomedical sciences foundation and cardiac research at the UMN Visible Heart Lab, I'm pursuing upstream and downstream PM roles where clinical depth and product craft meet.</p>
+        <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Upstream and downstream PM roles where clinical depth and product craft meet. Device commercialization, clinical evidence, and product strategy in regulated environments &mdash; backed by a biomedical sciences foundation and cardiac research at the UMN Visible Heart Lab.</p>
         <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
           <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Anteris Medical</span>
-          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Stryker</span>
+          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Medical 21</span>
         </div>
         <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
         <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Philips</span>
           <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Boston Scientific</span>
           <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Medtronic</span>
         </div>
@@ -488,7 +473,10 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 
   <!-- CTA row -->
   <div style="margin-top:32px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;" class="fade-up">
-    <a href="https://jobs.ryan-corcoran.com/access.html" target="_blank" style="font-family:var(--sans);font-size:12px;padding:10px 22px;border-radius:6px;background:rgba(201,150,26,.15);color:var(--gold2);border:0.5px solid rgba(201,150,26,.35);text-decoration:none;letter-spacing:.05em;transition:all .2s;display:inline-flex;align-items:center;gap:6px;">view live tool ↗</a>
+    <a href="https://jobs.ryan-corcoran.com/access.html" target="_blank" class="btn btn-jobquest">
+      <svg class="mn-star" width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12,1 13.07,9.4 16.6,7.4 14.6,10.9 23,12 14.6,13.07 16.6,16.6 13.07,14.6 12,23 10.93,14.6 7.4,16.6 9.4,13.07 1,12 9.4,10.93 7.4,7.4 10.93,9.4" fill="currentColor"/></svg>
+      view live tool ↗
+    </a>
     <span style="font-size:12px;color:var(--tx3);">Password protected — ask me for access during a conversation.</span>
   </div>
 </section>
@@ -539,7 +527,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
         </div>
       </div>
     </div>
-    <div class="case-card wide" onclick="toggleCase(this)">
+    <div class="case-card" onclick="toggleCase(this)">
       <span class="case-tag">commercialization strategy</span>
       <div class="case-title">SDOH Mobile App · UMN Technology Commercialization</div>
       <div class="case-summary">Academic researchers had built a compelling social determinants of health application, but had no path from desk to market. Led the strategy that got it to early-stage pilot.</div>
@@ -555,7 +543,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
         </div>
       </div>
     </div>
-    <div class="case-card wide" onclick="toggleCase(this)">
+    <div class="case-card" onclick="toggleCase(this)">
       <span class="case-tag" style="background:rgba(201,150,26,.12);color:var(--gold2);border-color:rgba(201,150,26,.3);">built during the search · claude-powered</span>
       <div class="case-title">JobQuest — A Search OS</div>
       <div class="case-summary">I built the tool I couldn't find. A full job search operating system — AI-powered JD analysis, application pipeline, networking CRM, job board workflows, and focus timer — in a single HTML file, while actively conducting this search.</div>
@@ -576,7 +564,10 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
             <li>Built and iterated in real-time alongside an active search — every feature driven by an actual friction point encountered that week</li>
           </ul>
           <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
-            <a href="https://jobs.ryan-corcoran.com/access.html" target="_blank" onclick="event.stopPropagation()" style="font-size:11px;padding:7px 14px;border-radius:6px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);text-decoration:none;letter-spacing:.04em;transition:all .2s;">view live tool ↗</a>
+            <a href="https://jobs.ryan-corcoran.com/access.html" target="_blank" onclick="event.stopPropagation()" class="btn btn-jobquest" style="font-size:11px;padding:8px 16px;">
+              <svg class="mn-star" width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12,1 13.07,9.4 16.6,7.4 14.6,10.9 23,12 14.6,13.07 16.6,16.6 13.07,14.6 12,23 10.93,14.6 7.4,16.6 9.4,13.07 1,12 9.4,10.93 7.4,7.4 10.93,9.4" fill="currentColor"/></svg>
+              view live tool ↗
+            </a>
             <span style="font-size:11px;padding:7px 14px;border-radius:6px;background:var(--bg4);color:var(--tx3);border:0.5px solid var(--border);letter-spacing:.04em;">password protected · ask me</span>
           </div>
         </div>
@@ -614,120 +605,105 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 <section id="schedule">
   <div class="section-eyebrow">book time</div>
   <h2 class="section-title">Let's have a<br><em>real conversation.</em></h2>
-  <p class="section-lead">Exploring a role, want to talk product, or just curious how my background maps to what you're building — pick a time below.</p>
+  <p class="section-lead">Exploring a role, want to talk product, or just curious how my background maps to what you're building — pick a format and grab a time.</p>
 
-  <div class="schedule-grid fade-up">
-
-    <!-- LEFT: Meeting types -->
-    <div class="schedule-left">
-      <p class="schedule-intro">I keep a few slots open each week for meaningful conversations. No prep required — just a real exchange about the work.</p>
-      <div class="meeting-types">
-        <div class="meeting-type selected" onclick="selectMeeting(this,'Recruiter / Role Intro','A quick intro call — learn about the role, I'll share where I am in the search. Best for recruiters and hiring managers.','20 min')" data-title="Recruiter / Role Intro" data-desc="A quick intro call — learn about the role, I'll share where I am in the search. Best for recruiters and hiring managers." data-dur="20 min">
-          <div class="mt-icon">🤝</div>
-          <div class="mt-body"><div class="mt-title">Recruiter / Role Intro</div><div class="mt-desc">Quick intro — discuss the role, share context on my search</div></div>
-          <span class="mt-duration">20 min</span>
-        </div>
-        <div class="meeting-type" onclick="selectMeeting(this,'Product Chat','Talk product craft — discovery, 0-to-1 builds, care navigation, analytics. I love these conversations.','30 min')" data-title="Product Chat" data-desc="Talk product craft — discovery, 0-to-1 builds, care navigation, analytics. I love these conversations." data-dur="30 min">
-          <div class="mt-icon">⚗️</div>
-          <div class="mt-body"><div class="mt-title">Product Chat</div><div class="mt-desc">Talk craft — discovery, 0-to-1 builds, care nav, analytics</div></div>
-          <span class="mt-duration">30 min</span>
-        </div>
-        <div class="meeting-type" onclick="selectMeeting(this,'Coffee Chat','Informal connection — no agenda required. Networks grow best over curiosity, not transactions.','20 min')" data-title="Coffee Chat" data-desc="Informal connection — no agenda required. Networks grow best over curiosity, not transactions." data-dur="20 min">
-          <div class="mt-icon">☕</div>
-          <div class="mt-body"><div class="mt-title">Coffee Chat</div><div class="mt-desc">Informal connection — no agenda, just curiosity</div></div>
-          <span class="mt-duration">20 min</span>
-        </div>
-        <div class="meeting-type" onclick="selectMeeting(this,'Deep Dive / Interview Prep','Full conversation for active interview processes. Share the JD and we go deeper on fit, background, questions.','45 min')" data-title="Deep Dive / Interview Prep" data-desc="Full conversation for active interview processes. Share the JD and we go deeper on fit, background, questions." data-dur="45 min">
-          <div class="mt-icon">🔬</div>
-          <div class="mt-body"><div class="mt-title">Deep Dive / Interview Prep</div><div class="mt-desc">Active interview process — go deep on fit and questions</div></div>
-          <span class="mt-duration">45 min</span>
-        </div>
-      </div>
-
-      <!-- Context note -->
-      <div style="background:var(--bg2);border:0.5px solid var(--border);border-left:2px solid var(--gold);border-radius:10px;padding:16px 20px;margin-top:4px;">
-        <div style="font-size:10px;color:var(--gold2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;">Currently available</div>
-        <div style="font-size:13px;color:var(--tx2);line-height:1.7;">Active search · Minneapolis, MN · <span style="color:var(--jade2)">Remote-first preferred</span><br>Target: <span style="color:var(--tx)">$120K–$175K</span> · Open to senior PM / Sr. Manager roles in behavioral health, care navigation, and analytics.</div>
-      </div>
+  <div class="book-panel fade-up">
+    <div class="book-panel-top">
+      <div class="avail-dot"></div>
+      <div class="strip-label">book a time</div>
+      <div class="strip-divider"></div>
+      <div class="strip-note">Minneapolis / St. Paul · remote · Central Time</div>
     </div>
-
-    <!-- RIGHT: Calendar widget -->
-    <div class="schedule-right">
-      <div class="schedule-header">
-        <div class="schedule-header-icon">📅</div>
-        <div class="schedule-header-text">
-          <div class="schedule-header-name">Ryan Corcoran</div>
-          <div class="schedule-header-sub" id="sched-type-label">Recruiter / Role Intro · 20 min</div>
-        </div>
-      </div>
-
-      <!-- Calendar -->
-      <div class="cal-wrapper" id="cal-wrapper">
-        <div class="cal-month-nav">
-          <button class="cal-nav-btn" onclick="prevMonth()">‹</button>
-          <div class="cal-month-label" id="cal-month-label"></div>
-          <button class="cal-nav-btn" onclick="nextMonth()">›</button>
-        </div>
-        <div class="cal-days-header">
-          <div class="cal-day-hdr">Su</div><div class="cal-day-hdr">Mo</div><div class="cal-day-hdr">Tu</div>
-          <div class="cal-day-hdr">We</div><div class="cal-day-hdr">Th</div><div class="cal-day-hdr">Fr</div><div class="cal-day-hdr">Sa</div>
-        </div>
-        <div class="cal-days-grid" id="cal-grid"></div>
-      </div>
-
-      <!-- Time slots (shown after selecting a day) -->
-      <div class="time-slots" id="time-slots" style="display:none">
-        <div class="time-slots-label" id="slots-date-label"></div>
-        <div class="slots-grid" id="slots-grid"></div>
-      </div>
-
-      <!-- Confirm panel -->
-      <div class="confirm-panel" id="confirm-panel">
-        <div class="confirm-summary" id="confirm-summary"></div>
-        <div class="confirm-fields">
-          <input class="confirm-input" id="sched-name" placeholder="Your name" type="text">
-          <input class="confirm-input" id="sched-email" placeholder="Email address" type="email">
-          <input class="confirm-input" id="sched-note" placeholder="Brief context (optional — role, company, topic)" type="text">
-        </div>
-        <button class="confirm-btn" id="confirm-btn" onclick="bookMeeting()">
-          <span>Confirm meeting</span><span>→</span>
-        </button>
-      </div>
-
-      <!-- Booked confirmation -->
-      <div class="booked-state" id="booked-state">
-        <div class="booked-icon">✓</div>
-        <div class="booked-title">You're on the calendar.</div>
-        <div class="booked-sub">A confirmation will be sent to your email. Looking forward to the conversation.</div>
-        <div class="booked-detail" id="booked-detail"></div>
-        <button onclick="resetScheduler()" style="margin-top:16px;background:none;border:0.5px solid var(--border2);color:var(--tx3);border-radius:6px;padding:8px 16px;font-size:12px;cursor:pointer;font-family:var(--sans);">Schedule another →</button>
-      </div>
-
-      <div class="cal-note" id="cal-note">Times shown in Central Time (CT) · Minneapolis, MN</div>
+    <div class="book-grid">
+      <a href="https://calendly.com/rcorcoran03/walk-and-talk-mpls-metro" target="_blank" rel="noopener" class="book-card">
+        <div class="bc-icon">🚶</div>
+        <div class="bc-body"><div class="bc-title">Walk &amp; Talk</div><div class="bc-desc">A walking conversation · Mpls / St. Paul metro</div></div>
+        <span class="bc-dur">30 min</span>
+      </a>
+      <a href="https://calendly.com/rcorcoran03/in-person-coffee-mpls-stp" target="_blank" rel="noopener" class="book-card">
+        <div class="bc-icon">☕</div>
+        <div class="bc-body"><div class="bc-title">In-Person Coffee</div><div class="bc-desc">In-person coffee chat · Mpls / St. Paul</div></div>
+        <span class="bc-dur">30 min</span>
+      </a>
+      <a href="https://calendly.com/rcorcoran03/virtual-intro" target="_blank" rel="noopener" class="book-card">
+        <div class="bc-icon">💻</div>
+        <div class="bc-body"><div class="bc-title">Virtual Intro</div><div class="bc-desc">Role overview &amp; search context</div></div>
+        <span class="bc-dur">30 min</span>
+      </a>
+      <a href="https://calendly.com/rcorcoran03/deep-dive" target="_blank" rel="noopener" class="book-card">
+        <div class="bc-icon">🔬</div>
+        <div class="bc-body"><div class="bc-title">Deep Dive</div><div class="bc-desc">Full conversation · virtual or in-person</div></div>
+        <span class="bc-dur">60 min</span>
+      </a>
+      <a href="https://calendly.com/rcorcoran03/chess-chat-cafe-racer-kitchen" target="_blank" rel="noopener" class="book-card">
+        <div class="bc-icon">♟</div>
+        <div class="bc-body"><div class="bc-title">Chess &amp; Chat</div><div class="bc-desc">Chess &amp; conversation · Cafe Racer Kitchen</div></div>
+        <span class="bc-dur">45 min</span>
+      </a>
     </div>
-
+    <div class="book-avail">
+      <div class="book-avail-label">Currently available</div>
+      <div class="book-avail-text">Active search · Minneapolis, MN · <span style="color:var(--jade2)">Hybrid · MSP metro</span><br>Target: <span style="color:var(--tx)">$130K–$175K</span> · Open to senior PM / Sr. Manager roles across digital health (care navigation, behavioral health, analytics) and medical devices (upstream / downstream product).</div>
+    </div>
   </div>
 </section>
 
 <section id="skills">
   <div class="section-eyebrow">skills &amp; domains</div>
   <h2 class="section-title">Where I'm <em>strong.</em></h2>
-  <div class="skills-layout fade-up">
-    <div class="domain-items">
-      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Care navigation &amp; patient access</span><span class="domain-row-pct">95%</span></div><div class="domain-bar-bg"><div class="domain-bar" data-w="95"></div></div></div>
-      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Behavioral &amp; mental health</span><span class="domain-row-pct">92%</span></div><div class="domain-bar-bg"><div class="domain-bar" data-w="92"></div></div></div>
-      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">0→1 digital healthcare products</span><span class="domain-row-pct">88%</span></div><div class="domain-bar-bg"><div class="domain-bar" data-w="88"></div></div></div>
-      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Analytics &amp; data platforms</span><span class="domain-row-pct">85%</span></div><div class="domain-bar-bg"><div class="domain-bar" data-w="85"></div></div></div>
-      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Payer / employer markets</span><span class="domain-row-pct">80%</span></div><div class="domain-bar-bg"><div class="domain-bar" data-w="80"></div></div></div>
-      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">GTM &amp; commercialization</span><span class="domain-row-pct">78%</span></div><div class="domain-bar-bg"><div class="domain-bar rose-bar" data-w="78"></div></div></div>
-      <div class="domain-row"><div class="domain-row-top"><span class="domain-row-name">Medtech &amp; regulated devices</span><span class="domain-row-pct">76%</span></div><div class="domain-bar-bg"><div class="domain-bar rose-bar" data-w="76"></div></div></div>
+  <p class="skills-lead">The domains I build in, and the toolkit I bring to them. The case studies above are the proof — this is the coverage map. Tap a category to focus it.</p>
+
+  <div class="domains-strip fade-up">
+    <span class="domain-chip">Care navigation &amp; patient access</span>
+    <span class="domain-chip">Behavioral &amp; mental health</span>
+    <span class="domain-chip">0→1 digital health products</span>
+    <span class="domain-chip">Analytics &amp; data platforms</span>
+    <span class="domain-chip">Payer / employer markets</span>
+    <span class="domain-chip">GTM &amp; commercialization</span>
+    <span class="domain-chip">Medtech &amp; regulated devices</span>
+  </div>
+
+  <div class="fade-up">
+    <div class="skill-filters">
+      <button class="skill-filter active" data-cat="all" onclick="filterSkills('all',this)">All</button>
+      <button class="skill-filter" data-cat="product" onclick="filterSkills('product',this)">Product craft</button>
+      <button class="skill-filter" data-cat="technical" onclick="filterSkills('technical',this)">Technical</button>
+      <button class="skill-filter" data-cat="domain" onclick="filterSkills('domain',this)">Domain knowledge</button>
+      <button class="skill-filter" data-cat="leadership" onclick="filterSkills('leadership',this)">Leadership</button>
+      <button class="skill-filter" data-cat="medtech" onclick="filterSkills('medtech',this)">Medtech</button>
     </div>
-    <div class="skills-right">
-      <div><div class="skill-cat-label">product craft</div><div class="skill-tags"><span class="skill-tag">Roadmap ownership</span><span class="skill-tag">Discovery &amp; research</span><span class="skill-tag">Backlog prioritization</span><span class="skill-tag">Agile / Jira</span><span class="skill-tag">User stories</span><span class="skill-tag">KPI design</span><span class="skill-tag">Go-to-market</span></div></div>
-      <div><div class="skill-cat-label">technical fluency</div><div class="skill-tags"><span class="skill-tag">Tableau</span><span class="skill-tag">SQL (working)</span><span class="skill-tag">Data warehousing</span><span class="skill-tag">API integrations</span><span class="skill-tag">HIPAA compliance</span><span class="skill-tag">Salesforce CRM</span><span class="skill-tag">Applied AI in product</span></div></div>
-      <div><div class="skill-cat-label">domain knowledge</div><div class="skill-tags"><span class="skill-tag">EAP / care navigation</span><span class="skill-tag">Behavioral health</span><span class="skill-tag">Medicare Advantage</span><span class="skill-tag">Value-based care</span><span class="skill-tag">Cardiac physiology</span><span class="skill-tag">SDOH</span><span class="skill-tag">Payer markets</span></div></div>
-      <div><div class="skill-cat-label">leadership</div><div class="skill-tags"><span class="skill-tag">Cross-functional teams</span><span class="skill-tag">Executive stakeholders</span><span class="skill-tag">Vendor management</span><span class="skill-tag">Storytelling</span><span class="skill-tag">Customer discovery</span></div></div>
-      <div><div class="skill-cat-label">medtech &amp; devices</div><div class="skill-tags"><span class="skill-tag">Design controls</span><span class="skill-tag">510(k) familiarity</span><span class="skill-tag">Clinical/commercial handoff</span><span class="skill-tag">Upstream voice of customer</span><span class="skill-tag">Risk management</span></div></div>
+    <div class="skill-cloud" id="skill-cloud">
+      <span class="skill-chip" data-cat="product">Roadmap ownership</span>
+      <span class="skill-chip" data-cat="domain">EAP / care navigation</span>
+      <span class="skill-chip" data-cat="technical">Tableau</span>
+      <span class="skill-chip" data-cat="leadership">Cross-functional teams</span>
+      <span class="skill-chip" data-cat="medtech">Design controls</span>
+      <span class="skill-chip" data-cat="product">Discovery &amp; research</span>
+      <span class="skill-chip" data-cat="technical">Applied AI in product</span>
+      <span class="skill-chip" data-cat="domain">Cardiac physiology</span>
+      <span class="skill-chip" data-cat="leadership">Storytelling</span>
+      <span class="skill-chip" data-cat="medtech">510(k) familiarity</span>
+      <span class="skill-chip" data-cat="technical">SQL (working)</span>
+      <span class="skill-chip" data-cat="product">KPI design</span>
+      <span class="skill-chip" data-cat="domain">Value-based care</span>
+      <span class="skill-chip" data-cat="medtech">Clinical / commercial handoff</span>
+      <span class="skill-chip" data-cat="leadership">Executive stakeholders</span>
+      <span class="skill-chip" data-cat="technical">HIPAA compliance</span>
+      <span class="skill-chip" data-cat="product">Backlog prioritization</span>
+      <span class="skill-chip" data-cat="domain">Medicare Advantage</span>
+      <span class="skill-chip" data-cat="medtech">Upstream voice of customer</span>
+      <span class="skill-chip" data-cat="technical">API integrations</span>
+      <span class="skill-chip" data-cat="leadership">Customer discovery</span>
+      <span class="skill-chip" data-cat="product">Go-to-market</span>
+      <span class="skill-chip" data-cat="domain">SDOH</span>
+      <span class="skill-chip" data-cat="technical">Data warehousing</span>
+      <span class="skill-chip" data-cat="medtech">Risk management</span>
+      <span class="skill-chip" data-cat="product">Agile / Jira</span>
+      <span class="skill-chip" data-cat="leadership">Vendor management</span>
+      <span class="skill-chip" data-cat="domain">Behavioral health</span>
+      <span class="skill-chip" data-cat="technical">Salesforce CRM</span>
+      <span class="skill-chip" data-cat="product">User stories</span>
+      <span class="skill-chip" data-cat="domain">Payer markets</span>
     </div>
   </div>
 </section>
@@ -738,9 +714,8 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   <div class="contact-grid fade-up">
     <div class="contact-links">
       <a href="mailto:rcorcoran03@gmail.com" class="contact-link-row"><span class="contact-link-icon">✉</span><span class="contact-link-label">Email</span><span class="contact-link-val">rcorcoran03@gmail.com</span></a>
-      <a href="https://linkedin.com/in/ryancorcoran1" target="_blank" class="contact-link-row"><span class="contact-link-icon">in</span><span class="contact-link-label">LinkedIn</span><span class="contact-link-val">linkedin.com/in/ryancorcoran1</span></a>
-      <a href="#" class="contact-link-row"><span class="contact-link-icon">↓</span><span class="contact-link-label">Resume</span><span class="contact-link-val">download PDF</span></a>
-      <div class="contact-link-row" style="cursor:default"><span class="contact-link-icon">◎</span><span class="contact-link-label">Location</span><span class="contact-link-val">Minneapolis, MN · remote ok</span></div>
+      <a href="https://linkedin.com/in/ryancorcoran1" target="_blank" class="contact-link-row"><span class="contact-link-icon">in</span><span class="contact-link-label">LinkedIn</span><span class="contact-link-val">/in/ryancorcoran1</span></a>
+      <div class="contact-link-row" style="cursor:default"><span class="contact-link-icon">◎</span><span class="contact-link-label">Location</span><span class="contact-link-val">Minneapolis · hybrid</span></div>
     </div>
     <p class="contact-note">"I'm drawn to teams building at the intersection of <strong>clinical complexity and consumer experience</strong>, where the stakes are real and the product craft has to match."</p>
   </div>
@@ -820,167 +795,6 @@ ${jd}`;
   btn.disabled=false;
 }
 
-
-// ── SCHEDULING WIDGET ────────────────────────────────────────────────────────
-
-const AVAILABLE_DAYS = [1,2,3,4]; // Mon–Thu (0=Sun)
-const TIMES_SHORT = ['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM'];
-const TIMES_LONG  = ['10:00 AM','11:00 AM','2:00 PM','3:00 PM'];
-
-let schedState = {
-  today: new Date(),
-  month: new Date().getMonth(),
-  year: new Date().getFullYear(),
-  selectedDay: null,
-  selectedTime: null,
-  meetingTitle: 'Recruiter / Role Intro',
-  meetingDesc: 'A quick intro call — learn about the role, I\'ll share where I am in the search.',
-  meetingDur: '20 min'
-};
-
-function selectMeeting(el, title, desc, dur) {
-  document.querySelectorAll('.meeting-type').forEach(m => m.classList.remove('selected'));
-  el.classList.add('selected');
-  schedState.meetingTitle = title;
-  schedState.meetingDesc = desc;
-  schedState.meetingDur = dur;
-  document.getElementById('sched-type-label').textContent = title + ' · ' + dur;
-  resetDaySelection();
-}
-
-function renderCalendar() {
-  const mn = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  document.getElementById('cal-month-label').textContent = mn[schedState.month] + ' ' + schedState.year;
-  const grid = document.getElementById('cal-grid');
-  grid.innerHTML = '';
-  const first = new Date(schedState.year, schedState.month, 1).getDay();
-  const days = new Date(schedState.year, schedState.month+1, 0).getDate();
-  const now = schedState.today;
-
-  for(let i = 0; i < first; i++) {
-    const d = document.createElement('div');
-    d.className = 'cal-day';
-    grid.appendChild(d);
-  }
-  for(let d = 1; d <= days; d++) {
-    const cell = document.createElement('div');
-    const date = new Date(schedState.year, schedState.month, d);
-    const dow = date.getDay();
-    const isPast = date < new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const isToday = d === now.getDate() && schedState.month === now.getMonth() && schedState.year === now.getFullYear();
-    const isAvail = AVAILABLE_DAYS.includes(dow) && !isPast;
-    const isSel = schedState.selectedDay === d && schedState.month === now.getMonth() && schedState.year === now.getFullYear();
-
-    cell.className = 'cal-day in-month' + (isPast ? ' past' : '') + (isAvail ? ' available' : '') + (isToday ? ' today' : '') + (isSel ? ' selected-day' : '');
-    cell.textContent = d;
-    if(isAvail) cell.onclick = () => selectDay(d, date);
-    grid.appendChild(cell);
-  }
-}
-
-function selectDay(d, date) {
-  schedState.selectedDay = d;
-  document.querySelectorAll('.cal-day.selected-day').forEach(c => c.classList.remove('selected-day'));
-  event.target.classList.add('selected-day');
-  schedState.selectedTime = null;
-
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const label = days[date.getDay()] + ', ' + months[date.getMonth()] + ' ' + d;
-
-  const slotsDiv = document.getElementById('time-slots');
-  const slotLabel = document.getElementById('slots-date-label');
-  const slotGrid = document.getElementById('slots-grid');
-  const confirmPanel = document.getElementById('confirm-panel');
-  const bookedState = document.getElementById('booked-state');
-
-  slotLabel.textContent = label;
-  const times = schedState.meetingDur === '45 min' ? TIMES_LONG : TIMES_SHORT;
-  slotGrid.innerHTML = times.map(t =>
-    `<button class="slot-btn" onclick="selectTime(this,'${t}','${label}')">${t}</button>`
-  ).join('');
-
-  slotsDiv.style.display = 'block';
-  confirmPanel.classList.remove('visible');
-  bookedState.classList.remove('visible');
-}
-
-function selectTime(btn, time, dateLabel) {
-  document.querySelectorAll('.slot-btn.selected-slot').forEach(b => b.classList.remove('selected-slot'));
-  btn.classList.add('selected-slot');
-  schedState.selectedTime = time;
-
-  const panel = document.getElementById('confirm-panel');
-  const summary = document.getElementById('confirm-summary');
-  summary.innerHTML = `<strong>${schedState.meetingTitle}</strong><br>${dateLabel} at ${time} CT · ${schedState.meetingDur}<br><span style="font-size:12px;color:var(--tx3)">Google Meet link will be sent to your email</span>`;
-  panel.classList.add('visible');
-  document.getElementById('cal-note').style.display = 'none';
-}
-
-function resetDaySelection() {
-  schedState.selectedDay = null;
-  schedState.selectedTime = null;
-  document.getElementById('time-slots').style.display = 'none';
-  document.getElementById('confirm-panel').classList.remove('visible');
-  document.getElementById('booked-state').classList.remove('visible');
-  document.getElementById('cal-note').style.display = 'block';
-  renderCalendar();
-}
-
-async function bookMeeting() {
-  const name = document.getElementById('sched-name').value.trim();
-  const email = document.getElementById('sched-email').value.trim();
-  if(!name || !email) {
-    document.getElementById('sched-name').style.borderColor = name ? '' : 'var(--rose)';
-    document.getElementById('sched-email').style.borderColor = email ? '' : 'var(--rose)';
-    return;
-  }
-  const btn = document.getElementById('confirm-btn');
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spin">↻</span> Confirming…';
-
-  // Simulate booking (replace with real calendar API / Calendly embed)
-  await new Promise(r => setTimeout(r, 1400));
-
-  document.getElementById('confirm-panel').classList.remove('visible');
-  document.getElementById('time-slots').style.display = 'none';
-  document.getElementById('cal-note').style.display = 'none';
-  document.getElementById('cal-wrapper').style.display = 'none';
-
-  const booked = document.getElementById('booked-state');
-  const detail = document.getElementById('booked-detail');
-  const note = document.getElementById('sched-note').value.trim();
-  detail.innerHTML = `📅 ${schedState.meetingTitle}<br>⏱ ${schedState.meetingDur}<br>👤 ${name} · ${email}` + (note ? `<br>💬 "${note}"` : '');
-  booked.classList.add('visible');
-  btn.disabled = false;
-  btn.innerHTML = '<span>Confirm meeting</span><span>→</span>';
-}
-
-function resetScheduler() {
-  document.getElementById('sched-name').value = '';
-  document.getElementById('sched-email').value = '';
-  document.getElementById('sched-note').value = '';
-  document.getElementById('booked-state').classList.remove('visible');
-  document.getElementById('cal-wrapper').style.display = 'block';
-  document.getElementById('cal-note').style.display = 'block';
-  resetDaySelection();
-}
-
-function prevMonth() {
-  if(schedState.month === 0) { schedState.month = 11; schedState.year--; }
-  else schedState.month--;
-  resetDaySelection();
-}
-function nextMonth() {
-  if(schedState.month === 11) { schedState.month = 0; schedState.year++; }
-  else schedState.month++;
-  resetDaySelection();
-}
-
-renderCalendar();
-
-// ── END SCHEDULING ────────────────────────────────────────────────────────────
-
 function toggleCase(card){
   const wasOpen=card.classList.contains('open');
   document.querySelectorAll('.case-card.open').forEach(c=>c.classList.remove('open'));
@@ -990,9 +804,24 @@ function toggleCase(card){
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:0.1});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
-const barObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.domain-bar').forEach(b=>{b.style.width=b.dataset.w+'%';});barObs.disconnect();}});},{threshold:0.3});
-const skillSec=document.getElementById('skills');
-if(skillSec)barObs.observe(skillSec);
+function filterSkills(cat, btn){
+  document.querySelectorAll('.skill-filter').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  let k = 0;
+  document.querySelectorAll('.skill-chip').forEach(chip=>{
+    const match = cat==='all' || chip.dataset.cat===cat;
+    chip.classList.remove('dim','lit');
+    if(cat==='all'){
+      chip.style.transitionDelay = (k++ % 12 * 0.018) + 's';
+    } else if(match){
+      chip.classList.add('lit');
+      chip.style.transitionDelay = (k++ % 12 * 0.03) + 's';
+    } else {
+      chip.classList.add('dim');
+      chip.style.transitionDelay = '0s';
+    }
+  });
+}
 
 setTimeout(()=>{document.querySelectorAll('.fade-up').forEach((el,i)=>{setTimeout(()=>el.classList.add('in'),i*120);});},100);
 </script>
