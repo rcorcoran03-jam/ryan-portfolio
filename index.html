@@ -245,15 +245,28 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 .jq-preview-eyebrow::before,.jq-preview-eyebrow::after{content:'';flex:1;height:1px;background:var(--border2);}
 .preview-cols{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px;scrollbar-width:none;}
 .preview-cols::-webkit-scrollbar{display:none;}
-@media(min-width:900px){.preview-cols{overflow-x:visible;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}}
+@media(min-width:900px){.preview-cols{overflow-x:visible;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;}}
 .preview-col{flex:0 0 280px;scroll-snap-align:start;position:relative;border-radius:12px;overflow:hidden;border:0.5px solid var(--border2);box-shadow:0 12px 40px rgba(0,0,0,.4);background:var(--bg2);}
 @media(min-width:900px){.preview-col{flex:unset;min-width:0;}}
 .col-inner{filter:blur(2.5px);pointer-events:none;user-select:none;}
 .col-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,27,45,.05) 0%,rgba(15,27,45,.12) 60%,rgba(15,27,45,.5) 100%);pointer-events:none;z-index:2;}
 .col-shimmer{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;border-radius:12px;}
 .col-shimmer::after{content:'';position:absolute;top:-100%;left:-60%;width:30%;height:300%;background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.055) 50%,transparent 80%);animation:jq-shimmer 3.5s ease-in-out infinite;}
-.preview-col:nth-child(2) .col-shimmer::after{animation-delay:.8s;}
-.preview-col:nth-child(3) .col-shimmer::after{animation-delay:1.6s;}
+.preview-col:nth-child(3) .col-shimmer::after{animation-delay:.8s;}
+.preview-col:nth-child(4) .col-shimmer::after{animation-delay:1.6s;}
+.preview-col-launch{flex:0 0 220px;scroll-snap-align:start;position:relative;border-radius:12px;overflow:visible;border:none;box-shadow:0 12px 40px rgba(0,0,0,.4);background:var(--bg2);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;gap:0;cursor:pointer;text-decoration:none;transition:box-shadow .25s;}
+.preview-col-launch::before{content:'';position:absolute;inset:-1px;border-radius:13px;background:conic-gradient(from -90deg at 50% 50%,rgba(184,212,232,.75) 0deg,rgba(196,132,143,.65) 60deg,rgba(107,163,200,.45) 120deg,rgba(107,163,200,.38) 180deg,rgba(107,163,200,.45) 240deg,rgba(196,132,143,.65) 300deg,rgba(184,212,232,.75) 360deg);z-index:-1;pointer-events:none;transition:filter .25s;}
+.preview-col-launch::after{content:'';position:absolute;inset:0px;border-radius:12px;background:var(--bg2);z-index:-1;pointer-events:none;}
+.preview-col-launch:hover{box-shadow:0 12px 40px rgba(0,0,0,.5);}
+.preview-col-launch:hover::before{filter:brightness(1.3);}
+@media(min-width:900px){.preview-col-launch{flex:unset;min-width:0;}}
+.launch-star{color:var(--jade2);margin-bottom:18px;transition:transform .5s ease;}
+.preview-col-launch:hover .launch-star{transform:rotate(72deg);}
+.launch-wordmark{font-family:var(--serif);font-size:22px;color:var(--tx);letter-spacing:-.01em;margin-bottom:4px;position:relative;z-index:1;}
+.launch-tagline{font-size:9px;color:var(--rose);letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px;opacity:.9;position:relative;z-index:1;}
+.launch-cta-pill{background:var(--gold);color:#1A1200;border:none;border-radius:8px;font-size:11px;font-family:var(--sans);letter-spacing:.06em;padding:10px 18px;font-weight:600;position:relative;z-index:1;transition:background .2s;white-space:nowrap;}
+.preview-col-launch:hover .launch-cta-pill{background:var(--gold2);color:#1A1200;}
+.launch-access-note{font-size:9px;color:var(--tx3);letter-spacing:.04em;margin-top:10px;text-align:center;line-height:1.5;position:relative;z-index:1;font-style:italic;}
 @keyframes jq-shimmer{0%{left:-60%;top:-100%}100%{left:120%;top:100%}}
 .col-label{position:absolute;bottom:0;left:0;right:0;z-index:4;padding:14px 14px 12px;background:linear-gradient(0deg,rgba(10,20,35,.92) 60%,transparent);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
 .col-label-eyebrow{font-size:9px;color:var(--tx3);letter-spacing:.08em;margin-bottom:2px;font-weight:400;}
@@ -364,7 +377,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   <div class="hero-left fade-up">
     <div class="hero-eyebrow">open to new roles · minneapolis, mn</div>
     <h1 class="hero-headline">Products with a pulse.<br><em>Ready for the next one.</em></h1>
-    <p class="hero-sub">Senior product leader who came up through biomedical science and now builds 0&rarr;1 digital health products. Clinical grounding and execution that ships. When I couldn't find a job-search tool that kept up, I built one. It's right below.</p>
+    <p class="hero-sub">Senior product leader who came up through biomedical science and now builds 0&rarr;1 digital health products. I care about the work staying close to the patient. When I couldn't find a job-search tool that kept up with how I actually operate, I built one myself. It's right below.</p>
     <div class="hero-tags">
       <span class="htag muted">Care navigation</span>
       <span class="htag muted">Behavioral health</span>
@@ -459,6 +472,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
           <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Unite Us</span>
           <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Reema Health</span>
+          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Oasis Health</span>
         </div>
         <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
         <div style="display:flex;flex-wrap:wrap;gap:6px;">
@@ -562,6 +576,15 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   <div class="jq-preview-wrap fade-up">
     <div class="jq-preview-eyebrow">live tool preview</div>
     <div class="preview-cols">
+
+      <!-- Col 0: Launch Panel -->
+      <a href="https://jobs.ryan-corcoran.com/access.html" target="_blank" class="preview-col-launch">
+        <svg class="launch-star" width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><polygon points="16,2 18.2,10.5 26,7.5 21.5,14.5 30,16 21.5,17.5 26,24.5 18.2,21.5 16,30 13.8,21.5 6,24.5 10.5,17.5 2,16 10.5,14.5 6,7.5 13.8,10.5" fill="currentColor"/></svg>
+        <div class="launch-wordmark">JobQuest HQ</div>
+        <div class="launch-tagline">Job Search OS</div>
+        <div class="launch-cta-pill">Launch ↗</div>
+        <div class="launch-access-note">Guest access available —<br>no login required</div>
+      </a>
 
       <!-- Col 1: HQ Command -->
       <div class="preview-col">
@@ -709,14 +732,6 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <div class="jq-swipe-hint">swipe to explore</div>
   </div>
 
-  <!-- CTA row -->
-  <div style="margin-top:32px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;" class="fade-up">
-    <a href="https://jobs.ryan-corcoran.com/access.html" target="_blank" class="btn btn-jobquest">
-      <svg class="mn-star" width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12,1 13.07,9.4 16.6,7.4 14.6,10.9 23,12 14.6,13.07 16.6,16.6 13.07,14.6 12,23 10.93,14.6 7.4,16.6 9.4,13.07 1,12 9.4,10.93 7.4,7.4 10.93,9.4" fill="currentColor"/></svg>
-      view live tool ↗
-    </a>
-    <span style="font-size:12px;color:var(--tx3);">Password protected — ask me for access during a conversation.</span>
-  </div>
 </section>
 
 <section id="work">
