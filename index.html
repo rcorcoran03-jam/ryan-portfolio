@@ -238,6 +238,93 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 .book-avail-label{font-size:10px;color:var(--teal2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
 .book-avail-text{font-size:13px;color:var(--tx2);line-height:1.7;}
 /* ── END SCHEDULE ────────────────────────────────────────── */
+
+/* ── JQ PREVIEW STRIP (access.html style) ───────────────── */
+.jq-preview-wrap{margin-top:44px;}
+.jq-preview-eyebrow{font-size:9px;color:var(--tx3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.jq-preview-eyebrow::before,.jq-preview-eyebrow::after{content:'';flex:1;height:1px;background:var(--border2);}
+.preview-cols{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px;scrollbar-width:none;}
+.preview-cols::-webkit-scrollbar{display:none;}
+@media(min-width:900px){.preview-cols{overflow-x:visible;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}}
+.preview-col{flex:0 0 280px;scroll-snap-align:start;position:relative;border-radius:12px;overflow:hidden;border:0.5px solid var(--border2);box-shadow:0 12px 40px rgba(0,0,0,.4);background:var(--bg2);}
+@media(min-width:900px){.preview-col{flex:unset;min-width:0;}}
+.col-inner{filter:blur(2.5px);pointer-events:none;user-select:none;}
+.col-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,27,45,.05) 0%,rgba(15,27,45,.12) 60%,rgba(15,27,45,.5) 100%);pointer-events:none;z-index:2;}
+.col-shimmer{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;border-radius:12px;}
+.col-shimmer::after{content:'';position:absolute;top:-100%;left:-60%;width:30%;height:300%;background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.055) 50%,transparent 80%);animation:jq-shimmer 3.5s ease-in-out infinite;}
+.preview-col:nth-child(2) .col-shimmer::after{animation-delay:.8s;}
+.preview-col:nth-child(3) .col-shimmer::after{animation-delay:1.6s;}
+@keyframes jq-shimmer{0%{left:-60%;top:-100%}100%{left:120%;top:100%}}
+.col-label{position:absolute;bottom:0;left:0;right:0;z-index:4;padding:14px 14px 12px;background:linear-gradient(0deg,rgba(10,20,35,.92) 60%,transparent);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+.col-label-eyebrow{font-size:9px;color:var(--tx3);letter-spacing:.08em;margin-bottom:2px;font-weight:400;}
+.jq-swipe-hint{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:14px;font-size:10px;color:var(--tx3);letter-spacing:.06em;}
+@media(min-width:900px){.jq-swipe-hint{display:none;}}
+/* Shared mini mockup styles */
+.m-nav{background:#0D1E30;height:38px;display:flex;align-items:center;padding:0 14px;gap:10px;border-bottom:1px solid rgba(255,255,255,.07);}
+.m-brand{font-family:var(--serif);font-size:12px;color:var(--tx);}
+.m-tabs{display:flex;gap:1px;margin-left:auto;}
+.m-tab{font-size:8px;padding:3px 8px;border-radius:3px 3px 0 0;color:rgba(244,192,209,.35);border:none;background:transparent;}
+.m-tab.on{color:var(--rose2);background:rgba(244,192,209,.07);border:1px solid rgba(244,192,209,.25);border-bottom:1.5px solid var(--rose);}
+.m-body{background:#1A2E40;padding:14px;}
+.m-eyebrow{font-size:8px;color:var(--rose2);letter-spacing:.09em;text-transform:uppercase;margin-bottom:4px;display:flex;align-items:center;gap:6px;}
+.m-eyebrow::before{content:'';display:inline-block;width:10px;height:1px;background:var(--rose);}
+.m-h1{font-family:var(--serif);font-size:17px;color:var(--tx);margin-bottom:2px;}
+.m-sub{font-family:var(--serif);font-size:9px;font-style:italic;color:var(--jade2);margin-bottom:8px;}
+.m-bar{width:16px;height:1.5px;background:var(--rose);border-radius:1px;margin-bottom:12px;}
+.m-kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(8,18,30,.7);border:0.5px solid rgba(91,160,210,.1);border-radius:6px;margin-bottom:10px;overflow:hidden;}
+.m-kpi{padding:7px 4px;text-align:center;border-right:1px solid rgba(255,255,255,.04);}
+.m-kpi:last-child{border-right:none;}
+.m-kpi-num{font-size:14px;font-weight:700;line-height:1;font-family:'DM Sans',system-ui,sans-serif;}
+.m-kpi-label{font-size:7px;color:var(--tx3);margin-top:2px;letter-spacing:.04em;}
+.m-cards{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:8px;}
+.m-card{background:#1A2B3C;border-radius:6px;padding:9px;border:0.5px solid rgba(255,255,255,.07);}
+.m-card-ht{border-top:1.5px solid var(--rose);}
+.m-card-mt{border-top:1.5px solid var(--teal);}
+.m-card-title{font-size:10px;font-weight:600;color:var(--tx);margin-bottom:2px;}
+.m-card-sub{font-size:7.5px;color:var(--tx3);margin-bottom:6px;}
+.m-card-sect{font-size:7.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;margin-bottom:4px;display:flex;justify-content:space-between;}
+.m-card-sect.rose{color:var(--rose2);}
+.m-card-sect.teal{color:var(--teal2);}
+.m-ent-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5px;margin-bottom:6px;}
+.m-ent-btn{font-size:7px;padding:2px 4px;text-align:center;border-radius:2px;border:0.5px solid rgba(196,132,143,.2);color:var(--rose2);background:rgba(196,132,143,.08);}
+.m-ent-btn.teal{border-color:rgba(42,181,160,.2);color:var(--teal2);background:rgba(42,181,160,.08);}
+.m-jd-bar{background:rgba(201,138,14,.07);border-top:1.5px solid var(--gold);padding:9px 14px;display:flex;align-items:center;gap:8px;}
+.m-jd-label{font-size:9px;color:var(--gold2);font-weight:600;white-space:nowrap;}
+.m-jd-input{flex:1;background:rgba(201,138,14,.05);border:0.5px solid rgba(201,138,14,.2);border-radius:4px;height:22px;}
+.m-jd-btn{background:var(--gold);color:#fff;border:none;border-radius:3px;padding:4px 10px;font-size:8px;font-weight:600;white-space:nowrap;}
+.m-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:9px;}
+.m-stat{background:rgba(255,255,255,.03);border:0.5px solid rgba(255,255,255,.08);border-radius:5px;padding:7px 5px;text-align:center;}
+.m-stat-num{font-family:var(--serif);font-size:15px;line-height:1;margin-bottom:1px;}
+.m-stat-label{font-size:7px;color:var(--tx3);letter-spacing:.03em;}
+.m-stage-row{display:flex;gap:3px;margin-bottom:8px;flex-wrap:wrap;}
+.m-stage{font-size:7.5px;padding:2px 6px;border-radius:8px;background:rgba(255,255,255,.04);border:0.5px solid rgba(255,255,255,.1);color:var(--tx3);}
+.m-stage.on{background:rgba(196,132,143,.1);border-color:rgba(196,132,143,.25);color:var(--rose2);}
+.m-app{background:#1A2B3C;border-radius:5px;padding:8px 10px;margin-bottom:5px;border-left:2.5px solid var(--rose);display:flex;gap:8px;align-items:center;}
+.m-app.blue{border-left-color:var(--jade);}
+.m-app.amber{border-left-color:var(--gold);}
+.m-app.teal{border-left-color:var(--teal);}
+.m-app-co{font-size:10px;font-weight:600;color:var(--tx);}
+.m-app-role{font-size:8px;color:var(--tx2);margin-top:1px;}
+.m-badge{display:inline-block;font-size:7px;padding:1.5px 5px;border-radius:6px;font-weight:500;}
+.m-badge.rose{background:rgba(196,132,143,.1);color:var(--rose2);border:0.5px solid rgba(196,132,143,.22);}
+.m-badge.blue{background:rgba(107,163,200,.1);color:var(--jade2);border:0.5px solid rgba(107,163,200,.22);}
+.m-badge.amber{background:rgba(201,138,14,.1);color:var(--gold2);border:0.5px solid rgba(201,138,14,.22);}
+.m-badge.teal{background:rgba(42,181,160,.09);color:var(--teal2);border:0.5px solid rgba(42,181,160,.22);}
+.m-fit{font-size:10px;color:var(--jade2);font-family:var(--serif);margin-left:auto;flex-shrink:0;}
+.m-heat-row{display:flex;gap:5px;margin-bottom:9px;}
+.m-heat{flex:1;border-radius:5px;padding:7px 5px;text-align:center;}
+.m-heat.sky{background:rgba(107,163,200,.08);border:0.5px solid rgba(107,163,200,.18);}
+.m-heat.teal{background:rgba(42,181,160,.07);border:0.5px solid rgba(42,181,160,.16);}
+.m-heat.amber{background:rgba(201,138,14,.07);border:0.5px solid rgba(201,138,14,.16);}
+.m-heat.cold{background:rgba(255,255,255,.03);border:0.5px solid rgba(255,255,255,.08);}
+.m-heat-num{font-family:var(--serif);font-size:15px;line-height:1;margin-bottom:1px;}
+.m-heat-label{font-size:7px;color:var(--tx3);letter-spacing:.03em;}
+.m-contact{background:#1A2B3C;border-radius:5px;padding:8px 10px;margin-bottom:5px;border-left:2.5px solid;display:grid;grid-template-columns:1fr 70px;gap:6px;align-items:center;}
+.m-con-name{font-size:10px;font-weight:600;color:var(--tx);margin-bottom:2px;}
+.m-con-role{font-size:8px;color:var(--tx2);}
+.m-con-date{text-align:right;font-size:8px;color:var(--tx3);}
+.m-con-chip{font-size:7px;padding:2px 5px;border-radius:5px;display:inline-block;margin-top:3px;}
+/* ── END JQ PREVIEW STRIP ────────────────────────────────── */
 @media(max-width:768px){
   .book-grid{grid-template-columns:1fr;}
   .book-panel{padding:16px 16px 16px 20px;}
@@ -281,7 +368,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <div class="hero-tags">
       <span class="htag muted">Care navigation</span>
       <span class="htag muted">Behavioral health</span>
-      <span class="htag muted">Medtech</span>
+      <span class="htag muted">MedTech</span>
     </div>
     <div class="hero-cta">
       <div class="btn-jq-wrap">
@@ -365,7 +452,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="seeking-grid">
       <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
-        <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">Health Tech</div>
+        <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">HealthTech</div>
         <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Digital Health &amp; Care Navigation</div>
         <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Senior PM and product leadership roles where the product directly shapes how people access and experience care. Navigation platforms, behavioral health tools, analytics, and 0-to-1 builds in regulated environments.</p>
         <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
@@ -380,7 +467,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
         </div>
       </div>
       <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
-        <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">Medtech</div>
+        <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">MedTech</div>
         <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Medical Devices &amp; Commercialization</div>
         <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Upstream and downstream PM roles where clinical depth and product craft meet. Device commercialization, clinical evidence, and product strategy in regulated environments &mdash; backed by a biomedical sciences foundation and cardiac research at the UMN Visible Heart Lab.</p>
         <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
@@ -407,7 +494,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <p style="margin-bottom:20px">Started in the <strong class="gold">Visible Heart Lab</strong> at the University of Minnesota, studying cardiac physiology and biomedical engineering at the device level. That foundation of understanding how complex systems fail, adapt, and heal has shaped how I think about product ever since.</p>
       <p style="margin-bottom:20px">Spent nearly a decade in consultative sales and training, then video and brand storytelling, learning that the hardest part of any complex idea is making it land for someone who doesn't already care. That skill travels.</p>
       <p style="margin-bottom:20px">Went back for a <strong class="gold">MBA in Medical Industry Leadership</strong> at Carlson, then joined the <strong>UMN Technology Commercialization office</strong> helping researchers cross the gap between a working idea and a real product: market fit, regulatory strategy, financial models. Moved into product full-time at <strong>Claros Technologies</strong>, building commercialization strategy around remediation technology for PFAS Forever Chemicals, then into digital access to behavioral healthcare at <strong>Aetna/CVS</strong>.</p>
-      <p style="margin-bottom:20px">I've embraced AI as a genuine force multiplier in discovery, synthesis, and delivery. Built the tools in this portfolio using Claude. The transformation is real and I'm leaning in, not waiting.</p>
+      <p style="margin-bottom:20px">AI has become a genuine force multiplier in how I work — discovery, synthesis, delivery. Every tool in this portfolio was built with Claude, and the productivity shift is real enough that I'm applying it to the search itself, not just the work.</p>
       <p>Now: senior product leader building <strong class="plain">platforms that help people navigate the hardest moments in health</strong>, where the stakes are real and the product craft has to match.</p>
     </div>
     <div class="timeline">
@@ -469,6 +556,157 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <p style="font-size:14px;color:var(--tx2);line-height:1.7;">Curated Healthtech and Medtech job board cards with enterprise search integrations, saved queries, and a built-in focus timer for deep-work search sessions.</p>
     </div>
 
+  </div>
+
+  <!-- JobQuest Preview Strip -->
+  <div class="jq-preview-wrap fade-up">
+    <div class="jq-preview-eyebrow">live tool preview</div>
+    <div class="preview-cols">
+
+      <!-- Col 1: HQ Command -->
+      <div class="preview-col">
+        <div class="col-inner">
+          <div class="m-nav">
+            <svg width="12" height="12" viewBox="0 0 32 32"><polygon points="16,2 18.2,10.5 26,7.5 21.5,14.5 30,16 21.5,17.5 26,24.5 18.2,21.5 16,30 13.8,21.5 6,24.5 10.5,17.5 2,16 10.5,14.5 6,7.5 13.8,10.5" fill="#6BA3C8"/></svg>
+            <div class="m-brand">JobQuest</div>
+            <div class="m-tabs"><button class="m-tab on">HQ</button><button class="m-tab">Apps</button><button class="m-tab">Net</button></div>
+          </div>
+          <div class="m-body">
+            <div class="m-eyebrow">Job Search HQ</div>
+            <div class="m-h1">HQ Command</div>
+            <div class="m-sub">Ryan Corcoran · Sr PM / Director · MedTech + Digital Health</div>
+            <div class="m-bar"></div>
+            <div class="m-kpi-strip">
+              <div class="m-kpi"><div class="m-kpi-num" style="color:var(--jade2)">44</div><div class="m-kpi-label">active</div></div>
+              <div class="m-kpi"><div class="m-kpi-num" style="color:var(--gold2)">33</div><div class="m-kpi-label">network</div></div>
+              <div class="m-kpi"><div class="m-kpi-num" style="color:var(--teal2)">222</div><div class="m-kpi-label">tracked</div></div>
+              <div class="m-kpi"><div class="m-kpi-num" style="color:var(--rose2)">8.4</div><div class="m-kpi-label">avg fit</div></div>
+            </div>
+            <div class="m-cards">
+              <div class="m-card m-card-ht">
+                <div class="m-card-title">HealthTech</div>
+                <div class="m-card-sub">Digital health, SDOH, care nav</div>
+                <div class="m-card-sect rose"><span>Enterprise</span></div>
+                <div class="m-ent-grid">
+                  <div class="m-ent-btn">Unite Us ↗</div><div class="m-ent-btn">Optum ↗</div>
+                  <div class="m-ent-btn">Aetna ↗</div><div class="m-ent-btn">Humana ↗</div>
+                </div>
+              </div>
+              <div class="m-card m-card-mt">
+                <div class="m-card-title">MedTech</div>
+                <div class="m-card-sub">Upstream / downstream PM</div>
+                <div class="m-card-sect teal"><span>Enterprise</span></div>
+                <div class="m-ent-grid">
+                  <div class="m-ent-btn teal">Medtronic ↗</div><div class="m-ent-btn teal">BSC ↗</div>
+                  <div class="m-ent-btn teal">Philips ↗</div><div class="m-ent-btn teal">Stryker ↗</div>
+                </div>
+              </div>
+            </div>
+            <div class="m-jd-bar">
+              <div class="m-jd-label">✦ Analyze JD:</div>
+              <div class="m-jd-input"></div>
+              <div class="m-jd-btn">⚡ Analyze</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-overlay"></div>
+        <div class="col-shimmer"></div>
+        <div class="col-label">
+          <div class="col-label-eyebrow">Job Board + Command Center</div>
+          <div style="color:var(--jade2)">HQ Dashboard</div>
+        </div>
+      </div>
+
+      <!-- Col 2: Pipeline -->
+      <div class="preview-col">
+        <div class="col-inner">
+          <div class="m-nav">
+            <svg width="12" height="12" viewBox="0 0 32 32"><polygon points="16,2 18.2,10.5 26,7.5 21.5,14.5 30,16 21.5,17.5 26,24.5 18.2,21.5 16,30 13.8,21.5 6,24.5 10.5,17.5 2,16 10.5,14.5 6,7.5 13.8,10.5" fill="#6BA3C8"/></svg>
+            <div class="m-brand">JobQuest</div>
+            <div class="m-tabs"><button class="m-tab">HQ</button><button class="m-tab on">Apps</button><button class="m-tab">Net</button></div>
+          </div>
+          <div class="m-body">
+            <div class="m-eyebrow">Applications</div>
+            <div class="m-h1">Pipeline</div>
+            <div class="m-sub">AI fit scoring · stage tracking · red flags</div>
+            <div class="m-bar"></div>
+            <div class="m-stat-row">
+              <div class="m-stat"><div class="m-stat-num" style="color:var(--teal2)">44</div><div class="m-stat-label">active</div></div>
+              <div class="m-stat"><div class="m-stat-num" style="color:var(--gold2)">88</div><div class="m-stat-label">applied</div></div>
+              <div class="m-stat"><div class="m-stat-num" style="color:var(--rose2)">22</div><div class="m-stat-label">app queue</div></div>
+            </div>
+            <div class="m-stage-row">
+              <div class="m-stage on">All</div><div class="m-stage">Saved</div><div class="m-stage">Applied</div><div class="m-stage">Interview</div><div class="m-stage">Offer</div>
+            </div>
+            <div class="m-app">
+              <div style="flex:1"><div class="m-app-co">Reema Health <span class="m-badge rose">Interview</span></div><div class="m-app-role">PM, Care Navigation · Minneapolis</div></div>
+              <div class="m-fit">9/10</div>
+            </div>
+            <div class="m-app blue">
+              <div style="flex:1"><div class="m-app-co">Unite Us <span class="m-badge blue">Applied</span></div><div class="m-app-role">Sr PM · SDOH Platform · Remote</div></div>
+              <div class="m-fit">9/10</div>
+            </div>
+            <div class="m-app amber">
+              <div style="flex:1"><div class="m-app-co">Oasis Health <span class="m-badge amber">Screen</span></div><div class="m-app-role">Sr Manager Product · Remote</div></div>
+              <div class="m-fit">7/10</div>
+            </div>
+            <div class="m-app teal">
+              <div style="flex:1"><div class="m-app-co">Stryker Medical <span class="m-badge teal">Applied</span></div><div class="m-app-role">PM, Downstream Marketing · Hybrid</div></div>
+              <div class="m-fit">8/10</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-overlay"></div>
+        <div class="col-shimmer"></div>
+        <div class="col-label">
+          <div class="col-label-eyebrow">Application Tracker</div>
+          <div style="color:var(--gold2)">Pipeline + AI Scoring</div>
+        </div>
+      </div>
+
+      <!-- Col 3: Networking CRM -->
+      <div class="preview-col">
+        <div class="col-inner">
+          <div class="m-nav">
+            <svg width="12" height="12" viewBox="0 0 32 32"><polygon points="16,2 18.2,10.5 26,7.5 21.5,14.5 30,16 21.5,17.5 26,24.5 18.2,21.5 16,30 13.8,21.5 6,24.5 10.5,17.5 2,16 10.5,14.5 6,7.5 13.8,10.5" fill="#6BA3C8"/></svg>
+            <div class="m-brand">JobQuest</div>
+            <div class="m-tabs"><button class="m-tab">HQ</button><button class="m-tab">Apps</button><button class="m-tab on">Net</button></div>
+          </div>
+          <div class="m-body">
+            <div class="m-eyebrow">Networking CRM</div>
+            <div class="m-h1">Network</div>
+            <div class="m-sub">Heat tracking · AI outreach · referral pipeline</div>
+            <div class="m-bar"></div>
+            <div class="m-heat-row">
+              <div class="m-heat sky"><div class="m-heat-num" style="color:var(--jade2)">55</div><div class="m-heat-label">total</div></div>
+              <div class="m-heat teal"><div class="m-heat-num" style="color:var(--teal2)">33</div><div class="m-heat-label">warm</div></div>
+              <div class="m-heat amber"><div class="m-heat-num" style="color:var(--gold2)">11</div><div class="m-heat-label">nudge</div></div>
+              <div class="m-heat cold"><div class="m-heat-num" style="color:var(--tx3)">11</div><div class="m-heat-label">cold</div></div>
+            </div>
+            <div class="m-contact" style="border-left-color:var(--teal)">
+              <div><div class="m-con-name">A. Chen <span class="m-badge teal">Warm</span></div><div class="m-con-role">Director of Product · Health Co.</div></div>
+              <div class="m-con-date">May 14<div><span class="m-con-chip" style="background:rgba(107,163,200,.1);color:var(--jade2);border:0.5px solid rgba(107,163,200,.2)">💬 Sent</span></div></div>
+            </div>
+            <div class="m-contact" style="border-left-color:var(--gold)">
+              <div><div class="m-con-name">M. Torres <span class="m-badge amber">Nudge</span></div><div class="m-con-role">Sr PM · Digital Health Startup</div></div>
+              <div class="m-con-date">Apr 28<div><span class="m-con-chip" style="background:rgba(42,181,160,.08);color:var(--teal2);border:0.5px solid rgba(42,181,160,.18)">📞 Call</span></div></div>
+            </div>
+            <div class="m-contact" style="border-left-color:var(--tx3);opacity:.55">
+              <div><div class="m-con-name">J. Park <span class="m-badge" style="background:rgba(255,255,255,.04);color:var(--tx3);border:0.5px solid rgba(255,255,255,.1)">Cold</span></div><div class="m-con-role">VP Product · Payer Co.</div></div>
+              <div class="m-con-date" style="color:var(--tx3)">Mar 10<div style="font-size:7px;margin-top:2px">48d ago</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-overlay"></div>
+        <div class="col-shimmer"></div>
+        <div class="col-label">
+          <div class="col-label-eyebrow">Networking CRM</div>
+          <div style="color:var(--teal2)">Heat Tracking + AI Outreach</div>
+        </div>
+      </div>
+
+    </div><!-- /preview-cols -->
+    <div class="jq-swipe-hint">swipe to explore</div>
   </div>
 
   <!-- CTA row -->
