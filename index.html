@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- portfolio v6_0 — moved domains strip below skill cloud + shrank domain chips (13px); skills filter opens on All then auto-settles to Product craft after ~950ms -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -153,8 +154,8 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .case-detail-list{margin-top:12px;padding-left:16px;}
 .case-detail-list li{font-size:13px;color:var(--tx2);margin-bottom:6px;line-height:1.7;}
 .skills-lead{font-size:15px;color:var(--tx2);line-height:1.7;max-width:600px;margin-bottom:34px;}
-.domains-strip{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:38px;}
-.domain-chip{font-family:var(--serif);font-size:15px;color:var(--tx);padding:10px 18px;border-radius:10px;background:linear-gradient(135deg,var(--bg2),var(--bg3));border:0.5px solid var(--border2);position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease;}
+.domains-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;}
+.domain-chip{font-family:var(--serif);font-size:13px;color:var(--tx);padding:6px 14px;border-radius:8px;background:linear-gradient(135deg,var(--bg2),var(--bg3));border:0.5px solid var(--border2);position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease;}
 .domain-chip::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1);}
 .domain-chip:hover{transform:translateY(-2px);border-color:rgba(201,150,26,.4);}
 .domain-chip:hover::after{transform:scaleX(1);}
@@ -298,6 +299,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <div class="hero-tags">
       <span class="htag muted">Care navigation</span>
       <span class="htag muted">Behavioral health</span>
+      <span class="htag muted">AI product strategy</span>
       <span class="htag muted">Medtech</span>
     </div>
     <div class="hero-cta">
@@ -313,7 +315,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
           <svg width="12" height="12" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><polygon points="16,2 18.2,10.5 26,7.5 21.5,14.5 30,16 21.5,17.5 26,24.5 18.2,21.5 16,30 13.8,21.5 6,24.5 10.5,17.5 2,16 10.5,14.5 6,7.5 13.8,10.5" fill="#E8C97A"/></svg>
           check role fit ↓
         </a>
-        <div class="claude-badge">powered by claude</div>
+        <div class="claude-badge">a claude integration i built</div>
       </div>
     </div>
 
@@ -379,7 +381,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
         <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">Health Tech</div>
         <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Digital Health &amp; Care Navigation</div>
-        <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Senior PM and product leadership roles where the product directly shapes how people access and experience care. Navigation platforms, behavioral health tools, analytics, and 0-to-1 builds in regulated environments.</p>
+        <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Senior PM and product leadership roles where the product directly shapes how people access and experience care. Navigation platforms, behavioral health tools, analytics, AI/ML product strategy, and 0-to-1 builds in regulated environments.</p>
         <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
         <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
           <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Unite Us</span>
@@ -419,7 +421,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <p style="margin-bottom:20px">Started in the <strong class="gold">Visible Heart Lab</strong> at the University of Minnesota, studying cardiac physiology and biomedical engineering at the device level. That foundation of understanding how complex systems fail, adapt, and heal has shaped how I think about product ever since.</p>
       <p style="margin-bottom:20px">Spent nearly a decade in consultative sales and training, then video and brand storytelling, learning that the hardest part of any complex idea is making it land for someone who doesn't already care. That skill travels.</p>
       <p style="margin-bottom:20px">Went back for a <strong class="gold">MBA in Medical Industry Leadership</strong> at Carlson, then joined the <strong>UMN Technology Commercialization office</strong> helping researchers cross the gap between a working idea and a real product: market fit, regulatory strategy, financial models. Moved into product full-time at <strong>Claros Technologies</strong>, building commercialization strategy around remediation technology for PFAS Forever Chemicals, then into digital access to behavioral healthcare at <strong>Aetna/CVS</strong>.</p>
-      <p style="margin-bottom:20px">I've embraced AI as a genuine force multiplier in discovery, synthesis, and delivery. Built the tools in this portfolio using Claude. The transformation is real and I'm leaning in, not waiting.</p>
+      <p style="margin-bottom:20px">I've embraced AI as a genuine force multiplier in discovery, synthesis, and delivery. Built the tools in this portfolio using Claude. But the bigger work is on the product side — scoping where AI belongs in a roadmap and laying the data foundations first, the way I structured the behavioral health analytics platform at Aetna for LLM/ML readiness. The transformation is real and I'm leaning in, not waiting.</p>
       <p>Now: senior product leader building <strong class="plain">platforms that help people navigate the hardest moments in health</strong>, where the stakes are real and the product craft has to match.</p>
     </div>
     <div class="timeline">
@@ -437,7 +439,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 <section id="jobquest">
   <div class="section-eyebrow">built during the search</div>
   <h2 class="section-title">JobQuest: Essential in 2026 —<br><em>a search OS.</em></h2>
-  <p class="section-lead">I built the tool I couldn't find. A full job search operating system — application tracking, AI-powered Job Description analysis, networking CRM, job board workflows, and focus timer — in a single HTML file while actively conducting this search.</p>
+  <p class="section-lead">I built the tool I couldn't find. A full job search operating system — application tracking, AI-powered Job Description analysis, networking CRM, job board workflows, and focus timer — in a single HTML file while actively conducting this search. It's also the clearest example of how I think about AI in product: I put it where it actually helped — judging fit — instead of bolting it onto everything, and built the data model and routing around it.</p>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;" class="seeking-grid fade-up">
 
@@ -445,7 +447,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <div style="background:var(--bg2);border:0.5px solid var(--border);border-left:2px solid var(--gold);border-radius:12px;padding:28px;">
       <div style="font-size:10px;color:var(--gold2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="width:16px;height:1px;background:var(--gold);display:inline-block;"></span>AI-Powered · Claude</div>
       <div style="font-family:var(--serif);font-size:22px;color:var(--tx);margin-bottom:12px;">Job Description Analyzer</div>
-      <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:18px;">Paste any job description — Claude scores fit against my profile, surfaces red flags, checks comp alignment, and pulls live company news. One click to save all relevant information to the tracker.</p>
+      <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:18px;">Paste any job description — Claude scores fit against the profile and scoring logic I built, surfaces red flags, checks comp alignment, and pulls live company news. One click to save all relevant information to the tracker.</p>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
         <span style="font-size:11px;padding:4px 11px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);">Fit score 1–10</span>
         <span style="font-size:11px;padding:4px 11px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);">Red flags</span>
@@ -458,7 +460,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <div style="background:var(--bg2);border:0.5px solid var(--border);border-left:2px solid var(--rose);border-radius:12px;padding:28px;">
       <div style="font-size:10px;color:var(--rose2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;"><span style="width:16px;height:1px;background:var(--rose);display:inline-block;"></span>Application Tracker</div>
       <div style="font-family:var(--serif);font-size:22px;color:var(--tx);margin-bottom:12px;">Pipeline Dashboard</div>
-      <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:18px;">Full application lifecycle — Saved → Applied → Interviewing → Offer. Clickable stat tiles, stage filters, high-priority queue, CSV import/export, and Excel sync. Built for 50–100 active roles.</p>
+      <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:18px;">Full application lifecycle — Saved → Applied → Interviewing → Offer. Clickable stat tiles, stage filters, high-priority queue, CSV import/export, and Excel sync.</p>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px;">
         <div style="text-align:center;"><div style="font-family:var(--serif);font-size:22px;color:var(--rose2);">189</div><div style="font-size:10px;color:var(--tx3);letter-spacing:.04em;">tracked</div></div>
         <div style="text-align:center;"><div style="font-family:var(--serif);font-size:22px;color:var(--tx);">22</div><div style="font-size:10px;color:var(--tx3);letter-spacing:.04em;">apply next</div></div>
@@ -487,9 +489,9 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   <div style="margin-top:32px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;" class="fade-up">
     <a href="https://jobs.ryan-corcoran.com/access.html" target="_blank" class="btn btn-jobquest">
       <svg class="mn-star" width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12,1 13.07,9.4 16.6,7.4 14.6,10.9 23,12 14.6,13.07 16.6,16.6 13.07,14.6 12,23 10.93,14.6 7.4,16.6 9.4,13.07 1,12 9.4,10.93 7.4,7.4 10.93,9.4" fill="currentColor"/></svg>
-      view live tool ↗
+      Launch JobQuest ↗
     </a>
-    <span style="font-size:12px;color:var(--tx3);">Password protected — ask me for access during a conversation.</span>
+    <span style="font-size:12px;color:var(--tx3);">Guest mode is live — try the demo now, no signup.</span>
   </div>
 </section>
 
@@ -515,6 +517,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
             <li>Owned the full product roadmap — prioritizing scheduling and navigation first, then building automated engagement workflows on top</li>
             <li>Launched 1,000+ automated monthly touchpoints that reduced unused authorizations and improved care utilization</li>
             <li>Delivered in a HIPAA-regulated environment with enterprise reporting requirements layered on top</li>
+            <li>Partnered with data science to define AI-assisted triage use cases — member routing, call-center optimization, and legacy-system data integration as the groundwork for LLM/ML implementation</li>
           </ul>
         </div>
       </div>
@@ -556,7 +559,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       </div>
     </div>
     <div class="case-card" onclick="toggleCase(this)">
-      <span class="case-tag" style="background:rgba(201,150,26,.12);color:var(--gold2);border-color:rgba(201,150,26,.3);">built during the search · claude-powered</span>
+      <span class="case-tag" style="background:rgba(201,150,26,.12);color:var(--gold2);border-color:rgba(201,150,26,.3);">built during the search · claude-powered</span><span class="case-tag" style="background:rgba(76,175,138,.12);color:var(--teal2);border-color:rgba(76,175,138,.3);margin-left:8px;">demo live</span>
       <div class="case-title">JobQuest — A Search OS</div>
       <div class="case-summary">I built the tool I couldn't find. A full job search operating system — AI-powered JD analysis, application pipeline, networking CRM, job board workflows, and focus timer — in a single HTML file, while actively conducting this search.</div>
       <div class="case-metrics">
@@ -567,10 +570,10 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       </div>
       <button class="case-expand-btn">read the story <span class="arrow">↓</span></button>
       <div class="case-detail">
-        <div class="case-detail-text">Every job search tool I tried was either too simple, too expensive, or built for a different era. I needed something that matched how I actually work — fast, analytical, AI-native. So I built it.
+        <div class="case-detail-text">Every job search tool I tried was either too simple, too expensive, or built for a different era. I needed something that matched how I actually work — fast and analytical. So I built it.
           <ul class="case-detail-list">
             <li><strong style="color:var(--tx)">JD Analyzer</strong> — paste any job description; Claude scores fit 1–10 against my profile, surfaces red flags, checks comp alignment, and pulls live company news. One click saves everything to the tracker</li>
-            <li><strong style="color:var(--tx)">Pipeline Dashboard</strong> — full application lifecycle (Saved → Applied → Interviewing → Offer) with stage filters, priority queue, and Excel sync built for 50–100 active roles</li>
+            <li><strong style="color:var(--tx)">Pipeline Dashboard</strong> — full application lifecycle (Saved → Applied → Interviewing → Offer) with stage filters, priority queue, and Excel sync — built to stay organized at volume</li>
             <li><strong style="color:var(--tx)">Networking CRM</strong> — heat-based contact tracking (Warm / Nudge / Cold) with follow-up queues and outreach history</li>
             <li><strong style="color:var(--tx)">Job Board HQ</strong> — curated Healthtech and Medtech board workflows with enterprise search integrations</li>
             <li>Built and iterated in real-time alongside an active search — every feature driven by an actual friction point encountered that week</li>
@@ -578,9 +581,9 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
           <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;">
             <a href="https://jobs.ryan-corcoran.com/access.html" target="_blank" onclick="event.stopPropagation()" class="btn btn-jobquest" style="font-size:11px;padding:8px 16px;">
               <svg class="mn-star" width="12" height="12" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12,1 13.07,9.4 16.6,7.4 14.6,10.9 23,12 14.6,13.07 16.6,16.6 13.07,14.6 12,23 10.93,14.6 7.4,16.6 9.4,13.07 1,12 9.4,10.93 7.4,7.4 10.93,9.4" fill="currentColor"/></svg>
-              view live tool ↗
+              Launch JobQuest ↗
             </a>
-            <span style="font-size:11px;padding:7px 14px;border-radius:6px;background:var(--bg4);color:var(--tx3);border:0.5px solid var(--border);letter-spacing:.04em;">password protected · ask me</span>
+            <span style="font-size:11px;padding:7px 14px;border-radius:6px;background:var(--bg4);color:var(--tx3);border:0.5px solid var(--border);letter-spacing:.04em;">guest mode live · no signup</span>
           </div>
         </div>
       </div>
@@ -591,14 +594,14 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 <section id="fit">
   <div class="section-eyebrow">role fit check</div>
   <h2 class="section-title">See how I map<br>to <em>your role.</em></h2>
-  <p class="section-lead">Paste a job description and get a real-time analysis of how my background aligns — experience, domain match, and anything worth a closer look.</p>
+  <p class="section-lead">Paste a job description and get a real-time analysis of how my background aligns — experience, domain match, and anything worth a closer look. It's a Claude integration I built, scoring against logic I designed.</p>
   <div class="fit-widget fade-up">
     <p class="fit-intro">Built this to make your life easier. Paste the JD below — you'll get an honest read on where there's genuine overlap, where there are gaps, and whether this conversation is worth having.</p>
     <div class="fit-input-row">
       <textarea class="fit-textarea" id="fit-jd" placeholder="Paste job description text here..."></textarea>
       <button class="fit-btn" id="fit-btn" onclick="runFit()">Analyze ↗</button>
     </div>
-    <div class="fit-hint" style="color:var(--gold2)">powered by claude · ~15 seconds · no data stored</div>
+    <div class="fit-hint" style="color:var(--gold2)">claude integration · ~15 seconds · no data stored</div>
     <div class="fit-loading" id="fit-loading"><span class="spin">↻</span> Analyzing the role...</div>
     <div class="fit-error" id="fit-error"></div>
     <div class="fit-result" id="fit-result">
@@ -660,16 +663,6 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   <h2 class="section-title">Where I'm <em>strong.</em></h2>
   <p class="skills-lead">The domains I build in, and the toolkit I bring to them. The case studies above are the proof — this is the coverage map. Tap a category to focus it.</p>
 
-  <div class="domains-strip fade-up">
-    <span class="domain-chip">Care navigation &amp; patient access</span>
-    <span class="domain-chip">Behavioral &amp; mental health</span>
-    <span class="domain-chip">0→1 digital health products</span>
-    <span class="domain-chip">Analytics &amp; data platforms</span>
-    <span class="domain-chip">Payer / employer markets</span>
-    <span class="domain-chip">GTM &amp; commercialization</span>
-    <span class="domain-chip">Medtech &amp; regulated devices</span>
-  </div>
-
   <div class="fade-up">
     <div class="skill-filters">
       <button class="skill-filter active" data-cat="all" onclick="filterSkills('all',this)">All</button>
@@ -687,6 +680,9 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <span class="skill-chip" data-cat="medtech">Design controls</span>
       <span class="skill-chip" data-cat="product">Discovery &amp; research</span>
       <span class="skill-chip" data-cat="technical">Applied AI in product</span>
+      <span class="skill-chip" data-cat="product">AI product strategy</span>
+      <span class="skill-chip" data-cat="technical">LLM/ML use-case definition</span>
+      <span class="skill-chip" data-cat="technical">Data foundations for AI</span>
       <span class="skill-chip" data-cat="domain">Cardiac physiology</span>
       <span class="skill-chip" data-cat="leadership">Storytelling</span>
       <span class="skill-chip" data-cat="medtech">510(k) familiarity</span>
@@ -712,6 +708,16 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <span class="skill-chip" data-cat="product">User stories</span>
       <span class="skill-chip" data-cat="domain">Payer markets</span>
     </div>
+  </div>
+
+  <div class="domains-strip fade-up">
+    <span class="domain-chip">Care navigation &amp; patient access</span>
+    <span class="domain-chip">Behavioral &amp; mental health</span>
+    <span class="domain-chip">0→1 digital health products</span>
+    <span class="domain-chip">Analytics &amp; data platforms</span>
+    <span class="domain-chip">Payer / employer markets</span>
+    <span class="domain-chip">GTM &amp; commercialization</span>
+    <span class="domain-chip">Medtech &amp; regulated devices</span>
   </div>
 </section>
 
@@ -740,7 +746,7 @@ const SYSTEM=`You are analyzing a job description on behalf of Ryan Corcoran's p
 RYAN'S PROFILE:
 - 7+ years Product Management in digital health, healthtech, and regulated environments
 - Core strengths: care navigation platforms, behavioral health analytics, 0-to-1 product builds, AI use case definition & data infrastructure readiness for LLM/ML integration, analytics/data products, patient engagement
-- Key wins: Access Plus (0-1 care nav, 48hr time-to-care, double-digit NPS gain in 6mo); behavioral health analytics platform at Aetna/CVS Health; SDOH app commercialization at UMN OTC
+- Key wins: Access Plus (0-1 care nav, 48hr time-to-care, double-digit NPS gain in 6mo; incl. AI-assisted triage use-case definition — member routing, call-center optimization); behavioral health analytics platform at Aetna/CVS Health (built with AI/LLM-ML integration readiness as an explicit design goal); SDOH app commercialization at UMN OTC
 - Commercial/GTM: P&L ownership at Claros; go-to-market strategy, pricing, partnerships; cross-functional leadership across clinical, sales, ops, and account teams
 - Regulatory: HIPAA-regulated product environments; 510(k) process familiarity
 - Education: MBA Medical Industry Leadership + Commercialization Strategy (UMN Carlson); BS Biomedical Sciences — Visible Heart Lab (physiology/biomedical engineering research)
@@ -748,10 +754,11 @@ RYAN'S PROFILE:
 - Location: Minneapolis MN (Plymouth/Twin Cities metro onsite is local — not relocation) — open to remote, hybrid, in-person
 - Target comp: $130K-$180K base
 - Open to: Senior PM, Sr. Manager Product, upstream/downstream medtech PM, downstream medtech product marketing, payer-side roles
-- Hard nos: base below $120K, relocation outside Twin Cities metro required
+- Hard nos: base below $130K, relocation outside Twin Cities metro required
 
 SCORING GUIDANCE:
 - Plymouth MN / Twin Cities metro onsite roles: treat as local, not a location flag
+- AI / LLM / ML product strategy is a core strength backed by concrete work (data-foundation design, AI-assisted triage use-case definition) — score AI-heavy roadmaps as a strength, not a gap
 - Hardware device PM and downstream medtech product marketing roles: evaluate against biomedical + commercial background, not digital health domain only
 - Application deadlines within 30 days: flag as urgency (e.g. "closes June 13 — apply soon"), not as a posting validity concern
 - Scan full JD text for location mentions, not only the header field
@@ -840,6 +847,7 @@ function filterSkills(cat, btn){
 }
 
 setTimeout(()=>{document.querySelectorAll('.fade-up').forEach((el,i)=>{setTimeout(()=>el.classList.add('in'),i*120);});},100);
+(function(){var pb=document.querySelector('.skill-filter[data-cat="product"]');if(pb)setTimeout(function(){filterSkills('product',pb);},950);})();
 </script>
 </body>
 </html>
