@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- portfolio v6_1 — skills settle animation now triggers on scroll-into-view (IntersectionObserver on #skill-cloud, fires once) instead of on page load -->
+<!-- portfolio v6_4 — restructured booking-strip availability into quick-facts + labeled Open-to/Focus lines, added Associate Director (also to fit-checker SYSTEM open-to) -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -154,11 +154,7 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .case-detail-list{margin-top:12px;padding-left:16px;}
 .case-detail-list li{font-size:13px;color:var(--tx2);margin-bottom:6px;line-height:1.7;}
 .skills-lead{font-size:15px;color:var(--tx2);line-height:1.7;max-width:600px;margin-bottom:34px;}
-.domains-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;}
-.domain-chip{font-family:var(--serif);font-size:13px;color:var(--tx);padding:6px 14px;border-radius:8px;background:linear-gradient(135deg,var(--bg2),var(--bg3));border:0.5px solid var(--border2);position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease;}
-.domain-chip::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1);}
-.domain-chip:hover{transform:translateY(-2px);border-color:rgba(201,150,26,.4);}
-.domain-chip:hover::after{transform:scaleX(1);}
+.skill-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
 .skill-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
 .skill-filter{--c:var(--tx2);font-family:var(--sans);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--tx2);background:transparent;border:0.5px solid var(--border2);border-radius:20px;padding:7px 15px;cursor:pointer;transition:all .2s ease;display:inline-flex;align-items:center;gap:7px;}
 .skill-filter::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--c);flex-shrink:0;transition:box-shadow .2s ease;}
@@ -653,7 +649,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     </div>
     <div class="book-avail">
       <div class="book-avail-label">Currently available</div>
-      <div class="book-avail-text">Active search · Minneapolis, MN · <span style="color:var(--jade2)">Hybrid · MSP metro</span><br>Target: <span style="color:var(--tx)">$130K–$180K</span> · Open to senior PM / Sr. Manager roles across digital health (care navigation, behavioral health, analytics) and medical devices (upstream / downstream product).</div>
+      <div class="book-avail-text">Active search · Minneapolis, MN · <span style="color:var(--jade2)">Hybrid · MSP metro</span> · <span style="color:var(--tx)">$130K–$180K</span><br><span style="color:var(--tx3);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Open to</span> Senior PM · Sr. Manager · Associate Director<br><span style="color:var(--tx3);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Focus</span> digital health (care navigation, behavioral health, analytics) · medical devices (upstream / downstream)</div>
     </div>
   </div>
 </section>
@@ -661,7 +657,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 <section id="skills">
   <div class="section-eyebrow">skills &amp; domains</div>
   <h2 class="section-title">Where I'm <em>strong.</em></h2>
-  <p class="skills-lead">The domains I build in, and the toolkit I bring to them. The case studies above are the proof — this is the coverage map. Tap a category to focus it.</p>
+  <p class="skills-lead">The domains I work in and the toolkit I bring, all in one filterable cloud. The case studies above show a few in practice — tap a category to focus.</p>
 
   <div class="fade-up">
     <div class="skill-filters">
@@ -709,16 +705,6 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <span class="skill-chip" data-cat="domain">Payer markets</span>
     </div>
   </div>
-
-  <div class="domains-strip fade-up">
-    <span class="domain-chip">Care navigation &amp; patient access</span>
-    <span class="domain-chip">Behavioral &amp; mental health</span>
-    <span class="domain-chip">0→1 digital health products</span>
-    <span class="domain-chip">Analytics &amp; data platforms</span>
-    <span class="domain-chip">Payer / employer markets</span>
-    <span class="domain-chip">GTM &amp; commercialization</span>
-    <span class="domain-chip">Medtech &amp; regulated devices</span>
-  </div>
 </section>
 
 <section id="contact">
@@ -753,7 +739,7 @@ RYAN'S PROFILE:
 - Medtech pathway: Biomedical sciences foundation + device research background supports pivot to upstream or downstream medtech PM or product marketing; hardware device PM and downstream commercial roles are within target, not outside expertise
 - Location: Minneapolis MN (Plymouth/Twin Cities metro onsite is local — not relocation) — open to remote, hybrid, in-person
 - Target comp: $130K-$180K base
-- Open to: Senior PM, Sr. Manager Product, upstream/downstream medtech PM, downstream medtech product marketing, payer-side roles
+- Open to: Senior PM, Sr. Manager Product, Associate Director, upstream/downstream medtech PM, downstream medtech product marketing, payer-side roles
 - Hard nos: base below $130K, relocation outside Twin Cities metro required
 
 SCORING GUIDANCE:
