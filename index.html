@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- portfolio v6_0 — moved domains strip below skill cloud + shrank domain chips (13px); skills filter opens on All then auto-settles to Product craft after ~950ms -->
+<!-- portfolio v6_1 — skills settle animation now triggers on scroll-into-view (IntersectionObserver on #skill-cloud, fires once) instead of on page load -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -847,7 +847,21 @@ function filterSkills(cat, btn){
 }
 
 setTimeout(()=>{document.querySelectorAll('.fade-up').forEach((el,i)=>{setTimeout(()=>el.classList.add('in'),i*120);});},100);
-(function(){var pb=document.querySelector('.skill-filter[data-cat="product"]');if(pb)setTimeout(function(){filterSkills('product',pb);},950);})();
+(function(){
+  var pb=document.querySelector('.skill-filter[data-cat="product"]');
+  var cloud=document.getElementById('skill-cloud');
+  if(!pb||!cloud)return;
+  var fired=false;
+  function settle(){ if(fired)return; fired=true; setTimeout(function(){filterSkills('product',pb);},600); }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ settle(); io.disconnect(); } });
+    },{threshold:0.3});
+    io.observe(cloud);
+  } else {
+    settle();
+  }
+})();
 </script>
 </body>
 </html>
