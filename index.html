@@ -52,9 +52,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,27,45,0.9
 .hero-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--rose);}
 .hero-headline{font-family:var(--serif);font-size:clamp(36px,5vw,68px);line-height:1.14;color:var(--tx);margin-bottom:48px;letter-spacing:-.01em;}
 .hero-headline em{display:block;font-style:italic;color:var(--jade2);}
+.hero-headline em:nth-of-type(1){color:#8FC0E0;}
+.hero-headline em:nth-of-type(2){color:#C4E0F2;}
+.hero-headline em:nth-of-type(3){color:#F4FAFE;}
 .hero-headline em:not(:first-child){margin-top:.10em;}
 .hero-headline em.gap{margin-top:.22em;}
-.hero-sub{font-size:16px;color:var(--tx2);line-height:1.7;margin-bottom:32px;max-width:72ch;}
+.hero-sub{font-size:16px;color:#AEC9DB;line-height:1.7;margin-bottom:32px;max-width:72ch;}
 .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px;}
 .htag{font-size:11px;padding:5px 12px;border-radius:20px;letter-spacing:.04em;}
 .htag.jade{background:var(--jade3);color:var(--jade2);border:0.5px solid rgba(29,158,117,.3);}
@@ -274,6 +277,32 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   .hero-headline{font-size:36px;}
 
 }
+
+/* ===== Current Builds — blueprint design language ===== */
+#builds{position:relative;overflow:hidden;}
+#builds > .section-eyebrow,#builds > .section-title,#builds > .section-lead,#builds > .cases-grid,#builds > p{position:relative;z-index:1;}
+.builds-blueprint{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;color:#7FB0D0;}
+.builds-blueprint .g{stroke:currentColor;fill:none;stroke-opacity:.085;stroke-width:1;}
+.builds-blueprint .l{stroke:currentColor;fill:none;stroke-opacity:.12;stroke-width:1;}
+.builds-blueprint .d{stroke:currentColor;fill:none;stroke-opacity:.13;stroke-width:1;stroke-dasharray:3 6;}
+.builds-blueprint .au{stroke:var(--gold);fill:none;stroke-opacity:.14;stroke-width:1;}
+.builds-blueprint .t{fill:currentColor;fill-opacity:.18;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:9px;letter-spacing:.14em;}
+.build-card{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(22,32,48,.80),rgba(20,29,44,.90));box-shadow:0 22px 48px -26px rgba(0,0,0,.72),0 1px 0 rgba(255,255,255,.03) inset;}
+.build-card .card-body{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;}
+.card-bp{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;color:#7FB0D0;opacity:.92;transition:opacity .55s ease;}
+.build-card:hover .card-bp{opacity:1;}
+.card-bp .s{stroke:currentColor;fill:none;stroke-opacity:.115;stroke-width:1;transition:stroke-opacity .55s ease;}
+.card-bp .sd{stroke:currentColor;fill:none;stroke-opacity:.125;stroke-width:1;stroke-dasharray:3 4;transition:stroke-opacity .55s ease;}
+.card-bp .sg{stroke:var(--gold);fill:none;stroke-opacity:.145;stroke-width:1;transition:stroke-opacity .55s ease;}
+.card-bp .st{fill:currentColor;fill-opacity:.17;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:8.5px;letter-spacing:.12em;}
+.build-card:hover .card-bp .s{stroke-opacity:.17;}
+.build-card:hover .card-bp .sd{stroke-opacity:.19;}
+.build-card:hover .card-bp .sg{stroke-opacity:.23;}
+.card-bp .bp-extra{opacity:0;transition:opacity .6s ease .05s;}
+.build-card:hover .card-bp .bp-extra{opacity:1;}
+.card-bp .bp-rot{transform-box:fill-box;transform-origin:center;transition:transform 1.5s cubic-bezier(.2,.7,.15,1);}
+.build-card:hover .card-bp .bp-rot{transform:rotate(150deg);}
+@media (prefers-reduced-motion:reduce){.card-bp,.card-bp *{transition:none!important;}}
 </style>
 </head>
 <body>
@@ -373,13 +402,37 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 
 
 <section id="builds">
+  <svg class="builds-blueprint" viewBox="0 0 1200 760" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <g class="g"><path d="M0 190 H1200 M0 380 H1200 M0 570 H1200"/><path d="M300 0 V760 M600 0 V760 M900 0 V760"/></g>
+    <path class="l" d="M40 118 H1160"/>
+    <path class="l" d="M40 112 v12 M220 114 v8 M400 114 v8 M580 114 v8 M760 114 v8 M940 114 v8 M1160 112 v12"/>
+    <text class="t" x="40" y="104">SECT · A—A</text><text class="t" x="1092" y="104">FIG. 01</text>
+    <circle class="d" cx="200" cy="480" r="150"/>
+    <circle class="au" cx="1015" cy="300" r="118"/><circle class="d" cx="1015" cy="300" r="176"/>
+    <path class="l" d="M60 700 L350 470 M1140 720 L830 520"/>
+    <path class="l" d="M46 690 h22 M57 679 v22"/><text class="t" x="74" y="676">0,0</text>
+    <text class="t" x="892" y="470">R 176</text>
+  </svg>
   <div class="section-eyebrow">current builds</div>
   <h2 class="section-title">Problems I've chosen to <em>solve.</em></h2>
   <p class="section-lead">Three live builds, three systems people get stuck in &mdash; opportunity, belonging, financial resilience. Different audiences, one philosophy: find the friction, understand the people, design the system, measure the impact.</p>
   <div class="cases-grid fade-up" style="grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch;">
 
     <!-- JobQuest -->
-    <div class="case-card" style="cursor:default;display:flex;flex-direction:column;">
+    <div class="case-card build-card" style="cursor:default;">
+      <svg class="card-bp" viewBox="0 0 340 460" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <path class="s" d="M18 30 h18 M27 21 v18"/><text class="st" x="32" y="18">0,0</text>
+        <path class="s" d="M232 34 h84 v72 h-84 z M232 51 h84 M246 63 h56 v33 h-56 z M274 63 v33 M246 79 h56 M262 96 h22 v10 h-22 z"/>
+        <text class="st" x="234" y="46">HQ · ELEV</text>
+        <circle class="s" cx="60" cy="152" r="9"/><circle class="sg bp-rot" cx="150" cy="152" r="13"/><circle class="s" cx="240" cy="152" r="9"/>
+        <path class="sd" d="M69 152 H137 M163 152 H231"/><path class="s" d="M240 161 v42 H60"/>
+        <text class="st" x="126" y="130">FIT · k</text>
+        <g class="bp-extra"><circle class="s" cx="52" cy="300" r="5"/><circle class="s" cx="98" cy="330" r="5"/><circle class="s" cx="60" cy="360" r="5"/><path class="sd" d="M56 304 L94 326 M96 335 L64 356 M54 356 L52 306"/></g>
+        <path class="s" d="M188 372 h40 v72 h-40 z M234 372 h40 v72 h-40 z M280 372 h40 v72 h-40 z"/>
+        <path class="s" d="M194 386 h28 M194 402 h28 M240 386 h28 M286 386 h28"/><text class="st" x="188" y="366">PIPELINE</text>
+        <path class="s" d="M20 452 H150 M20 448 v8 M53 449 v6 M86 449 v6 M119 449 v6 M150 448 v8"/>
+      </svg>
+      <div class="card-body">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;">
         <span style="font-size:10px;color:var(--gold2);letter-spacing:.08em;text-transform:uppercase;">Access to opportunity</span>
         <span style="display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--teal2);letter-spacing:.05em;white-space:nowrap;"><span style="width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 8px var(--teal);"></span>Live</span>
@@ -391,10 +444,24 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
         <span class="htag muted">AI workflows</span><span class="htag muted">UX</span><span class="htag muted">Automation</span><span class="htag muted">Shipped fast</span>
       </div>
       <a href="https://jobs.ryan-corcoran.com/access.html" target="_blank" class="btn btn-ghost" style="margin-top:auto;align-self:flex-start;font-size:11px;padding:9px 18px;">Explore &nearr;</a>
+      </div>
     </div>
 
     <!-- Double Cup Coffee Co. -->
-    <div class="case-card" style="cursor:default;display:flex;flex-direction:column;">
+    <div class="case-card build-card" style="cursor:default;">
+      <svg class="card-bp" viewBox="0 0 340 460" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <circle class="sd bp-rot" cx="240" cy="120" r="58"/><circle class="s" cx="240" cy="120" r="44"/><circle class="sd bp-extra" cx="240" cy="120" r="30"/>
+        <path class="s" d="M228 106 h11 l-2 26 a7 7 0 0 1 -7 0 z M240 106 h11 l-2 26 a7 7 0 0 1 -7 0 z"/>
+        <ellipse class="s" cx="233" cy="106" rx="6" ry="2"/><ellipse class="s" cx="245" cy="106" rx="6" ry="2"/>
+        <path class="sg" d="M240 92 v-9 M226 96 l-6 -8 M254 96 l6 -8"/>
+        <path class="s" d="M240 62 v8 M240 170 v8 M182 120 h8 M290 120 h8"/><text class="st" x="196" y="58">R 58</text>
+        <path class="s" d="M20 76 l40 -22 l40 22 M28 76 v40 h64 v-40 M44 94 h32 v22 h-32 z"/><text class="st" x="20" y="130">SHOP</text>
+        <circle class="s" cx="60" cy="330" r="6"/><circle class="s" cx="120" cy="360" r="6"/><circle class="s" cx="70" cy="392" r="6"/><circle class="sg" cx="170" cy="322" r="7"/><circle class="s" cx="210" cy="372" r="6"/><circle class="s" cx="272" cy="344" r="6"/>
+        <path class="sd" d="M66 332 L114 358 M126 360 L164 326 M170 329 L206 366 M216 372 L266 348 M120 366 L74 388 M64 336 L68 386"/>
+        <text class="st" x="150" y="412">CONN · net</text>
+        <path class="s bp-extra" d="M24 436 C 90 420 150 448 210 418 S 300 420 320 430"/>
+      </svg>
+      <div class="card-body">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;">
         <span style="font-size:10px;color:var(--rose2);letter-spacing:.08em;text-transform:uppercase;">Access to belonging</span>
         <span style="display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--gold2);letter-spacing:.05em;white-space:nowrap;"><span style="width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);"></span>Pilot Design</span>
@@ -409,10 +476,23 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
         <a href="https://doublecupcoffeeco.com/" target="_blank" class="btn btn-ghost" style="font-size:11px;padding:9px 18px;">Explore &nearr;</a>
         <a href="https://doublecupcoffeeco.com/impact.html" target="_blank" style="font-size:11px;color:var(--tx3);text-decoration:none;letter-spacing:.03em;border-bottom:0.5px solid var(--border2);">Impact report</a>
       </div>
+      </div>
     </div>
 
     <!-- Liquidity -->
-    <div class="case-card" style="cursor:default;display:flex;flex-direction:column;">
+    <div class="case-card build-card" style="cursor:default;">
+      <svg class="card-bp" viewBox="0 0 340 460" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <path class="sg" d="M64 40 c8 12 12 18 12 26 a12 12 0 0 1 -24 0 c0 -8 4 -14 12 -26 z"/>
+        <ellipse class="s" cx="64" cy="92" rx="30" ry="9"/><ellipse class="sd bp-rot" cx="64" cy="96" rx="54" ry="15"/><ellipse class="sd bp-extra" cx="64" cy="100" rx="80" ry="22"/>
+        <text class="st" x="20" y="122">&#916; burn</text>
+        <circle class="sd bp-rot" cx="268" cy="92" r="40"/><circle class="s" cx="268" cy="92" r="26"/><path class="sg" d="M268 92 L268 52 A40 40 0 0 1 302 112 Z"/><text class="st" x="238" y="150">ALLOC</text>
+        <path class="s" d="M196 220 h120 v96 h-120 z M196 244 h120 M196 268 h120 M196 292 h120 M236 220 v96 M276 220 v96"/><text class="st" x="196" y="214">LEDGER</text>
+        <path class="sd" d="M24 372 C 90 372 90 336 150 336 S 250 384 316 360"/>
+        <path class="s" d="M24 420 H316 M24 416 v8 M82 417 v6 M140 417 v6 M198 417 v6 M256 417 v6 M316 416 v8"/>
+        <text class="st" x="24" y="440">MO 0</text><text class="st" x="290" y="440">MO 6</text>
+        <path class="sg bp-extra" d="M198 336 v84"/>
+      </svg>
+      <div class="card-body">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px;">
         <span style="font-size:10px;color:var(--blue2);letter-spacing:.08em;text-transform:uppercase;">Access to stability</span>
         <span style="display:inline-flex;align-items:center;gap:5px;font-size:10px;color:var(--blue2);letter-spacing:.05em;white-space:nowrap;"><span style="width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue);"></span>Active Development</span>
@@ -425,6 +505,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       </div>
       <!-- TODO: confirm/replace Liquidity live URL below -->
       <a href="https://liquidity.ryan-corcoran.com/" target="_blank" class="btn btn-ghost" style="margin-top:auto;align-self:flex-start;font-size:11px;padding:9px 18px;">View prototype &nearr;</a>
+      </div>
     </div>
 
   </div>
