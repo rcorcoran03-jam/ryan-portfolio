@@ -171,7 +171,7 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .skill-filter[data-cat="technical"]{--c:var(--teal2);}
 .skill-filter[data-cat="domain"]{--c:var(--gold2);}
 .skill-filter[data-cat="leadership"]{--c:var(--rose2);}
-.skill-filter[data-cat="medtech"]{--c:var(--gold2);}
+.skill-filter[data-cat="medtech"]{--c:var(--blue2);}
 .skill-filter:hover{color:var(--tx);border-color:var(--c);}
 .skill-filter:hover::before{box-shadow:0 0 7px var(--c);}
 .skill-filter.active{color:var(--tx);border-color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);}
@@ -183,7 +183,7 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .skill-chip[data-cat="technical"]{--c:var(--teal);}
 .skill-chip[data-cat="domain"]{--c:var(--gold);}
 .skill-chip[data-cat="leadership"]{--c:var(--rose);}
-.skill-chip[data-cat="medtech"]{--c:var(--gold2);}
+.skill-chip[data-cat="medtech"]{--c:var(--blue);}
 .skill-chip:hover{color:var(--tx);border-color:var(--border2);transform:translateY(-2px);}
 .skill-chip:hover::before{transform:scale(1.4);box-shadow:0 0 8px var(--c);}
 .skill-chip.dim{opacity:.16;}
@@ -193,7 +193,7 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .skill-chip[data-cat="technical"].lit{border-color:rgba(76,175,138,.55);background:rgba(76,175,138,.1);}
 .skill-chip[data-cat="domain"].lit{border-color:rgba(201,150,26,.55);background:rgba(201,150,26,.1);}
 .skill-chip[data-cat="leadership"].lit{border-color:rgba(196,132,143,.55);background:rgba(196,132,143,.1);}
-.skill-chip[data-cat="medtech"].lit{border-color:rgba(232,201,122,.55);background:rgba(232,201,122,.1);}
+.skill-chip[data-cat="medtech"].lit{border-color:rgba(107,163,200,.55);background:rgba(107,163,200,.1);}
 .fit-widget{background:var(--bg2);border:0.5px solid rgba(201,150,26,.2);border-left:2px solid var(--gold);border-radius:16px;padding:36px;position:relative;overflow:hidden;}
 .fit-widget::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(201,150,26,.10) 0%,transparent 70%);pointer-events:none;}
 .fit-intro{font-size:15px;color:var(--tx2);line-height:1.7;margin-bottom:24px;max-width:560px;}
@@ -280,6 +280,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 
 /* ===== Current Builds — blueprint design language ===== */
 #builds{position:relative;overflow:hidden;}
+@media(min-width:769px){.builds-grid{grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch;}}
 #builds > .section-eyebrow,#builds > .section-title,#builds > .section-lead,#builds > .cases-grid,#builds > p{position:relative;z-index:1;}
 .builds-blueprint{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;color:#7FB0D0;}
 .builds-blueprint .g{stroke:currentColor;fill:none;stroke-opacity:.085;stroke-width:1;}
@@ -331,6 +332,10 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 .btn-blueprint:active{transform:translateY(0);}
 .build-link-secondary{position:relative;z-index:2;font-size:11px;color:var(--tx2);text-decoration:none;letter-spacing:.05em;border-bottom:0.5px solid var(--border2);transition:color .2s ease,border-color .2s ease;}
 .build-link-secondary:hover{color:var(--gold2);border-color:rgba(201,150,26,.5);}
+.value-chips-label{font-size:10px;color:var(--tx3);letter-spacing:.08em;text-transform:uppercase;margin:28px 0 10px;}
+.value-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
+.value-chip{font-size:12px;color:var(--tx2);padding:7px 14px;border-radius:20px;background:var(--bg2);border:0.5px solid var(--border2);letter-spacing:.02em;}
+.value-fit-card{background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--blue);border-radius:12px;padding:28px;margin-top:24px;position:relative;overflow:hidden;}
 </style>
 </head>
 <body>
@@ -339,12 +344,11 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   <a href="#top" class="nav-name" style="display:flex;align-items:center;gap:10px;text-decoration:none;"><svg width="20" height="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><polygon points="16,2 18.2,10.5 26,7.5 21.5,14.5 30,16 21.5,17.5 26,24.5 18.2,21.5 16,30 13.8,21.5 6,24.5 10.5,17.5 2,16 10.5,14.5 6,7.5 13.8,10.5" fill="#6BA3C8"/></svg>Ryan Corcoran</a>
   <div class="nav-links">
     <a href="#builds">builds</a>
-    <a href="#work">work</a>
-    <a href="#focus">focus</a>
+    <a href="#value">value</a>
     <a href="#story">story</a>
-    <a href="#fit">fit check</a>
-    <a href="#schedule">schedule</a>
+    <a href="#work">work</a>
     <a href="#skills">skills</a>
+    <a href="#schedule">schedule</a>
     <a href="#contact">contact</a>
   </div>
 </nav>
@@ -446,7 +450,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   <div class="section-eyebrow">current builds</div>
   <h2 class="section-title">Problems I've chosen to <em>solve.</em></h2>
   <p class="section-lead">Three live builds, three systems people get stuck in &mdash; opportunity, belonging, financial resilience. Different audiences, one philosophy: find the friction, understand the people, design the system, measure the impact.</p>
-  <div class="cases-grid fade-up" style="grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch;">
+  <div class="cases-grid fade-up builds-grid">
 
     <!-- JobQuest -->
     <div class="case-card build-card" onclick="if(event.target.closest('a'))return;window.open('https://jobs.ryan-corcoran.com/access.html','_blank');">
@@ -611,6 +615,106 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   <p style="font-size:13px;color:var(--tx3);line-height:1.8;max-width:660px;margin-top:30px;">JobQuest improves access to opportunity. Double Cup improves access to belonging. Liquidity improves access to financial stability. Different domains &mdash; same product philosophy.</p>
 </section>
 
+<section id="value">
+  <div class="section-eyebrow">where I create value</div>
+  <h2 class="section-title">Where I Create <em>Value.</em></h2>
+  <p class="section-lead">Two industries. One product philosophy. Designing high-stakes products around the people who depend on them.</p>
+  <div class="seeking-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
+      <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">Digital Health</div>
+      <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Digital Health &amp; Care Navigation</div>
+      <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Building products that improve how people access, navigate, and experience care&mdash;from behavioral health and care navigation to analytics, AI-enabled workflows, and regulated healthcare platforms.</p>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Unite Us</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Reema Health</span>
+      </div>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">UnitedHealth / Optum</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">CVS / Aetna</span>
+      </div>
+    </div>
+    <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
+      <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">Medtech</div>
+      <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Medical Devices &amp; Commercialization</div>
+      <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Bringing clinical evidence, product strategy, and commercialization together to build regulated medical technologies&mdash;from upstream discovery through launch.</p>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Anteris Medical</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Medical 21</span>
+      </div>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Philips</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Boston Scientific</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Medtronic</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="value-chips-label">Common role themes</div>
+  <div class="value-chips">
+    <span class="value-chip">AI Product Strategy</span>
+    <span class="value-chip">Digital Health</span>
+    <span class="value-chip">MedTech</span>
+    <span class="value-chip">Care Navigation</span>
+    <span class="value-chip">Healthcare Analytics</span>
+    <span class="value-chip">Platform Strategy</span>
+    <span class="value-chip">Consumer Experience</span>
+    <span class="value-chip">Behavior Change</span>
+  </div>
+
+  <div class="value-fit-card" id="fit">
+    <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(107,163,200,.12);color:var(--blue2);border:0.5px solid rgba(107,163,200,.3);display:inline-block;margin-bottom:14px;">AI Product Strategy</div>
+    <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">See how I map to your role</div>
+    <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Paste a job description and get a real-time analysis of how my background aligns &mdash; experience, domain match, and anything worth a closer look. It's a Claude integration I built, scoring against logic I designed.</p>
+    <div class="fit-widget fade-up">
+      <p class="fit-intro">Built this to make your life easier. Paste the JD below &mdash; you'll get an honest read on where there's genuine overlap, where there are gaps, and whether this conversation is worth having.</p>
+      <div class="fit-input-row">
+        <textarea class="fit-textarea" id="fit-jd" placeholder="Paste job description text here..."></textarea>
+        <button class="fit-btn" id="fit-btn" onclick="runFit()">Analyze ↗</button>
+      </div>
+      <div class="fit-hint" style="color:var(--gold2)">claude integration · ~15 seconds · no data stored</div>
+      <div class="fit-loading" id="fit-loading"><span class="spin">↻</span> Analyzing the role...</div>
+      <div class="fit-error" id="fit-error"></div>
+      <div class="fit-result" id="fit-result">
+        <div class="fit-result-top">
+          <div class="fit-score-box"><div class="fit-score-num" id="fit-score-num">—</div><div class="fit-score-label">fit score</div></div>
+          <div class="fit-role-box"><div class="fit-role-co" id="fit-co">—</div><div class="fit-role-title" id="fit-role">—</div><div class="fit-role-comp" id="fit-comp"></div></div>
+          <div class="fit-rationale" id="fit-rationale">—</div>
+        </div>
+        <div class="fit-match" id="fit-match"></div>
+        <div class="fit-flags" id="fit-flags"></div>
+        <div class="fit-news" id="fit-news" style="display:none"><div class="fit-news-label">company news</div><div id="fit-news-text"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="section-eyebrow">the story</div>
+  <h2 class="section-title">Non-linear path.<br><em>Intentional direction.</em></h2>
+  <div class="story-grid fade-up">
+    <div class="story-text">
+      <p style="margin-bottom:20px">Started in the <strong class="gold">Visible Heart Lab</strong> at the University of Minnesota, studying cardiac physiology and biomedical engineering at the device level. That foundation of understanding how complex systems fail, adapt, and heal has shaped how I think about product ever since.</p>
+      <p style="margin-bottom:20px">Spent nearly a decade in consultative sales and training, then video and brand storytelling, learning that the hardest part of any complex idea is making it land for someone who doesn't already care. That skill travels.</p>
+      <p style="margin-bottom:20px">Went back for a <strong class="gold">MBA in Medical Industry Leadership</strong> at Carlson, then joined the <strong>UMN Technology Commercialization office</strong> helping researchers cross the gap between a working idea and a real product: market fit, regulatory strategy, financial models. Moved into product full-time at <strong>Claros Technologies</strong>, building commercialization strategy around remediation technology for PFAS Forever Chemicals, then into digital access to behavioral healthcare at <strong>Aetna/CVS</strong>.</p>
+      <p style="margin-bottom:20px">I've embraced AI as a genuine force multiplier in discovery, synthesis, and delivery. Built the tools in this portfolio using Claude. But the bigger work is on the product side — scoping where AI belongs in a roadmap and laying the data foundations first, the way I structured the behavioral health analytics platform at Aetna for LLM/ML readiness. The transformation is real and I'm leaning in, not waiting.</p>
+      <p>Now: senior product leader building <strong class="plain">platforms that help people navigate the hardest moments in health</strong>, where the stakes are real and the product craft has to match.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot gold"></div><div class="tl-year">2009</div><div class="tl-role">BS Biomedical Sciences</div><div class="tl-co">University of Minnesota · Visible Heart Lab</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2009 – 2017</div><div class="tl-role">Consultative Sales &amp; Training</div><div class="tl-co">Various companies</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2017 – 2019</div><div class="tl-role">Business Development &amp; Producer</div><div class="tl-co">Motion 117</div></div>
+      <div class="tl-item"><div class="tl-dot gold"></div><div class="tl-year">2020 – 2021</div><div class="tl-role">MBA · Medical Industry Leadership</div><div class="tl-co">Carlson School of Management, UMN</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2020 – 2021</div><div class="tl-role">Venture Center Associate</div><div class="tl-co">UMN Office of Technology Commercialization</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2021 – 2023</div><div class="tl-role">Technical Product Manager</div><div class="tl-co">Claros Technologies</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2023 – 2026</div><div class="tl-role">Senior Manager, Digital Product</div><div class="tl-co">Aetna · CVS Health</div></div>
+    </div>
+  </div>
+</section>
+
 <section id="work">
   <div class="section-eyebrow">case studies</div>
   <h2 class="section-title">Problems worth <em>solving.</em></h2>
@@ -677,139 +781,6 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   </div>
 </section>
 
-<section id="focus" style="padding-top:0;">
-  <div style="max-width:1200px;margin:0 auto;padding:0 48px 64px;">
-    <div style="padding:56px 0 32px;">
-      <div style="font-size:10px;color:var(--rose);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;"><span style="display:inline-block;width:16px;height:1px;background:var(--rose);"></span>where I want to build</div>
-      <h2 style="font-family:var(--serif);font-size:clamp(26px,3vw,38px);color:var(--tx);margin-bottom:8px;line-height:1.1;">Where I'm <em style="font-style:italic;color:var(--blue2);">focused.</em></h2>
-      <p style="font-size:15px;color:var(--tx2);line-height:1.7;max-width:540px;">Two parallel paths, one throughline: high-stakes products that have to work for the person on the other end.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="seeking-grid">
-      <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
-        <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">Health Tech</div>
-        <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Digital Health &amp; Care Navigation</div>
-        <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Senior PM and product leadership roles where the product directly shapes how people access and experience care. Navigation platforms, behavioral health tools, analytics, AI/ML product strategy, and 0-to-1 builds in regulated environments.</p>
-        <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Unite Us</span>
-          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Reema Health</span>
-        </div>
-        <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">UnitedHealth / Optum</span>
-          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">CVS / Aetna</span>
-        </div>
-      </div>
-      <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
-        <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">Medtech</div>
-        <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Medical Devices &amp; Commercialization</div>
-        <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Upstream and downstream PM roles where clinical depth and product craft meet. Device commercialization, clinical evidence, and product strategy in regulated environments &mdash; backed by a biomedical sciences foundation and cardiac research at the UMN Visible Heart Lab.</p>
-        <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Anteris Medical</span>
-          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Medical 21</span>
-        </div>
-        <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Philips</span>
-          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Boston Scientific</span>
-          <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:#2A4A6B;color:#E8F2F8;border:0.5px solid #3A6A9B;">Medtronic</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="story">
-  <div class="section-eyebrow">the story</div>
-  <h2 class="section-title">Non-linear path.<br><em>Intentional direction.</em></h2>
-  <div class="story-grid fade-up">
-    <div class="story-text">
-      <p style="margin-bottom:20px">Started in the <strong class="gold">Visible Heart Lab</strong> at the University of Minnesota, studying cardiac physiology and biomedical engineering at the device level. That foundation of understanding how complex systems fail, adapt, and heal has shaped how I think about product ever since.</p>
-      <p style="margin-bottom:20px">Spent nearly a decade in consultative sales and training, then video and brand storytelling, learning that the hardest part of any complex idea is making it land for someone who doesn't already care. That skill travels.</p>
-      <p style="margin-bottom:20px">Went back for a <strong class="gold">MBA in Medical Industry Leadership</strong> at Carlson, then joined the <strong>UMN Technology Commercialization office</strong> helping researchers cross the gap between a working idea and a real product: market fit, regulatory strategy, financial models. Moved into product full-time at <strong>Claros Technologies</strong>, building commercialization strategy around remediation technology for PFAS Forever Chemicals, then into digital access to behavioral healthcare at <strong>Aetna/CVS</strong>.</p>
-      <p style="margin-bottom:20px">I've embraced AI as a genuine force multiplier in discovery, synthesis, and delivery. Built the tools in this portfolio using Claude. But the bigger work is on the product side — scoping where AI belongs in a roadmap and laying the data foundations first, the way I structured the behavioral health analytics platform at Aetna for LLM/ML readiness. The transformation is real and I'm leaning in, not waiting.</p>
-      <p>Now: senior product leader building <strong class="plain">platforms that help people navigate the hardest moments in health</strong>, where the stakes are real and the product craft has to match.</p>
-    </div>
-    <div class="timeline">
-      <div class="tl-item"><div class="tl-dot gold"></div><div class="tl-year">2009</div><div class="tl-role">BS Biomedical Sciences</div><div class="tl-co">University of Minnesota · Visible Heart Lab</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2009 – 2017</div><div class="tl-role">Consultative Sales &amp; Training</div><div class="tl-co">Various companies</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2017 – 2019</div><div class="tl-role">Business Development &amp; Producer</div><div class="tl-co">Motion 117</div></div>
-      <div class="tl-item"><div class="tl-dot gold"></div><div class="tl-year">2020 – 2021</div><div class="tl-role">MBA · Medical Industry Leadership</div><div class="tl-co">Carlson School of Management, UMN</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2020 – 2021</div><div class="tl-role">Venture Center Associate</div><div class="tl-co">UMN Office of Technology Commercialization</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2021 – 2023</div><div class="tl-role">Technical Product Manager</div><div class="tl-co">Claros Technologies</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2023 – 2026</div><div class="tl-role">Senior Manager, Digital Product</div><div class="tl-co">Aetna · CVS Health</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="fit">
-  <div class="section-eyebrow">role fit check</div>
-  <h2 class="section-title">See how I map<br>to <em>your role.</em></h2>
-  <p class="section-lead">Paste a job description and get a real-time analysis of how my background aligns — experience, domain match, and anything worth a closer look. It's a Claude integration I built, scoring against logic I designed.</p>
-  <div class="fit-widget fade-up">
-    <p class="fit-intro">Built this to make your life easier. Paste the JD below — you'll get an honest read on where there's genuine overlap, where there are gaps, and whether this conversation is worth having.</p>
-    <div class="fit-input-row">
-      <textarea class="fit-textarea" id="fit-jd" placeholder="Paste job description text here..."></textarea>
-      <button class="fit-btn" id="fit-btn" onclick="runFit()">Analyze ↗</button>
-    </div>
-    <div class="fit-hint" style="color:var(--gold2)">claude integration · ~15 seconds · no data stored</div>
-    <div class="fit-loading" id="fit-loading"><span class="spin">↻</span> Analyzing the role...</div>
-    <div class="fit-error" id="fit-error"></div>
-    <div class="fit-result" id="fit-result">
-      <div class="fit-result-top">
-        <div class="fit-score-box"><div class="fit-score-num" id="fit-score-num">—</div><div class="fit-score-label">fit score</div></div>
-        <div class="fit-role-box"><div class="fit-role-co" id="fit-co">—</div><div class="fit-role-title" id="fit-role">—</div><div class="fit-role-comp" id="fit-comp"></div></div>
-        <div class="fit-rationale" id="fit-rationale">—</div>
-      </div>
-      <div class="fit-match" id="fit-match"></div>
-      <div class="fit-flags" id="fit-flags"></div>
-      <div class="fit-news" id="fit-news" style="display:none"><div class="fit-news-label">company news</div><div id="fit-news-text"></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="schedule">
-  <div class="section-eyebrow">book time</div>
-  <h2 class="section-title">Let's have a<br><em>real conversation.</em></h2>
-  <p class="section-lead">Exploring a role, want to talk product, or just curious how my background maps to what you're building — pick a format and grab a time.</p>
-
-  <div class="book-panel fade-up">
-    <div class="book-panel-top">
-      <div class="avail-dot"></div>
-      <div class="strip-label">book a time</div>
-      <div class="strip-divider"></div>
-      <div class="strip-note">Minneapolis / St. Paul · remote · Central Time</div>
-    </div>
-    <div class="book-grid">
-      <a href="https://cal.com/ryan-corcoran-4fugai/walk-and-talk" target="_blank" rel="noopener" class="book-card">
-        <div class="bc-icon">🚶</div>
-        <div class="bc-body"><div class="bc-title">Walk &amp; Talk</div><div class="bc-desc">A walking conversation · Mpls / St. Paul metro</div></div>
-        <span class="bc-dur">45 min</span>
-      </a>
-      <a href="https://cal.com/ryan-corcoran-4fugai/in-person-coffee" target="_blank" rel="noopener" class="book-card">
-        <div class="bc-icon">☕</div>
-        <div class="bc-body"><div class="bc-title">In-Person Coffee</div><div class="bc-desc">In-person coffee chat · Mpls / St. Paul</div></div>
-        <span class="bc-dur">30 min</span>
-      </a>
-      <a href="https://cal.com/ryan-corcoran-4fugai/virtual-connection" target="_blank" rel="noopener" class="book-card">
-        <div class="bc-icon">💻</div>
-        <div class="bc-body"><div class="bc-title">Virtual Connection</div><div class="bc-desc">Role overview &amp; search context</div></div>
-        <span class="bc-dur">30 min</span>
-      </a>
-      <a href="https://cal.com/ryan-corcoran-4fugai/deep-dive" target="_blank" rel="noopener" class="book-card">
-        <div class="bc-icon">🔬</div>
-        <div class="bc-body"><div class="bc-title">Deep Dive</div><div class="bc-desc">Full conversation · virtual or in-person</div></div>
-        <span class="bc-dur">60 min</span>
-      </a>
-    </div>
-    <div class="book-avail">
-      <div class="book-avail-label">Currently available</div>
-      <div class="book-avail-text">Active search · Minneapolis, MN · <span style="color:var(--jade2)">Hybrid · MSP metro</span> · <span style="color:var(--tx)">$130K–$180K</span><br><span style="color:var(--tx3);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Open to</span> Senior PM · Sr. Manager · Associate Director<br><span style="color:var(--tx3);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Focus</span> digital health (care navigation, behavioral health, analytics) · medical devices (upstream / downstream)</div>
-    </div>
-  </div>
-</section>
-
 <section id="skills">
   <div class="section-eyebrow">skills &amp; domains</div>
   <h2 class="section-title">Where I'm <em>strong.</em></h2>
@@ -863,9 +834,51 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   </div>
 </section>
 
+<section id="schedule">
+  <div class="section-eyebrow">book time</div>
+  <h2 class="section-title">Let's have a<br><em>real conversation.</em></h2>
+  <p class="section-lead">Exploring a role, want to talk product, or just curious how my background maps to what you're building — pick a format and grab a time.</p>
+
+  <div class="book-panel fade-up">
+    <div class="book-panel-top">
+      <div class="avail-dot"></div>
+      <div class="strip-label">book a time</div>
+      <div class="strip-divider"></div>
+      <div class="strip-note">Minneapolis / St. Paul · remote · Central Time</div>
+    </div>
+    <div class="book-grid">
+      <a href="https://cal.com/ryan-corcoran-4fugai/walk-and-talk" target="_blank" rel="noopener" class="book-card">
+        <div class="bc-icon">🚶</div>
+        <div class="bc-body"><div class="bc-title">Walk &amp; Talk</div><div class="bc-desc">A walking conversation · Mpls / St. Paul metro</div></div>
+        <span class="bc-dur">45 min</span>
+      </a>
+      <a href="https://cal.com/ryan-corcoran-4fugai/in-person-coffee" target="_blank" rel="noopener" class="book-card">
+        <div class="bc-icon">☕</div>
+        <div class="bc-body"><div class="bc-title">In-Person Coffee</div><div class="bc-desc">In-person coffee chat · Mpls / St. Paul</div></div>
+        <span class="bc-dur">30 min</span>
+      </a>
+      <a href="https://cal.com/ryan-corcoran-4fugai/virtual-connection" target="_blank" rel="noopener" class="book-card">
+        <div class="bc-icon">💻</div>
+        <div class="bc-body"><div class="bc-title">Virtual Connection</div><div class="bc-desc">Role overview &amp; search context</div></div>
+        <span class="bc-dur">30 min</span>
+      </a>
+      <a href="https://cal.com/ryan-corcoran-4fugai/deep-dive" target="_blank" rel="noopener" class="book-card">
+        <div class="bc-icon">🔬</div>
+        <div class="bc-body"><div class="bc-title">Deep Dive</div><div class="bc-desc">Full conversation · virtual or in-person</div></div>
+        <span class="bc-dur">60 min</span>
+      </a>
+    </div>
+    <div class="book-avail">
+      <div class="book-avail-label">Currently available</div>
+      <div class="book-avail-text">Active search · Minneapolis, MN · <span style="color:var(--jade2)">Hybrid · MSP metro</span> · <span style="color:var(--tx)">$130K–$180K</span><br><span style="color:var(--tx3);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Open to</span> Senior PM · Sr. Manager · Associate Director<br><span style="color:var(--tx3);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Focus</span> digital health (care navigation, behavioral health, analytics) · medical devices (upstream / downstream)</div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
   <div class="section-eyebrow">get in touch</div>
   <h2 class="section-title">Let's talk about<br>what you're <em>building.</em></h2>
+  <p class="section-lead">The three products above weren&rsquo;t random. They represent the kinds of problems I&rsquo;ve intentionally spent this season learning to solve&mdash;and the work I&rsquo;m excited to bring back to a product team.</p>
   <div class="contact-grid fade-up">
     <div class="contact-links">
       <a href="mailto:rcorcoran03@gmail.com" class="contact-link-row"><span class="contact-link-icon">✉</span><span class="contact-link-label">Email</span><span class="contact-link-val">rcorcoran03@gmail.com</span></a>
@@ -875,6 +888,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <p class="contact-note">"I'm drawn to teams building at the intersection of <strong>clinical complexity and consumer experience</strong>, where the stakes are real and the product craft has to match."</p>
   </div>
 </section>
+
 
 <footer>
   <span class="footer-name">Ryan Corcoran</span>
