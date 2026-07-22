@@ -235,7 +235,9 @@ section{padding:80px 48px;border-top:0.5px solid var(--border);max-width:1200px;
 .contact-link-icon{font-size:13px;color:var(--rose);width:16px;text-align:center;flex-shrink:0;}
 .contact-link-label{font-size:12px;color:var(--tx2);flex-shrink:0;}
 .contact-link-val{font-size:11px;color:var(--rose2);margin-left:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}
-.contact-note{font-size:17px;color:var(--tx2);line-height:1.8;font-family:var(--serif);font-style:italic;border-left:2px solid var(--blue);padding-left:20px;}
+.contact-note{font-size:17px;color:var(--tx2);line-height:1.8;font-family:var(--serif);font-style:italic;border-left:2px solid var(--blue);padding-left:20px;max-width:640px;margin-bottom:32px;}
+.contact-note-lg{font-size:23px;line-height:1.65;}
+.contact-cta-line{font-size:15px;color:var(--tx2);line-height:1.6;margin:32px 0 16px;max-width:560px;}
 .contact-note strong{font-style:normal;color:var(--tx);}
 footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;}
 .footer-name{font-family:var(--serif);font-size:14px;color:var(--tx3);}
@@ -348,7 +350,6 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <a href="#story">story</a>
     <a href="#work">work</a>
     <a href="#skills">skills</a>
-    <a href="#schedule">schedule</a>
     <a href="#contact">contact</a>
   </div>
 </nav>
@@ -834,10 +835,12 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   </div>
 </section>
 
-<section id="schedule">
-  <div class="section-eyebrow">book time</div>
-  <h2 class="section-title">Let's have a<br><em>real conversation.</em></h2>
-  <p class="section-lead">Exploring a role, want to talk product, or just curious how my background maps to what you're building — pick a format and grab a time.</p>
+<section id="contact">
+  <div class="section-eyebrow">get in touch</div>
+  <h2 class="section-title">Let's talk about<br>what you're <em>building.</em></h2>
+  <p class="section-lead">The three products above weren&rsquo;t random. They represent the kinds of problems I&rsquo;ve intentionally spent this season learning to solve&mdash;and the work I&rsquo;m excited to bring back to a product team. If you&rsquo;re building products where strategy, AI, and thoughtful execution matter, I&rsquo;d love to talk.</p>
+
+  <p class="contact-note contact-note-lg">"I'm drawn to teams building at the intersection of <strong>clinical complexity and consumer experience</strong>, where the stakes are real and the product craft has to match."</p>
 
   <div class="book-panel fade-up">
     <div class="book-panel-top">
@@ -869,23 +872,17 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       </a>
     </div>
     <div class="book-avail">
-      <div class="book-avail-label">Currently available</div>
-      <div class="book-avail-text">Active search · Minneapolis, MN · <span style="color:var(--jade2)">Hybrid · MSP metro</span> · <span style="color:var(--tx)">$130K–$180K</span><br><span style="color:var(--tx3);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Open to</span> Senior PM · Sr. Manager · Associate Director<br><span style="color:var(--tx3);font-size:11px;letter-spacing:.06em;text-transform:uppercase;">Focus</span> digital health (care navigation, behavioral health, analytics) · medical devices (upstream / downstream)</div>
+      <div class="book-avail-label">Currently Exploring</div>
+      <div class="book-avail-text">Senior Product Manager &bull; Product Lead &bull; Principal PM<br>Digital Health &bull; MedTech &bull; AI Product Strategy<br>Minneapolis &bull; Hybrid &bull; Remote</div>
     </div>
   </div>
-</section>
 
-<section id="contact">
-  <div class="section-eyebrow">get in touch</div>
-  <h2 class="section-title">Let's talk about<br>what you're <em>building.</em></h2>
-  <p class="section-lead">The three products above weren&rsquo;t random. They represent the kinds of problems I&rsquo;ve intentionally spent this season learning to solve&mdash;and the work I&rsquo;m excited to bring back to a product team.</p>
-  <div class="contact-grid fade-up">
-    <div class="contact-links">
-      <a href="mailto:rcorcoran03@gmail.com" class="contact-link-row"><span class="contact-link-icon">✉</span><span class="contact-link-label">Email</span><span class="contact-link-val">rcorcoran03@gmail.com</span></a>
-      <a href="https://linkedin.com/in/ryancorcoran1" target="_blank" class="contact-link-row"><span class="contact-link-icon">in</span><span class="contact-link-label">LinkedIn</span><span class="contact-link-val">/in/ryancorcoran1</span></a>
-      <div class="contact-link-row" style="cursor:default"><span class="contact-link-icon">◎</span><span class="contact-link-label">Location</span><span class="contact-link-val">Minneapolis · hybrid</span></div>
-    </div>
-    <p class="contact-note">"I'm drawn to teams building at the intersection of <strong>clinical complexity and consumer experience</strong>, where the stakes are real and the product craft has to match."</p>
+  <p class="contact-cta-line">Whether you&rsquo;re building for patients, clinicians, or consumers, I&rsquo;d love to hear what your team is working on.</p>
+
+  <div class="contact-links">
+    <a href="mailto:rcorcoran03@gmail.com" class="contact-link-row"><span class="contact-link-icon">✉</span><span class="contact-link-label">Email</span><span class="contact-link-val">rcorcoran03@gmail.com</span></a>
+    <a href="https://linkedin.com/in/ryancorcoran1" target="_blank" class="contact-link-row"><span class="contact-link-icon">in</span><span class="contact-link-label">LinkedIn</span><span class="contact-link-val">/in/ryancorcoran1</span></a>
+    <div class="contact-link-row" style="cursor:default"><span class="contact-link-icon">◎</span><span class="contact-link-label">Location</span><span class="contact-link-val">Minneapolis · hybrid</span></div>
   </div>
 </section>
 
