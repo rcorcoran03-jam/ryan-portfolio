@@ -340,6 +340,17 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 .build-preview img{width:100%;height:100%;object-fit:cover;display:block;}
 .build-preview.empty{border-style:dashed;background:linear-gradient(135deg,var(--bg3),var(--bg2));}
 .build-preview.empty::after{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--tx3);font-size:10px;letter-spacing:.12em;text-transform:uppercase;}
+/* Double Cup — three linked builds, stacked (icon + title + one-line desc + AI-component pills) */
+.dc-stack{display:flex;flex-direction:column;gap:7px;margin:2px 0 16px;position:relative;z-index:1;}
+.dc-stack-label{font-size:9px;color:var(--tx3);letter-spacing:.11em;text-transform:uppercase;margin-bottom:1px;}
+.dc-item{display:block;text-decoration:none;padding:9px 12px;border-radius:8px;border:0.5px solid var(--border2);background:var(--bg3);transition:border-color .18s,background .18s,transform .15s;}
+.dc-item:hover{border-color:rgba(196,132,143,.55);background:var(--bg4);transform:translateY(-1px);}
+.dc-item-head{display:flex;align-items:center;gap:8px;margin-bottom:3px;}
+.dc-icon{width:15px;height:15px;flex-shrink:0;color:var(--rose2);}
+.dc-title{font-size:14px;font-weight:600;color:var(--tx);letter-spacing:-.01em;line-height:1.1;}
+.dc-title .arw{color:var(--rose2);font-size:11px;margin-left:3px;font-weight:400;}
+.dc-item:hover .dc-title{color:var(--rose2);}
+.dc-desc{font-size:11px;color:var(--tx2);line-height:1.4;margin:0;}
 .value-chips-label{font-size:10px;color:var(--tx3);letter-spacing:.08em;text-transform:uppercase;margin:28px 0 10px;}
 .value-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
 .value-chip{font-size:12px;color:var(--tx2);padding:7px 14px;border-radius:20px;background:var(--bg2);border:0.5px solid var(--border2);letter-spacing:.02em;}
@@ -503,13 +514,12 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <div class="case-title" style="font-size:22px;margin-bottom:8px;">JobQuest</div>
       <p style="font-size:13px;color:var(--tx2);line-height:1.65;margin-bottom:8px;"><strong style="color:var(--rose2);font-weight:500;">Opportunity is hard to navigate.</strong> The modern job search is fragmented, repetitive, and built for a different era.</p>
       <p style="font-size:13px;color:var(--tx2);line-height:1.65;margin-bottom:14px;">An AI-assisted operating system for running a search &mdash; tracker, networking CRM, fit analyzer, and focus timer in a single private file.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
-        <span class="htag muted">AI workflows</span><span class="htag muted">UX</span><span class="htag muted">Automation</span><span class="htag muted">Shipped fast</span>
-      </div>
       <div class="build-preview" data-label="Focus preview">
         <img src="jobquest-focus.png" alt="JobQuest Focus — guided wellness practices for the search" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove();">
       </div>
-      <a href="https://jobs.ryan-corcoran.com/access.html" target="_blank" class="btn-blueprint" style="margin-top:auto;align-self:flex-start;">Explore &nearr;</a>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;">
+        <span class="htag muted">AI workflows</span><span class="htag muted">UX</span><span class="htag muted">Automation</span><span class="htag muted">Shipped fast</span>
+      </div>
       </div>
     </div>
 
@@ -557,21 +567,32 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <div class="case-title" style="font-size:22px;margin-bottom:8px;">Double Cup Coffee Co.</div>
       <p style="font-size:13px;color:var(--tx2);line-height:1.65;margin-bottom:8px;"><strong style="color:var(--rose2);font-weight:500;">Belonging deserves infrastructure.</strong> Healthcare increasingly screens for loneliness but has no scalable way to build connection.</p>
       <p style="font-size:13px;color:var(--tx2);line-height:1.65;margin-bottom:14px;">A community belonging network with a privacy-preserving evidence layer. Coffee isn't the product &mdash; belonging is. Healthcare receives evidence, not relationship data.</p>
-      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:7px 11px;margin-bottom:16px;padding:10px 13px;background:var(--bg3);border:0.5px solid var(--border2);border-radius:8px;">
-        <span style="font-size:9px;color:var(--rose2);letter-spacing:.09em;text-transform:uppercase;font-weight:500;white-space:nowrap;">Three linked builds</span>
-        <a href="https://doublecupcoffeeco.com/" target="_blank" class="build-link-secondary">Concept</a>
-        <span style="color:var(--tx3);font-size:10px;">&middot;</span>
-        <a href="https://doublecupcoffeeco.com/impact.html" target="_blank" class="build-link-secondary">Impact report</a>
-        <span style="color:var(--tx3);font-size:10px;">&middot;</span>
-        <a href="https://doublecupcoffeeco.com/population-fit.html" target="_blank" class="build-link-secondary">Population-fit tool</a>
+      <div class="dc-stack">
+        <div class="dc-stack-label">Three linked builds</div>
+        <a href="https://doublecupcoffeeco.com/" target="_blank" class="dc-item">
+          <div class="dc-item-head">
+            <svg class="dc-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 L13.7 9.6 L20.5 12 L13.7 14.4 L12 21 L10.3 14.4 L3.5 12 L10.3 9.6 Z"/></svg>
+            <span class="dc-title">Double Cup Concept<span class="arw">&nearr;</span></span>
+          </div>
+          <div class="dc-desc">A fundable model for building social infrastructure through everyday connection.</div>
+        </a>
+        <a href="https://doublecupcoffeeco.com/impact.html" target="_blank" class="dc-item">
+          <div class="dc-item-head">
+            <svg class="dc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 20 V13 M12 20 V5 M19 20 V10"/></svg>
+            <span class="dc-title">Impact Report<span class="arw">&nearr;</span></span>
+          </div>
+          <div class="dc-desc">An evidence framework for measuring the impact of community infrastructure.</div>
+        </a>
+        <a href="https://doublecupcoffeeco.com/population-fit.html" target="_blank" class="dc-item">
+          <div class="dc-item-head">
+            <svg class="dc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5 L11 15.5 L16.5 9"/></svg>
+            <span class="dc-title">Population Fit<span class="arw">&nearr;</span></span>
+          </div>
+          <div class="dc-desc">An AI decision engine for assessing a member population's pilot readiness.</div>
+        </a>
       </div>
-      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px;">
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;">
         <span class="htag muted">Service design</span><span class="htag muted">Systems thinking</span><span class="htag muted">Behavioral health</span><span class="htag muted">Evidence-based</span>
-      </div>
-      <div style="margin-top:auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-        <a href="https://doublecupcoffeeco.com/" target="_blank" class="btn-blueprint">Explore &nearr;</a>
-        <a href="https://doublecupcoffeeco.com/impact.html" target="_blank" class="build-link-secondary">Impact report</a>
-        <a href="https://doublecupcoffeeco.com/population-fit.html" target="_blank" class="build-link-secondary">Population-fit tool</a>
       </div>
       </div>
     </div>
@@ -622,14 +643,12 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <div class="case-title" style="font-size:22px;margin-bottom:8px;">Liquidity</div>
       <p style="font-size:13px;color:var(--tx2);line-height:1.65;margin-bottom:8px;"><strong style="color:var(--rose2);font-weight:500;">Financial resilience should be designed, not improvised.</strong> Personal-finance tools optimize wealth accumulation, not surviving uncertainty.</p>
       <p style="font-size:13px;color:var(--tx2);line-height:1.65;margin-bottom:14px;">A financial operating system for navigating unemployment and rebuilding stability &mdash; spending pace, upcoming bills, and real runway, computed privately in the browser.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
-        <span class="htag muted">Behavioral econ</span><span class="htag muted">Dashboard design</span><span class="htag muted">Info architecture</span><span class="htag muted">Product strategy</span>
-      </div>
       <div class="build-preview" data-label="Liquidity preview">
         <img src="liquidity-preview.png" alt="Liquidity — personal-finance clarity preview" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove();">
       </div>
-      <!-- TODO: confirm/replace Liquidity live URL below -->
-      <a href="https://liquidity.ryan-corcoran.com/" target="_blank" class="btn-blueprint" style="margin-top:auto;align-self:flex-start;">View prototype &nearr;</a>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;">
+        <span class="htag muted">Behavioral econ</span><span class="htag muted">Dashboard design</span><span class="htag muted">Info architecture</span><span class="htag muted">Product strategy</span>
+      </div>
       </div>
     </div>
 
