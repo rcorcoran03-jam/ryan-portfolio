@@ -291,8 +291,8 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 .builds-blueprint .d{stroke:currentColor;fill:none;stroke-opacity:.13;stroke-width:1;stroke-dasharray:3 6;}
 .builds-blueprint .au{stroke:var(--gold);fill:none;stroke-opacity:.14;stroke-width:1;}
 .builds-blueprint .t{fill:currentColor;fill-opacity:.18;font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:9px;letter-spacing:.14em;}
-.build-card{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(22,32,48,.80),rgba(20,29,44,.90));box-shadow:0 22px 48px -26px rgba(0,0,0,.72),0 1px 0 rgba(255,255,255,.03) inset;}
-.build-card .card-body{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;}
+.build-card{position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(22,32,48,.80),rgba(20,29,44,.90));box-shadow:0 22px 48px -26px rgba(0,0,0,.72),0 1px 0 rgba(255,255,255,.03) inset;display:flex;flex-direction:column;}
+.build-card .card-body{position:relative;z-index:2;display:flex;flex:1;flex-direction:column;height:auto;}
 .card-bp{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;color:#7FB0D0;opacity:.92;transition:opacity .55s ease;}
 .build-card:hover .card-bp{opacity:1;}
 .card-bp .s{stroke:currentColor;fill:none;stroke-opacity:.115;stroke-width:1;transition:stroke-opacity .55s ease;}
