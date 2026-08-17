@@ -335,6 +335,11 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 .btn-blueprint:active{transform:translateY(0);}
 .build-link-secondary{position:relative;z-index:2;font-size:11px;color:var(--tx2);text-decoration:none;letter-spacing:.05em;border-bottom:0.5px solid var(--border2);transition:color .2s ease,border-color .2s ease;}
 .build-link-secondary:hover{color:var(--gold2);border-color:rgba(201,150,26,.5);}
+/* additional feature preview (og-image proportions) — degrades to a styled placeholder if the image file is missing */
+.build-preview{position:relative;z-index:1;width:100%;aspect-ratio:1200/630;border-radius:9px;border:0.5px solid var(--border2);overflow:hidden;margin:2px 0 18px;background:var(--bg3);box-shadow:0 8px 22px rgba(0,0,0,.3);}
+.build-preview img{width:100%;height:100%;object-fit:cover;display:block;}
+.build-preview.empty{border-style:dashed;background:linear-gradient(135deg,var(--bg3),var(--bg2));}
+.build-preview.empty::after{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--tx3);font-size:10px;letter-spacing:.12em;text-transform:uppercase;}
 .value-chips-label{font-size:10px;color:var(--tx3);letter-spacing:.08em;text-transform:uppercase;margin:28px 0 10px;}
 .value-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
 .value-chip{font-size:12px;color:var(--tx2);padding:7px 14px;border-radius:20px;background:var(--bg2);border:0.5px solid var(--border2);letter-spacing:.02em;}
@@ -498,8 +503,11 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <div class="case-title" style="font-size:22px;margin-bottom:8px;">JobQuest</div>
       <p style="font-size:13px;color:var(--tx2);line-height:1.65;margin-bottom:8px;"><strong style="color:var(--rose2);font-weight:500;">Opportunity is hard to navigate.</strong> The modern job search is fragmented, repetitive, and built for a different era.</p>
       <p style="font-size:13px;color:var(--tx2);line-height:1.65;margin-bottom:14px;">An AI-assisted operating system for running a search &mdash; tracker, networking CRM, fit analyzer, and focus timer in a single private file.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px;">
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
         <span class="htag muted">AI workflows</span><span class="htag muted">UX</span><span class="htag muted">Automation</span><span class="htag muted">Shipped fast</span>
+      </div>
+      <div class="build-preview" data-label="Focus preview">
+        <img src="jobquest-focus.png" alt="JobQuest Focus — guided wellness practices for the search" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove();">
       </div>
       <a href="https://jobs.ryan-corcoran.com/access.html" target="_blank" class="btn-blueprint" style="margin-top:auto;align-self:flex-start;">Explore &nearr;</a>
       </div>
@@ -614,8 +622,11 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <div class="case-title" style="font-size:22px;margin-bottom:8px;">Liquidity</div>
       <p style="font-size:13px;color:var(--tx2);line-height:1.65;margin-bottom:8px;"><strong style="color:var(--rose2);font-weight:500;">Financial resilience should be designed, not improvised.</strong> Personal-finance tools optimize wealth accumulation, not surviving uncertainty.</p>
       <p style="font-size:13px;color:var(--tx2);line-height:1.65;margin-bottom:14px;">A financial operating system for navigating unemployment and rebuilding stability &mdash; spending pace, upcoming bills, and real runway, computed privately in the browser.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:20px;">
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
         <span class="htag muted">Behavioral econ</span><span class="htag muted">Dashboard design</span><span class="htag muted">Info architecture</span><span class="htag muted">Product strategy</span>
+      </div>
+      <div class="build-preview" data-label="Liquidity preview">
+        <img src="liquidity-preview.png" alt="Liquidity — personal-finance clarity preview" loading="lazy" onerror="this.parentElement.classList.add('empty');this.remove();">
       </div>
       <!-- TODO: confirm/replace Liquidity live URL below -->
       <a href="https://liquidity.ryan-corcoran.com/" target="_blank" class="btn-blueprint" style="margin-top:auto;align-self:flex-start;">View prototype &nearr;</a>
