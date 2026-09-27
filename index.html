@@ -340,7 +340,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 .build-preview img{width:100%;height:100%;object-fit:cover;display:block;}
 .build-preview.empty{border-style:dashed;background:linear-gradient(135deg,var(--bg3),var(--bg2));}
 .build-preview.empty::after{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--tx3);font-size:10px;letter-spacing:.12em;text-transform:uppercase;}
-/* Double Cup — three linked builds, stacked (icon + title + one-line desc + AI-component pills) */
+/* Double Cup — linked items, stacked (icon + title + one-line desc + AI-component pills) */
 .dc-stack{display:flex;flex-direction:column;gap:7px;margin:2px 0 16px;position:relative;z-index:1;}
 .dc-stack-label{font-size:9px;color:var(--tx3);letter-spacing:.11em;text-transform:uppercase;margin-bottom:1px;}
 .dc-item{display:block;text-decoration:none;padding:9px 12px;border-radius:8px;border:0.5px solid var(--border2);background:var(--bg3);transition:border-color .18s,background .18s,transform .15s;}
@@ -355,6 +355,14 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 .value-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
 .value-chip{font-size:12px;color:var(--tx2);padding:7px 14px;border-radius:20px;background:var(--bg2);border:0.5px solid var(--border2);letter-spacing:.02em;}
 .value-fit-card{background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--blue);border-radius:12px;padding:28px;margin-top:24px;position:relative;overflow:hidden;}
+/* Double Cup pair — two cards framed as one build */
+.dc-pair{grid-column:1/-1;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 14px 16px;border:0.5px solid rgba(196,132,143,.30);border-radius:16px;background:linear-gradient(180deg,rgba(196,132,143,.05),rgba(196,132,143,.015));}
+.dc-pair-head{grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:2px 4px 0;}
+.dc-pair-kicker{font-size:10px;color:var(--rose2);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;font-weight:500;}
+.dc-pair-line{flex:1;height:0.5px;background:linear-gradient(90deg,rgba(196,132,143,.45),rgba(196,132,143,.08));}
+.dc-pair-note{font-size:11px;color:var(--tx3);letter-spacing:.02em;white-space:nowrap;}
+.dc-pair-join{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:4;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--bg);border:0.5px solid rgba(196,132,143,.55);color:var(--rose2);font-size:16px;line-height:1;box-shadow:0 0 0 4px var(--bg),0 0 14px rgba(196,132,143,.18);pointer-events:none;}
+@media(max-width:768px){.dc-pair{grid-template-columns:1fr;padding:12px;}.dc-pair-note{white-space:normal;}.dc-pair-head{flex-wrap:wrap;gap:6px 12px;}.dc-pair-line{display:none;}.dc-pair-join{display:none;}}
 /* build cards — bottom-anchored links, single-line pills */
 .build-card .dc-stack{margin:auto 0 16px;}
 .build-card .build-preview{margin:auto 0 16px;}
@@ -384,14 +392,14 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     <h1 class="hero-headline">Product leader.<em>Building what&rsquo;s next.</em></h1>
     <p class="hero-bridge">My work sits at the intersection of product strategy, AI, UX, and healthcare. I&rsquo;ve spent this season designing and shipping products that explore meaningful human problems while demonstrating how modern product teams can leverage AI to move from idea to execution faster.</p>
     <p class="hero-sub">Every build began with a different challenge: navigating a fragmented job market, rebuilding belonging in a disconnected world, or creating financial resilience during uncertainty. Different domains. One product philosophy: understand the people, design the system, ship the product, measure the impact.</p>
-    <div class="hero-credit">Three live AI-assisted products, built end-to-end.</div>
+    <div class="hero-credit">AI didn&rsquo;t just make the work faster. It let me go deeper.</div>
     <div class="hero-cta">
       <div class="btn-jq-wrap">
         <a href="#builds" class="btn btn-jobquest">
           <svg class="mn-star" width="14" height="14" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12,1 13.07,9.4 16.6,7.4 14.6,10.9 23,12 14.6,13.07 16.6,16.6 13.07,14.6 12,23 10.93,14.6 7.4,16.6 9.4,13.07 1,12 9.4,10.93 7.4,7.4 10.93,9.4" fill="currentColor"/></svg>
           See the builds &darr;
         </a>
-        <div class="jq-caption">Three live products, three human problems</div>
+        <div class="jq-caption">Three builds, three human problems</div>
       </div>
       <div class="btn-claude-wrap">
         <a href="#fit" class="btn btn-ghost">
@@ -473,8 +481,13 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
   </svg>
   <div class="section-eyebrow">current builds</div>
   <h2 class="section-title">Problems I've chosen to <em>solve.</em></h2>
-  <p class="section-lead">Four builds across three systems people get stuck in: belonging, opportunity, and financial resilience. Double Cup comes in two halves, a community solution and the health-tech AI product that decides where it fits and proves whether it worked. Different audiences, one philosophy: find the friction, understand the people, design the system, measure the impact.</p>
+  <p class="section-lead">Three builds across three systems people get stuck in: belonging, opportunity, and financial resilience. Double Cup is one build in two halves: a community solution, and the health-tech AI product that decides where it fits and proves whether it worked. Different audiences, one philosophy: find the friction, understand the people, design the system, measure the impact.</p>
   <div class="cases-grid fade-up builds-grid">
+
+    <!-- Double Cup — one build, two halves (solution + intelligence layer) -->
+    <div class="dc-pair" role="group" aria-label="Double Cup: one build in two halves">
+      <div class="dc-pair-head"><span class="dc-pair-kicker">Double Cup &middot; one build</span><span class="dc-pair-line"></span><span class="dc-pair-note">The community solution + the AI product that funds and proves it</span></div>
+      <span class="dc-pair-join" aria-hidden="true">+</span>
 
     <!-- Double Cup — The Solution (isolation & loneliness) -->
     <div class="case-card build-card" onclick="if(event.target.closest('a'))return;window.open('https://doublecupcoffeeco.com/','_blank');">
@@ -598,6 +611,8 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       </div>
       </div>
     </div>
+
+    </div><!-- /.dc-pair -->
 
     <!-- JobQuest -->
     <div class="case-card build-card" onclick="if(event.target.closest('a'))return;window.open('https://jobquest.ryan-corcoran.com/access.html','_blank');">
