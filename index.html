@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<!-- portfolio v6_4 — restructured booking-strip availability into quick-facts + labeled Open-to/Focus lines, added Associate Director (also to fit-checker SYSTEM open-to) -->
+<!-- portfolio v6_10 (2026-10-16) — new og-image.jpg (headline + headshot + three lanes, ryan-corcoran.com); og:image cache-busted ?v=2; alt text updated -->
+<!-- prev v6_9 (2026-10-16) — hero headline: "I take on human problems / with AI, creativity, and hustle." Title/OG titles follow -->
+<!-- prev v6_8 (2026-10-16) — Currently Exploring reorganized into three lanes (product / AI solutions & sales / customer success & accounts); Dan's Fan City (2002) added to timeline so 15+ yrs sales adds up; fit-checker Open-to matched -->
+<!-- prev v6_7 (2026-10-15) — AI claims scaled to what happened: story paragraph + analytics case study now match the LinkedIn About (Access Plus planning with data science; Tableau + new warehouse set up for next-phase AI) -->
+<!-- prev v6_6 (2026-10-15) — hero reworked to serve product + AI sales lanes ("Healthcare AI, from idea to production"); title/meta updated; meta description added; contact lead no longer says "product team" -->
+<!-- prev v6_5 (2026-10-15) — fit checker: prompt + model moved server-side (functions/api/claude.js), client sends only the JD, comp removed, output escaped; "Where I Create Value" company chips replaced with problem areas + real experience -->
+<!-- prev v6_4 — restructured booking-strip availability into quick-facts + labeled Open-to/Focus lines, added Associate Director -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ryan Corcoran — Product Leader</title>
+<title>Ryan Corcoran · Human problems, AI, creativity, and hustle</title>
+<meta name="description" content="Healthcare AI from idea to production. Digital health and medtech, 0→1 product work at CVS Health / Aetna, a consultative sales foundation, and three AI products built end to end. Minneapolis, MN.">
 
 <!-- Open Graph / iMessage / Slack / LinkedIn previews -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.ryan-corcoran.com/">
 <meta property="og:site_name" content="Ryan Corcoran">
-<meta property="og:title" content="Ryan Corcoran — Product Leader">
-<meta property="og:description" content="Product leader and builder. Three live products across opportunity, belonging, and financial resilience. Digital health & medtech. Minneapolis, MN.">
-<meta property="og:image" content="https://www.ryan-corcoran.com/og-image.jpg">
+<meta property="og:title" content="Ryan Corcoran · Human problems, AI, creativity, and hustle">
+<meta property="og:description" content="Healthcare AI from idea to production. Digital health and medtech, 0→1 product work at CVS Health / Aetna, a consultative sales foundation, and three AI products built end to end. Minneapolis, MN.">
+<meta property="og:image" content="https://www.ryan-corcoran.com/og-image.jpg?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ryan Corcoran — Product Leader · Digital Health & Medtech · Minneapolis, MN">
+<meta property="og:image:alt" content="Ryan Corcoran: I take on human problems with AI, creativity, and hustle. Product, AI solutions and sales, customer success. ryan-corcoran.com">
 
 <!-- Twitter / X card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ryan Corcoran — Product Leader">
-<meta name="twitter:description" content="Product leader and builder. Three live products across opportunity, belonging, and financial resilience. Digital health & medtech. Minneapolis, MN.">
-<meta name="twitter:image" content="https://www.ryan-corcoran.com/og-image.jpg">
+<meta name="twitter:title" content="Ryan Corcoran · Human problems, AI, creativity, and hustle">
+<meta name="twitter:description" content="Healthcare AI from idea to production. Digital health and medtech, 0→1 product work at CVS Health / Aetna, a consultative sales foundation, and three AI products built end to end. Minneapolis, MN.">
+<meta name="twitter:image" content="https://www.ryan-corcoran.com/og-image.jpg?v=2">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1B2D'/%3E%3Cpolygon points='16,3 17.8,10.2 24.5,7.5 20.5,13.5 27.5,15.5 20.5,17.5 24.5,23.5 17.8,20.8 16,28 14.2,20.8 7.5,23.5 11.5,17.5 4.5,15.5 11.5,13.5 7.5,7.5 14.2,10.2' fill='%236BA3C8'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,6 +55,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,27,45,0.9
 .nav-links a:hover{color:var(--rose2);}
 .hero{min-height:100vh;padding:112px 48px 72px;display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:stretch;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(29,158,117,0.06) 0%,transparent 70%);pointer-events:none;}
+.hero-headline,.hero-headline em{text-wrap:balance;}
 .hero-eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--rose);letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px;}
 .hero-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:var(--rose);}
 .hero-headline{font-family:var(--serif);font-size:clamp(36px,5vw,68px);line-height:1.14;color:var(--tx);margin-bottom:24px;letter-spacing:-.01em;}
@@ -388,10 +396,10 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 <div class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="hero-left fade-up">
-    <div class="hero-eyebrow">Building AI products · Healthcare · Medtech · Minneapolis, MN</div>
-    <h1 class="hero-headline">Product leader.<em>Building what&rsquo;s next.</em></h1>
-    <p class="hero-bridge">My work sits at the intersection of product strategy, AI, UX, and healthcare. I&rsquo;ve spent this season designing and shipping products that explore meaningful human problems while demonstrating how modern product teams can leverage AI to move from idea to execution faster.</p>
-    <p class="hero-sub">Every build began with a different challenge: navigating a fragmented job market, rebuilding belonging in a disconnected world, or creating financial resilience during uncertainty. Different domains. One product philosophy: understand the people, design the system, ship the product, measure the impact.</p>
+    <div class="hero-eyebrow">AI · Healthcare · Medtech · Minneapolis, MN</div>
+    <h1 class="hero-headline">I take on human problems<em>with AI, creativity, and hustle.</em></h1>
+    <p class="hero-bridge">I work where healthcare problems meet the people who can solve them: finding the AI use case worth funding, making the case to the people who buy it, and getting a real product shipped. Seven years in healthcare tech, including 0&rarr;1 care navigation and analytics at CVS Health / Aetna, built on a first career in consultative sales and storytelling.</p>
+    <p class="hero-sub">This year I built three AI products end to end, each aimed at a system people get stuck in: finding work, finding belonging, and staying financially steady. Different domains, same method: understand the people, design the system, ship it, measure it.</p>
     <div class="hero-credit">AI didn&rsquo;t just make the work faster. It let me go deeper.</div>
     <div class="hero-cta">
       <div class="btn-jq-wrap">
@@ -736,31 +744,35 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">Digital Health</div>
       <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Digital Health &amp; Care Navigation</div>
       <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Building products that improve how people access, navigate, and experience care&mdash;from behavioral health and care navigation to analytics, AI-enabled workflows, and regulated healthcare platforms.</p>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Problems I build for</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Unite Us</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Reema Health</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Behavioral health access</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Care navigation &amp; scheduling</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Payer &amp; client analytics</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Social needs &amp; SDOH</span>
       </div>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Where I've done the work</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">UnitedHealth / Optum</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">CVS / Aetna</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">CVS Health / Aetna</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">UMN Technology Commercialization</span>
       </div>
     </div>
     <div style="background:var(--bg2);border:0.5px solid var(--border);border-top:2px solid var(--gold);border-radius:12px;padding:28px;position:relative;overflow:hidden;">
       <div style="font-size:10px;letter-spacing:.08em;padding:3px 9px;border-radius:10px;background:rgba(201,150,26,.12);color:var(--gold2);border:0.5px solid rgba(201,150,26,.3);display:inline-block;margin-bottom:14px;">Medtech</div>
       <div style="font-family:var(--serif);font-size:20px;color:var(--tx);margin-bottom:10px;line-height:1.2;">Medical Devices &amp; Commercialization</div>
       <p style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;">Bringing clinical evidence, product strategy, and commercialization together to build regulated medical technologies&mdash;from upstream discovery through launch.</p>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">⚡ Startups</div>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Problems I build for</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Anteris Medical</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Medical 21</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Imaging &amp; image-guided therapy</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Cardiac &amp; structural heart</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Upstream voice of customer</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Launch &amp; commercialization</span>
       </div>
-      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">🏢 Enterprise</div>
+      <div style="font-size:10px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:6px;">Where I've done the work</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Philips</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Boston Scientific</span>
-        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Medtronic</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Visible Heart Lab (cardiac research)</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">Claros Technologies</span>
+        <span style="font-size:11px;padding:3px 10px;border-radius:10px;background:var(--bg3);color:var(--tx2);border:0.5px solid var(--border2);">UMN Technology Commercialization</span>
       </div>
     </div>
   </div>
@@ -813,10 +825,11 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       <p style="margin-bottom:20px">Spent the next chapter in consultative sales, training, and account development, then moved into digital media as a producer at <strong>Motion 117</strong>, translating complex ideas into video and brand narratives. A strong idea only matters if you can make it land for someone who doesn't already care. That lesson travels.</p>
       <p style="margin-bottom:20px">Went back to the U of M for an <strong class="gold">MBA in Medical Industry Leadership</strong>, then joined the <strong>Technology Commercialization office</strong>, helping researchers move promising ideas toward viable products through market assessment, regulatory strategy, and financial modeling. From there I led commercialization strategy for PFAS remediation technology at <strong>Claros Technologies</strong>, then moved into behavioral health product strategy at <strong>Aetna / CVS Health</strong>.</p>
       <p style="margin-bottom:20px">At CVS, my work crossed product, analytics, brand, sales, and account leadership. I repositioned a legacy employee assistance program, built a digital care-navigation experience, and led development of a client-facing behavioral health analytics platform.</p>
-      <p style="margin-bottom:20px">I've embraced AI as a genuine force multiplier for discovery, synthesis, prototyping, and delivery. I built the tools and concepts in this portfolio through AI-assisted workflows. But the bigger work is on the product side: understanding where AI belongs, what problem it should solve, and what data foundations must exist before it can deliver value, the way I structured that analytics platform for LLM/ML readiness. The transformation is real, and I'm leaning in.</p>
+      <p style="margin-bottom:20px">My first real AI work came out of Access Plus. Part of our product planning was sitting with data science to figure out where AI could actually help, like triage routing and call center load, and what the data needed to look like first. We didn't call it AI readiness at the time. Looking back, that's what it was. Now I build with AI every day: the tools and concepts in this portfolio came out of AI-assisted workflows, from discovery and synthesis through prototyping and shipping.</p>
       <p>Now: a senior product and growth leader working at the intersection of strategy, storytelling, technology, and human need. I build <strong class="plain">platforms that help people navigate the hardest moments in health</strong>, where the stakes are real and the product craft has to match. Those same instincts extend naturally into medtech, and into the broader work of helping people navigate complexity and make meaningful progress.</p>
     </div>
     <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2002 – 2009</div><div class="tl-role">Family Business</div><div class="tl-co">Dan&rsquo;s Fan City · ceiling fan retail</div></div>
       <div class="tl-item"><div class="tl-dot gold"></div><div class="tl-year">2009</div><div class="tl-role">BS Biomedical Sciences</div><div class="tl-co">University of Minnesota · Visible Heart Lab</div></div>
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2009 – 2017</div><div class="tl-role">Consultative Sales &amp; Training</div><div class="tl-co">Various companies</div></div>
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2017 – 2019</div><div class="tl-role">Business Development &amp; Producer</div><div class="tl-co">Motion 117</div></div>
@@ -860,7 +873,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
       </div>
       <ul class="case-highlights">
         <li>Unified disparate member &amp; clinical data into one schema and quality pipeline</li>
-        <li>Built with AI/LLM integration readiness as an explicit design goal</li>
+        <li>Launched in Tableau on a new data warehouse designed to support the AI work planned for the next phase</li>
         <li>Powered pricing &amp; go-to-market decisions at national scale</li>
       </ul>
     </div>
@@ -923,7 +936,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 <section id="contact">
   <div class="section-eyebrow">get in touch</div>
   <h2 class="section-title">Let's talk about<br>what you're <em>building.</em></h2>
-  <p class="section-lead">The three products above weren&rsquo;t random. They represent the kinds of problems I&rsquo;ve intentionally spent this season learning to solve&mdash;and the work I&rsquo;m excited to bring back to a product team. If you&rsquo;re building products where strategy, AI, and thoughtful execution matter, I&rsquo;d love to talk.</p>
+  <p class="section-lead">The three products above weren&rsquo;t random. They represent the kinds of problems I&rsquo;ve intentionally spent this season learning to solve&mdash;and the work I&rsquo;m excited to bring to my next team. If you&rsquo;re building products where strategy, AI, and thoughtful execution matter, I&rsquo;d love to talk.</p>
 
   <p class="contact-note contact-note-lg">"I'm drawn to teams building at the intersection of <strong>clinical complexity and consumer experience</strong>, where the stakes are real and the product craft has to match."</p>
 
@@ -958,7 +971,7 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
     </div>
     <div class="book-avail">
       <div class="book-avail-label">Currently Exploring</div>
-      <div class="book-avail-text">Senior Product Manager &bull; Product Lead &bull; Principal PM<br>Digital Health &bull; MedTech &bull; AI Product Strategy<br>Minneapolis &bull; Hybrid &bull; Remote</div>
+      <div class="book-avail-text">Roles between the customer and the product<br>Product Leadership &bull; AI Solutions &amp; Sales &bull; Customer Success &amp; Accounts<br>Digital Health &bull; MedTech &bull; Healthcare AI<br>Minneapolis &bull; Hybrid &bull; Remote</div>
     </div>
   </div>
 
@@ -979,30 +992,9 @@ footer{border-top:0.5px solid var(--border);padding:24px 48px;display:flex;justi
 
 <script>
 const CLAUDE_URL='/api/claude';
-const SYSTEM=`You are analyzing a job description on behalf of Ryan Corcoran's portfolio site to help recruiters and hiring managers understand how his background maps to their role.
+// Fit-checker prompt, model and limits live server-side in functions/api/claude.js
 
-RYAN'S PROFILE:
-- 7+ years Product Management in digital health, healthtech, and regulated environments
-- Core strengths: care navigation platforms, behavioral health analytics, 0-to-1 product builds, AI use case definition & data infrastructure readiness for LLM/ML integration, analytics/data products, patient engagement
-- Key wins: Access Plus (0-1 care nav, 48hr time-to-care, double-digit NPS gain in 6mo; incl. AI-assisted triage use-case definition — member routing, call-center optimization); behavioral health analytics platform at Aetna/CVS Health (built with AI/LLM-ML integration readiness as an explicit design goal); SDOH app commercialization at UMN OTC
-- Commercial/GTM: P&L ownership at Claros; go-to-market strategy, pricing, partnerships; cross-functional leadership across clinical, sales, ops, and account teams
-- Regulatory: HIPAA-regulated product environments; 510(k) process familiarity
-- Education: MBA Medical Industry Leadership + Commercialization Strategy (UMN Carlson); BS Biomedical Sciences — Visible Heart Lab (physiology/biomedical engineering research)
-- Medtech pathway: Biomedical sciences foundation + device research background supports pivot to upstream or downstream medtech PM or product marketing; hardware device PM and downstream commercial roles are within target, not outside expertise
-- Location: Minneapolis MN (Plymouth/Twin Cities metro onsite is local — not relocation) — open to remote, hybrid, in-person
-- Target comp: $130K-$180K base
-- Open to: Senior PM, Sr. Manager Product, Associate Director, upstream/downstream medtech PM, downstream medtech product marketing, payer-side roles
-- Hard nos: base below $130K, relocation outside Twin Cities metro required
-
-SCORING GUIDANCE:
-- Plymouth MN / Twin Cities metro onsite roles: treat as local, not a location flag
-- AI / LLM / ML product strategy is a core strength backed by concrete work (data-foundation design, AI-assisted triage use-case definition) — score AI-heavy roadmaps as a strength, not a gap
-- Hardware device PM and downstream medtech product marketing roles: evaluate against biomedical + commercial background, not digital health domain only
-- Application deadlines within 30 days: flag as urgency (e.g. "closes June 13 — apply soon"), not as a posting validity concern
-- Scan full JD text for location mentions, not only the header field
-
-Be honest and direct. This helps recruiters quickly understand fit — not oversell. Strong fit: say so. Gaps: name them. Goal is useful signal, not a pitch.`;
-
+function esc(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 async function runFit(){
   const jd=document.getElementById('fit-jd').value.trim();
   if(!jd)return;
@@ -1020,37 +1012,32 @@ async function runFit(){
   loading.classList.add('visible');
   result.classList.remove('visible');
   error.classList.remove('visible');
-  const prompt=`Analyze this job posting and return ONLY valid JSON (no markdown, no preamble):
-{"company":"company name","role":"job title","salary":"range or empty","location":"location","fitScore":<1-10>,"fitRationale":"2-3 honest sentences on fit","matchCriteria":"key requirements semicolon separated","redFlags":["flag1"],"compAnalysis":"1 sentence on market comp","newsSnapshot":"2-3 sentences recent company news using web search"}
 
-Job posting:
-${jd}`;
   try{
-    const apiKey=localStorage.getItem('portfolio_api_key')||'';
-    const headers={'Content-Type':'application/json'};
-    if(apiKey)headers['x-user-api-key']=apiKey;
-    const resp=await fetch(CLAUDE_URL,{method:'POST',headers,body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1000,system:SYSTEM,tools:[{type:'web_search_20250305',name:'web_search'}],messages:[{role:'user',content:prompt}]})});
-    const data=await resp.json();
-    const text=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('').trim();
-    const clean=text.replace(/^```json\s*/,'').replace(/^```\s*/,'').replace(/\s*```$/,'').trim();
-    const r=JSON.parse(clean);
+    const resp=await fetch(CLAUDE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jd})});
+    let data={};
+    try{data=await resp.json();}catch(_){}
+    if(!resp.ok||!data.result)throw new Error(data.error||'The analyzer is unavailable right now. Please try again in a minute.');
+    const r=data.result;
     const sEl=document.getElementById('fit-score-num');
-    sEl.textContent=r.fitScore+'/10';
-    sEl.style.color=r.fitScore>=7?'var(--jade2)':r.fitScore>=5?'#EF9F27':'var(--rose2)';
+    const score=Math.max(1,Math.min(10,Math.round(Number(r.fitScore)||0)));
+    sEl.textContent=score+'/10';
+    sEl.style.color=score>=7?'var(--jade2)':score>=5?'#EF9F27':'var(--rose2)';
     document.getElementById('fit-co').textContent=r.company||'—';
     document.getElementById('fit-role').textContent=r.role||'—';
     document.getElementById('fit-comp').textContent=r.salary||'';
     document.getElementById('fit-rationale').textContent=r.fitRationale||'';
     const mEl=document.getElementById('fit-match');
-    mEl.innerHTML=r.matchCriteria?`<strong>Key requirements:</strong> ${r.matchCriteria}`:'';
+    mEl.innerHTML=r.matchCriteria?`<strong>Key requirements:</strong> ${esc(r.matchCriteria)}`:'';
     const fEl=document.getElementById('fit-flags');
-    fEl.innerHTML=(r.redFlags||[]).map(f=>`<span class="fit-flag">⚑ ${f}</span>`).join('');
+    fEl.innerHTML=(r.closerLook||[]).map(f=>`<span class="fit-flag">⚑ ${esc(f)}</span>`).join('');
+    document.getElementById('fit-news').style.display='none';
     if(r.newsSnapshot){document.getElementById('fit-news').style.display='block';document.getElementById('fit-news-text').textContent=r.newsSnapshot;}
     loading.classList.remove('visible');
     result.classList.add('visible');
   }catch(e){
     loading.classList.remove('visible');
-    error.textContent='Analysis failed: '+e.message;
+    error.textContent=e.message||'Analysis failed. Please try again.';
     error.classList.add('visible');
   }
   btn.disabled=false;
